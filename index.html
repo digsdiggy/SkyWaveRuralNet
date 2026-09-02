@@ -1,25 +1,352 @@
-<!DOCTYPE html><html lang="en"> <head> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>SKYWAVE RURALNET SCIO | Rural Digital Inclusion Scotland</title> <meta name="description" content="SKYWAVE RURALNET SCIO works to reduce digital exclusion in rural Scotland through research, connectivity initiatives, and community-led digital inclusion programmes."> <link rel="stylesheet" href="style.css" /> <!-- Smooth scroll behavior --> <style> html { scroll-behavior: smooth; } </style> </head> <body> 
+<!DOCTYPE html><html lang="en"> <head> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>SKYWAVE RURALNET SCIO | Rural Digital Inclusion Scotland</title> <meta name="description" content="SKYWAVE RURALNET SCIO works to reduce digital exclusion in rural Scotland through research, connectivity initiatives, and community-led digital inclusion programmes."> <link rel="stylesheet" href="style.css" /> <!-- Smooth scroll behavior --> <style> html { scroll-behavior: smooth; } </style><link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/> </head> <body> 
   <!-- ================= NAVIGATION ================= -->
-  <header class="topbar"> <div class="logo-wrap"> <img src="https://res.cloudinary.com/dshto9bis/image/upload/f_auto,q_auto/IMG_5347_pd4krs" alt="SkyWave RuralNet SCIO Logo" class="logo"> <span class="brand">SKYWAVE RURALNET SCIO</span> </div> <button class="menu-toggle" onclick="openMenu()"> ☰ </button> </header> 
+  <header class="topbar">
+
+    <div class="logo-wrap">
+
+        <img
+            src="https://res.cloudinary.com/dshto9bis/image/upload/f_auto,q_auto/IMG_5347_pd4krs"
+            alt="SkyWave RuralNet SCIO Logo"
+            class="logo"
+        >
+
+        <span class="brand">
+            SKYWAVE RURALNET SCIO
+        </span>
+
+    </div>
+
+
+    <!-- SOCIAL MEDIA ICONS -->
+    <div class="social-links">
+
+        <a
+            href="https://www.facebook.com/share/18GvTwzEbh/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+        >
+             <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a
+            href="https://x.com/SkyWaveRuralNet"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X / Twitter"
+        >
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <a
+            href="https://www.linkedin.com/company/skywave-connect/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+        >
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+    </div>
+
+
+    <!-- MENU BUTTON -->
+    <button class="menu-toggle" onclick="openMenu()" aria-label="Open navigation menu">
+        ☰
+    </button>
+
+</header>
+
   <!-- SIDE MENU MUST BE OUTSIDE HEADER -->
   <div id="sideMenu" class="side-menu"> <button class="close-menu" onclick="closeMenu()"> ✕ </button> <a href="#home" onclick="closeMenu()">Home</a> <a href="#about" onclick="closeMenu()">About Us</a> <a href="#research" onclick="closeMenu()">Research</a> <a href="#values" onclick="closeMenu()">Our Values</a> <a href="#impact" onclick="closeMenu()">Impact</a> <a href="#partners" onclick="closeMenu()">Partner with us</a> <a href="#volunteer" onclick="closeMenu()">Volunteer</a> <a href="#contact" onclick="closeMenu()">Get in touch</a> <a href="#donate" onclick="closeMenu()">Donate</a> <a href="#admin" onclick="closeMenu()">Admin</a> </div> <!-- ================= HERO ================= -->
-  <section id="home" class="hero"> <div class="hero-overlay"></div> <div class="hero-content"> <h1>Closing the Rural Digital Divide in Scotland</h1> <h7> We work to ensure that no rural household is left behind in a digital world. </h7> <p> Reliable internet access, digital skills, and essential online services should not depend on where you live </p> <div class="section"> <h5>Why We Exist</h5> Across rural Scotland, many communities face: <div class="card"> <ul> <div class="card">Unstable or no internet connection</div> <div class="card">Poor access to NHS and public services online</div> <div class="card">Barriers to education and employment opportunities</div> <div class="card">Social isolation caused by digital exclusion</div> </div> <p>Without digital access, everyday life becomes harder and inequality grows.</p> <div class="section"> <h5>What We Do</h5> We tackle digital exclusion through: <div class="card"> <ul> <div class="card"><h5>Connectivity Support</h5><p>Helping households and communities access reliable internet infrastructure.</P></div> <div class="card"><h5>Digital Skills Support</h5><p>Training people to confidently use online services, devices, and tools.</p></div> <div class="card"><h5>Devices for Inclusion </h5><p>Provision of refurbished or donated devices to those in need.</p></div> <div class="card"><h5>Community Partnerships</h5><p>Working with community organisations, schools, councils, Healthcare providers, and charities.</p></div> <div class="card"><h5>Research & Mapping</h5><p>Identifying where digital inequality is most severe in Scotland.</p></div> </div> </div> </section> <!-- ================= ABOUT ================= -->
-  <section id="about" class="section"> <h3>About Us</h3> <p> Skywave RuralNet SCIO is a Scottish Charitable Incorporated Organisation (SCIO) dedicated to reducing digital exclusion across rural Scotland.
+  <!-- ================= HERO ================= -->
+<section id="home" class="hero">
 
-We believe that reliable digital connectivity is essential for modern life. Yet many rural communities continue to face barriers to accessing the internet, digital services, education, healthcare, employment, and opportunities for economic growth.
+    <div class="hero-overlay"></div>
 
-Our work brings together research, community engagement, and practical action to develop sustainable solutions that improve digital inclusion. We combine evidence-based connectivity initiatives, community access hubs, and digital skills support to help ensure rural communities are connected, confident, and able to benefit from the digital world.
+    <div class="hero-content">
 
-Our approach is informed by original research, including postcode-level connectivity mapping and academic work undertaken in collaboration with The Mhor Collective. This evidence helps us understand local challenges and design solutions that reflect the needs of rural communities.
+        <h1>Closing the Rural Digital Divide in Scotland</h1>
 
-We are currently developing a pilot programme in Sutherland and Wester Ross, working alongside local communities, partners, and stakeholders to create practical, scalable models that can be adapted across rural Scotland.
+        <h4>
+            Understanding rural digital inequality and developing
+            community-led solutions.
+        </h4>
+
+        <p>
+            Skywave RuralNet works to understand and reduce digital exclusion
+            in rural communities through research, community engagement and
+            practical digital inclusion solutions.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#research" class="btn-primary">Explore Our Research</a>
+            <a href="#partners" class="btn-secondary">Work With Us</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY WE EXIST ================= -->
+<section class="section">
+
+    <h2>Why We Exist</h2>
+
+    <p>
+        Digital exclusion is not only about whether an internet connection
+        exists. People can also be excluded because they lack a suitable
+        device, digital skills, confidence or access to practical support.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Connectivity</h3>
+            <p>
+                Rural households and communities can experience limited,
+                unreliable or inadequate broadband access.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Devices</h3>
+            <p>
+                Having a connection is not enough if people do not have access
+                to a suitable device.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Digital Skills</h3>
+            <p>
+                People may need skills, confidence and guidance to use digital
+                services effectively.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Digital Support</h3>
+            <p>
+                Some people need ongoing practical support to overcome digital
+                barriers.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHAT WE DO ================= -->
+<section id="what-we-do" class="section">
+
+    <h2>What We Do</h2>
+
+    <p>
+        Skywave RuralNet takes a community-led and evidence-based approach
+        to digital inclusion. We research local needs and work with
+        communities and partners to develop practical solutions.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <img
+                src="https://res.cloudinary.com/dshto9bis/image/upload/v1788369474/conn_ctxwgh.png"
+                alt="Rural community and digital connectivity"
+            >
+
+            <h3>Connectivity & Internet Access</h3>
+
+            <p>
+                We research rural connectivity inequalities and explore
+                practical approaches to improving access to reliable internet.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <img
+                src="https://res.cloudinary.com/dshto9bis/image/upload/v1788369031/digital_device_zw8d2i.png"
+                alt="Digital device supporting digital inclusion"
+            >
+
+            <h3>Digital Devices</h3>
+
+            <p>
+                We recognise access to suitable devices as an important part
+                of digital inclusion and are developing approaches to help
+                address device barriers.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <img
+                src="https://res.cloudinary.com/dshto9bis/image/upload/v1788369019/hhh_nmf8l2.png"
+                alt="Person learning digital skills"
+            >
+
+            <h3>Digital Skills & Confidence</h3>
+
+            <p>
+                We aim to support people to develop the skills and confidence
+                needed to participate in an increasingly digital society.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <img
+                src="https://res.cloudinary.com/dshto9bis/image/upload/v1788369316/Screenshot_2026-09-02_181453_siycs6.png"
+                alt="Person receiving digital support"
+            >
+
+            <h3>Digital Support</h3>
+
+            <p>
+                We are developing practical support approaches to help people
+                overcome everyday digital barriers.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <img
+                src="https://res.cloudinary.com/dshto9bis/image/upload/v1788370222/mapping_slwj8q.png"
+                alt="Digital inequality research and mapping"
+            >
+
+            <h3>Research & Mapping</h3>
+
+            <p>
+                We use postcode-level data and spatial analysis to identify
+                digital inequalities and understand where need is concentrated.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <img
+                src="https://res.cloudinary.com/dshto9bis/image/upload/v1788370193/coll_qm92ao.png"
+                alt="Community partnership meeting"
+            >
+
+            <h3>Community Partnerships</h3>
+
+            <p>
+                We work with communities, researchers, charities, local
+                authorities and other organisations to develop locally
+                relevant solutions.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ================= ABOUT ================= -->
+  <section id="about" class="section"> <h3>About Us</h3> <p> <p>
+Skywave RuralNet SCIO is a Scottish Charitable Incorporated Organisation dedicated to reducing digital exclusion across rural Scotland.
+
+We believe that digital inclusion is about more than having an internet connection. People also need access to suitable devices, digital skills, confidence and practical support to benefit from the digital world.
+
+Our work combines research, community engagement and the development of practical digital inclusion solutions. We use data and postcode-level mapping to understand where inequalities exist and work with communities and partners to identify what support is needed.
+
+Our approach considers four connected areas: connectivity, digital devices,
+digital skills and digital support. By understanding the needs of individual communities, we aim to develop solutions that are relevant, sustainable and capable of being adapted across rural Scotland.
+</p>
     </p> <div class="grid"> <div class="card"> <h3>Our Mission</h3> <p> To reduce digital exclusion in rural Scotland by developing evidence-based, community-led solutions that improve connectivity, increase digital confidence, and create equal opportunities for everyone to participate in the digital world. </p> </div> <div class="card"> <h3>Our Vision</h3> <p> A rural Scotland where every community has access to reliable digital connectivity, the skills and confidence to use it effectively, and equal opportunities to thrive socially, economically, and culturally in an increasingly digital society. </p> </div> </div> </section> 
   <!-- ================= RESEARCH ================= -->
-  <section id="research" class="section"> <h5>Research & Evidence</h5> <p> Our work is based on a postcode-level spatial analysis of broadband inequality across rural Scotland using premises-level data. </p> <div class="pilott-card"> <h6>2026 Pilot Programme</h6> <p> Our pilot programme focuses on postcode districts IV26, IV27, and IV28 in rural Scotland. </p> </div> <div class="researchh-card"> <h6>Key Finding</h6> <p> Broadband inequality is spatially clustered and cannot be understood using simple "served vs underserved" classification. </p> <div class="grid"> <div class="card"> <h6>IV26</h6> <p>Large number of premises experience intermediate broadband connectivity requiring targetted improvement</p> </div> <div class="card"> <h6>IV27</h6> <p>Significant Variation exists between well served and under served communities</p> </div> <div class="card"> <h6>IV28</h6> <p>The highest level of broadband deprivation identified in our study</p> </div> </div> </div> <div class="card"> <h6>Research Preprint</h6> <p> A postcode-Level Framework for Measuring Rural Broadband Inequality in Scotland </p> <a href="https://osf.io/42s5h/overview?view_only=63589c5350564e448f3319f6dd3d5907" target="_blank" class="btn-primary"> View Research Paper </a> </div> <h5>Spatial Analysis Results</h5> <div class="grid"> <div class="card"> <h6>Broadband Inequality</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1782402877/map_inequality_legend_b5k2i1.png" alt="activities"> <p> Shows concetration of underserved premises across rural postcode areas. </p> </div> <div class="card"> <h6>Service Composition(IV26-IV28)</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1782403033/map_decomp2_nlpper.png" alt="activities"> <p> Highlights variation between under served, intermediate, and fully served areas. </p> </div> <div class="card"> <h6>Spatial Clustering</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1782403081/lisa_map_legend_j3fekt.png" alt="activities"> <p> Identifies statistically significant clusters of broadband deprivation. </p> </div> <div class="card"> <h6>Spatial Autocorrelation</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1782403068/moran_scatter_plot_hq9iyu.png" alt="activities"> <p> Confirms strong clustering of broadband inequality (Moran's I>0.6) </p> </div> <div class="card"> <h6>Sensitivity Analysis of Moran's I</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1783019338/sensitivity_kyn5pg.png"> <p> Indicate strong and persistent spatial autocorrelation in broadband inequality across the study area. </p> </div> <div class="card"> <h6>Sample Moran's I python code</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1783018856/Moran_jml9c9.png"> <p> </p> </div> </section> 
+<section id="research" class="section">
+
+    <h2>Research & Evidence</h2>
+
+    <p>
+        Good digital inclusion starts with understanding where the barriers
+        are and what communities actually need.
+
+        Skywave RuralNet uses postcode-level data, spatial analysis and
+        community engagement to build a more detailed picture of rural
+        digital inequality.
+    </p>
+
+    <div class="card">
+
+        <h3>Our 2026 Pilot Research</h3>
+
+        <p>
+            Our current pilot research examines postcode districts IV26,
+            IV27 and IV28, helping us understand how broadband access varies
+            between communities.
+        </p>
+
+    </div>
+
+    <!-- Your existing research maps go here -->
+
+
+<div class="researchh-card"> <h6>Key Finding</h6> <p> Broadband inequality is spatially clustered and cannot be understood using simple "served vs underserved" classification. </p> <div class="grid"> <div class="card"> <h6>IV26</h6> <p>Large number of premises experience intermediate broadband connectivity requiring targetted improvement</p> </div> <div class="card"> <h6>IV27</h6> <p>Significant Variation exists between well served and under served communities</p> </div> <div class="card"> <h6>IV28</h6> <p>The highest level of broadband deprivation identified in our study</p> </div> </div> </div> <div class="card"> <h6>Research Preprint</h6> <p> A postcode-Level Framework for Measuring Rural Broadband Inequality in Scotland </p> <a href="https://osf.io/42s5h/overview?view_only=63589c5350564e448f3319f6dd3d5907" target="_blank" class="btn-primary"> View Research Paper </a> </div> <h5>Spatial Analysis Results</h5> <div class="grid"> <div class="card"> <h6>Broadband Inequality</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1782402877/map_inequality_legend_b5k2i1.png" alt="activities"> <p> Shows concetration of underserved premises across rural postcode areas. </p> </div> <div class="card"> <h6>Service Composition(IV26-IV28)</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1782403033/map_decomp2_nlpper.png" alt="activities"> <p> Highlights variation between under served, intermediate, and fully served areas. </p> </div> <div class="card"> <h6>Spatial Clustering</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1782403081/lisa_map_legend_j3fekt.png" alt="activities"> <p> Identifies statistically significant clusters of broadband deprivation. </p> </div> <div class="card"> <h6>Spatial Autocorrelation</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1782403068/moran_scatter_plot_hq9iyu.png" alt="activities"> <p> Confirms strong clustering of broadband inequality (Moran's I>0.6) </p> </div> <div class="card"> <h6>Sensitivity Analysis of Moran's I</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1783019338/sensitivity_kyn5pg.png"> <p> Indicate strong and persistent spatial autocorrelation in broadband inequality across the study area. </p> </div> <div class="card"> <h6>Sample Moran's I python code</h6> <img src="https://res.cloudinary.com/dshto9bis/image/upload/v1783018856/Moran_jml9c9.png"> <p> </p> </div> </section> 
   <!-- ================= Our Values ================= -->
   <section id="values" class="section"> <h3>Our Values</h3><div class="grid"> <div class="card"> <h5>Community First</h5> <p>We believe rural communities should shape the decisions and solutions that affect their digital future. </p> </div> <div class="card"> <h5>Evidence-led</h5> <p>We use research, data and spatial analysis to understand need, measure impact and inform decision-making.</p> </div> <div class="card"> <h5>Inclusion</h5> <p> We believe everyone should have the opportunity to participate in digital society, regardless of where they live, their age, income or circumstances. </p> </div> <div class="card"> <h5>Partnership</h5> <p>We work collaboratively with partners such as community organisations, local councils, healthcare organisations, charities, and academia to create sustainable, lasting solutions.</p> </div> <div class="card"> <h5>Transparency</h5> <p>We are committed to openness, accountability and responsible stewardship, ensuring our work and resources deliver the greatest possible public benefit.</p> </div> </div> </section> 
   <!-- ================= IMPACT ================= -->
-  <section id="impact" class="section"> <h5>Planned Impact</h5> We expect reduced digital exclusion and improved participation in modern society. <div class="card"> <ul> <div class="card">Better access to education</div> <div class="card">Improved healthcare access</div> <div class="card">Increased employment opportunities</div> <div class="card">Reduced social isolation</div> <div class="card">Strong rural economies</div> <div class="card">Grant funders and charitable trusts</div> </div> </section> 
+ <section id="impact" class="section">
+
+    <h2>Our Intended Impact</h2>
+
+    <p>
+        Our work is still developing. We are using research and community
+        engagement to build an evidence base for future digital inclusion
+        activity.
+    </p>
+
+    <p>
+        Over time, we aim to contribute to:
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Better Digital Access</h3>
+            <p>
+                Helping communities overcome barriers to connectivity and
+                access to digital technology.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Greater Digital Confidence</h3>
+            <p>
+                Supporting people to develop the skills and confidence to
+                participate online.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Greater Opportunity</h3>
+            <p>
+                Supporting access to education, employment, healthcare and
+                essential online services.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Stronger Rural Communities</h3>
+            <p>
+                Contributing to more digitally inclusive and resilient rural
+                communities.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
     <!-- ================= PARTNERS ================= -->
 
     <section id="partners" class="section">
@@ -282,16 +609,84 @@ Submit Partnership Enquiry
   <!-- ================= CONTACT ================= -->
       <section id="contact" class="section"> <h5>Get in touch</h5>We would be delighted to hear from you.  <form onsubmit="sendMessage(event)"> <input id="c_name" placeholder="Full Name" required> <input id="c_email" type="email" placeholder="Email Address" required> <input id="c_phone" placeholder="Phone Number"> <h3>Address (Optional)</h3> <input id="c_address1" placeholder="Address Line 1"> <input id="c_address2" placeholder="Address Line 2"> <input id="c_town" placeholder="Town / City"> <input id="c_county" placeholder="County"> <input id="c_postcode" placeholder="Postcode"> <label for="c_subject">Reason</label> <select id="c_subject"> <option>General Enquiry</option> <option>Volunteer Information</option> <option>Partnership Opportunity</option> <option>Digital Skills Support</option> <option>Connectivity Support</option> <option>Device Donation</option> <option>Research Enquiry</option> <option>Funding / Grant Enquiry</option> <option>Other</option> </select> <textarea id="c_message" placeholder="Your message" required> </textarea> <label> <input type="checkbox" required> I agree that SkyWave RuralNet SCIO can store my information.</input> </label> <button type="submit"> Send Message </button> </form> </section> 
   <!-- ================= DONATE ================= -->
-      <section id="donate" class="donate"> <div class="section"> <h5>Support Our Work</h5> Your support helps bring: <div class="card"> <ul> <div class="card">internet access to rural homes</div> <div class="card">devices to schools and families in need</div> <div class="card">digital skills training</div> <div class="card">community connectivity projects</div> </div> </div> <div class="section"> <h5>Why It Matters</h5> Digital exclusion affects education, healthcare, and opportunity. Your donation helps close that gap </div> <div class="section"> <h5>Choose Your Donation Method</h5> <div class="grid"> 
-        <!-- PayPal Donation -->
-        <div class="card"> <h3>Donate with PayPal</h3> <p> Pay securely using your PayPal account or supported card options. </p> <a href="https://www.paypal.com/donate" target="_blank" class="btn-primary"> Pay by Paypal </a> </div> 
+      <section id="donate" class="donate">
+
+    <div class="section">
+
+        <h2>Support Our Work</h2>
+
+        <p>
+            Your support can help Skywave RuralNet continue its research,
+            community engagement and development of practical digital
+            inclusion solutions for rural communities.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Research</h3>
+                <p>
+                    Supporting research and mapping to identify where digital
+                    inequalities exist.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Community Engagement</h3>
+                <p>
+                    Helping us understand the needs and priorities of
+                    individual rural communities.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Digital Inclusion</h3>
+                <p>
+Supporting the development of future connectivity, device, digital skills and support initiatives.
+                </p>
+            </div>
+<div class="card"> <h3>Donate with PayPal</h3> <p> Pay securely using your PayPal account or supported card options. </p> <a href="https://www.paypal.com/donate" target="_blank" class="btn-primary"> Pay by Paypal </a> </div> 
         <!-- Stripe Donation -->
-        <div class="card"> <h3>Donate by Card</h3> <p> Pay securely using Visa, Mastercard, or other supported cards. </p> <a href="YOUR_STRIPE_PAYMENT_LINK" target="_blank" class="btn-primary"> Pay with Card </a> </div> </div> </div> </section> 
+        <div class="card"> <h3>Donate by Card</h3> <p> Pay securely using Visa, Mastercard, or other supported cards. </p> <a href="YOUR_STRIPE_PAYMENT_LINK" target="_blank" class="btn-primary"> Pay with Card </a> </div>
+        </div>
+
+    </div>
+
+</section>
+
+      
   <!-- ================= ADMIN ================= -->
         <section id="admin" class="section dark"> <h5>Admin Access</h5> <div class="admin-box"> <h6>Secure Login</h6> <input id="adminEmail" type="email" placeholder="Admin Email"> <input id="adminPassword" type="password" placeholder="Password"> <button onclick="login()" class="btn-primary">Login</button> </div> </section> <section id="dashboard" class="hidden"> <div class="dashboard-container"> <aside class="sidebar"> <h7>Dashboard</h7> <button onclick="loadVolunteers()">Volunteers</button> <button onclick="loadMessages()">Messages</button> <button onclick="loadPartners()">Partners</button> </aside> <main class="dashboard-content"> <h2>Welcome Administrator</h2> <div id="adminData"></div> <button onclick="logout()">Logout</button> </main> </div> </section> 
         <!-- ================= FOOTER ================= -->
         <footer>
   <p>
+    <div class="social-links">
+
+    <a href="YOUR_FACEBOOK_URL"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Facebook">
+        Facebook
+    </a>
+
+    <a href="YOUR_X_URL"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="X (Twitter)">
+        X (Twitter)
+    </a>
+
+    <a href="YOUR_LINKEDIN_URL"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="LinkedIn">
+        LinkedIn
+    </a>
+
+</div>
+
+<p>
     SKYWAVE RURALNET SCIO | Scottish Charity No. SC055507
+</p>
   </p>
 </footer><script> function openMenu(){ document.getElementById("sideMenu") .classList.add("open"); } function closeMenu(){ document.getElementById("sideMenu") .classList.remove("open"); } </script> <script type="module" src="app.js"></script> </body> </html>
