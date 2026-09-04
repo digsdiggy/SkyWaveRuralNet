@@ -10,8 +10,10 @@ import {
     collection,
     getDocs,
     getDoc,
-    doc
+    doc,
+    deleteDoc
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
 /* FIREBASE CONFIG */
 
   const firebaseConfig = {
@@ -280,6 +282,12 @@ ${m.createdAt?.toDate
 ? m.createdAt.toDate().toLocaleString()
 : ""}
 </small>
+<button
+    class="delete-btn"
+    onclick="deleteRecord('messages', '${doc.id}')"
+>
+    Delete Message
+</button>
 
 
 
@@ -406,6 +414,13 @@ ${p.partnershipInterest}
 ${p.description}
 </p>
 
+<button
+    class="delete-btn"
+    onclick="deleteRecord('partners', '${doc.id}')"
+>
+    Delete Partner
+</button>
+
 
 </div>
 
@@ -518,7 +533,54 @@ alert(
 
 }
 //////////////////////////////////////////////////////
+window.deleteRecord = async function(collectionName, documentId) {
 
+    const confirmed = confirm(
+        "Are you sure you want to delete this record? This cannot be undone."
+    );
+
+    if (!confirmed) {
+        return;
+    }
+
+    try {
+
+        await deleteDoc(
+            doc(db, collectionName, documentId)
+        );
+
+        alert("Record deleted successfully.");
+
+        // Reload the current section
+        if (collectionName === "messages") {
+            loadMessages();
+        }
+
+        if (collectionName === "partners") {
+            loadPartners();
+        }
+
+        if (collectionName === "volunteers") {
+            loadVolunteers();
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Error deleting record: " + error.message
+        );
+
+    }
+};
+
+
+
+
+
+
+////////////////////////////////////////////
 
 /* =========================
    ADMIN LOGIN
@@ -593,47 +655,61 @@ alert(error.message);
 
 }*/
 ////////////////////////////////////
-window.login = function () {
+
+window.login = async function () {
 
     const email = document.getElementById("adminEmail").value.trim();
     const password = document.getElementById("adminPassword").value.trim();
 
-
-    if(!email){
-        alert("Please enter email");
+    if (!email || !password) {
+        alert("Please enter your email and password.");
         return;
     }
 
-    if(!password){
-        alert("Please enter password");
-        return;
+    try {
+
+        await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+        // Hide all public sections
+        document.querySelectorAll(
+            "body > section:not(#dashboard), body > footer"
+        ).forEach(element => {
+            element.classList.add("hidden");
+        });
+
+        // Specifically hide Why We Exist
+        document
+            .getElementById("why-we-exist")
+            .classList.add("hidden");
+
+        // Show dashboard
+        document
+            .getElementById("dashboard")
+            .classList.remove("hidden");
+
+        // Close side menu
+        document
+            .getElementById("sideMenu")
+            .classList.remove("open");
+
+        // Go to top
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    } catch (error) {
+
+        console.error(error);
+        alert(error.message);
+
     }
-
-
-    signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-    )
-
-    .then(()=>{
-
-        document.getElementById("admin")
-        .classList.add("hidden");
-
-
-        document.getElementById("dashboard")
-        .classList.remove("hidden");
-
-    })
-
-    .catch(err=>{
-
-        alert(err.message);
-
-    });
-
 };
+
 
 //////////////////////////////////////
 /*window.login = async function () {
@@ -731,24 +807,76 @@ window.login = function () {
 */
 window.logout = function () {
 
-  signOut(auth).then(() => {
+    signOut(auth)
 
-    // Hide dashboard
-    document.getElementById("dashboard").style.display = "none";
+    .then(() => {
 
-    // Show login section
-    document.getElementById("admin").style.display = "block";
+        // Hide dashboard
+        const dashboard = document.getElementById("dashboard");
 
-    // Clear fields
-    adminEmail.value = "";
-    adminPassword.value = "";
+        if (dashboard) {
+            dashboard.classList.add("hidden");
+        }
 
-    // Return to home
-    window.location.hash = "#home";
 
-  });
+        // Show normal website sections
+        const sectionsToShow = [
+            "home",
+            "what-we-do",
+            "about",
+            "research",
+            "values",
+            "impact",
+            "partners",
+            "volunteer",
+            "contact",
+            "donate",
+            "admin"
+        ];
+
+        sectionsToShow.forEach(id => {
+
+            const element = document.getElementById(id);
+
+            if (element) {
+                element.classList.remove("hidden");
+            }
+
+        });
+
+
+        // Clear login fields
+        const adminEmail = document.getElementById("adminEmail");
+        const adminPassword = document.getElementById("adminPassword");
+
+        if (adminEmail) {
+            adminEmail.value = "";
+        }
+
+        if (adminPassword) {
+            adminPassword.value = "";
+        }
+
+
+        // Return to home
+        window.location.hash = "#home";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    })
+
+    .catch(error => {
+
+        console.error(error);
+        alert(error.message);
+
+    });
 
 };
+
 /* =========================
    LOGOUT (optional)
 ========================= */
@@ -870,7 +998,12 @@ window.loadVolunteers = async function(){
                 <strong>Status:</strong>
                 ${volunteer.status || "Pending"}
                 </p>
-
+<button
+    class="delete-btn"
+    onclick="deleteRecord('volunteers', '${doc.id}')"
+>
+    Delete Volunteer
+</button>
 
             </div>
 
