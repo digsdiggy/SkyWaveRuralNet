@@ -366,38 +366,132 @@ li::before {
 
 /* ================= MOBILE ================= */
 
+/* ================= MOBILE HEADER ================= */
+
 @media (max-width: 700px) {
 
     .topbar {
-        min-height: 76px;
-        padding: 10px 16px;
+        width: 100%;
+        min-height: 68px;
+        height: auto;
+        padding: 8px 10px;
+        gap: 6px;
+        overflow: hidden;
+    }
+
+    /* Logo + brand */
+    .logo-wrap {
+        gap: 7px;
+        min-width: 0;
+        flex: 1 1 auto;
     }
 
     .logo {
-        width: 50px;
-        height: 50px;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
     }
 
     .brand {
-        font-size: 0.78rem;
-        letter-spacing: 0.7px;
+        font-size: 0.68rem;
+        letter-spacing: 0.45px;
+
+        /* IMPORTANT */
+        white-space: normal;
+        line-height: 1.1;
+
+        min-width: 0;
+        overflow: hidden;
     }
 
+    /* Reduce animated light on small screens */
+    .logo-wrap::before {
+        width: 62px;
+        height: 62px;
+        left: -8px;
+    }
+
+    .logo-wrap::after {
+        width: 66px;
+        height: 66px;
+        left: -10px;
+    }
+
+    /* SOCIAL ICONS */
     .topbar .social-links {
-        gap: 7px;
-        margin-right: 10px;
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+
+        gap: 4px;
+
+        margin-left: 0;
+        margin-right: 3px;
     }
 
     .topbar .social-links a {
-        width: 32px;
-        height: 32px;
-        font-size: 13px;
+        width: 29px;
+        height: 29px;
+
+        flex-shrink: 0;
+
+        font-size: 12px;
+
+        border-width: 1px;
+    }
+
+    /* MENU */
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        flex-shrink: 0;
+
+        font-size: 20px;
+
+        border-radius: 8px;
+    }
+}
+
+
+/* ================= VERY SMALL PHONES ================= */
+
+@media (max-width: 390px) {
+
+    .topbar {
+        padding: 7px 7px;
+        gap: 4px;
+    }
+
+    .logo {
+        width: 39px;
+        height: 39px;
+    }
+
+    .brand {
+        font-size: 0.58rem;
+        letter-spacing: 0.3px;
+        max-width: 105px;
+    }
+
+    .topbar .social-links {
+        gap: 2px;
+        margin-right: 2px;
+    }
+
+    .topbar .social-links a {
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
     }
 
     .menu-toggle {
-        width: 40px;
-        height: 40px;
-        font-size: 21px;
+        width: 35px;
+        height: 35px;
+        min-width: 35px;
+        font-size: 18px;
     }
 }
 
@@ -2730,160 +2824,3 @@ section + div {
 }
 /* ================= TOP BAR ================= */
 
-.topbar {
-    width: 100%;
-    min-height: 78px;
-    padding: 10px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    box-sizing: border-box;
-
-    background: rgba(15, 15, 15, 0.96);
-    position: relative;
-    z-index: 1000;
-}
-
-/* Logo + name */
-.logo-wrap {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 0;
-}
-
-.logo {
-    width: 55px;
-    height: 55px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-.brand {
-    color: #D4A24C;
-    font-size: 18px;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-/* Social icons */
-.social-links {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-left: auto;
-}
-
-.social-links a {
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #D4A24C;
-    text-decoration: none;
-    border-radius: 50%;
-
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #fff;
-    background: rgba(212, 162, 76, 0.2);
-    box-shadow: 0 0 15px rgba(212, 162, 76, 0.6);
-}
-
-/* Menu button */
-.menu-toggle {
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: transparent;
-    border: 1px solid rgba(212, 162, 76, 0.7);
-    border-radius: 8px;
-
-    color: #D4A24C;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-
-    .topbar {
-        min-height: 68px;
-        padding: 8px 12px;
-        gap: 8px;
-    }
-
-    .logo {
-        width: 45px;
-        height: 45px;
-    }
-
-    .brand {
-        font-size: 12px;
-        letter-spacing: 0.3px;
-    }
-
-    .social-links {
-        gap: 5px;
-    }
-
-    .social-links a {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-    }
-
-    .menu-toggle {
-        width: 40px;
-        height: 40px;
-        font-size: 21px;
-    }
-}
-
-/* ================= SMALL PHONES ================= */
-
-@media (max-width: 430px) {
-
-    .topbar {
-        padding: 7px 9px;
-    }
-
-    .logo {
-        width: 40px;
-        height: 40px;
-    }
-
-    .brand {
-        font-size: 10px;
-        max-width: 125px;
-        white-space: normal;
-        line-height: 1.1;
-    }
-
-    .social-links {
-        gap: 2px;
-    }
-
-    .social-links a {
-        width: 27px;
-        height: 27px;
-        font-size: 13px;
-    }
-
-    .menu-toggle {
-        width: 37px;
-        height: 37px;
-        font-size: 19px;
-    }
-}
