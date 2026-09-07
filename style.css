@@ -2482,7 +2482,15 @@ section + div {
 /* ================= TOP BAR ================= */
 
 @media (max-width: 600px) {
-
+#home {
+    min-height: 400vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 40px;
+    box-sizing: border-box;
+}
     .topbar {
         padding: 10px 15px;
     }
