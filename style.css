@@ -282,7 +282,7 @@ nav a {
 }
 
 #home {
-    min-height: 140vh;
+    min-height: 300vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
