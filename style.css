@@ -253,12 +253,12 @@ nav a {
 }
 
 #home {
-    min-height: 100vh;
+    min-height: 200vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px 40px;
+   
     box-sizing: border-box;
 }
 
