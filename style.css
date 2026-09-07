@@ -2136,35 +2136,230 @@ button:hover {
     transform: translateY(-1px);
 }
 
-@media (max-width: 600px) {
+/* =====================================================
+   MOBILE HEADER — RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 700px) {
 
     .topbar {
-        padding: 10px 15px;
+        width: 100%;
+        min-height: 64px;
+        height: 64px;
+
+        padding: 7px 8px;
+
+        display: flex;
+        align-items: center;
+
+        box-sizing: border-box;
+        overflow: hidden;
+
+        gap: 6px;
     }
 
-    .brand {
-        font-size: 13px;
+
+    /* ================= LOGO ================= */
+
+    .logo-wrap {
+        display: flex;
+        align-items: center;
+
+        gap: 6px;
+
+        flex: 1 1 auto;
+        min-width: 0;
+
+        overflow: hidden;
     }
 
     .logo {
-        width: 45px;
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+        max-width: 42px;
+
+        flex-shrink: 0;
     }
 
-    .social-links {
-        gap: 6px;
-        margin-right: 8px;
+
+    /* ================= BRAND ================= */
+
+    .brand {
+        display: block;
+
+        color: #ffffff;
+
+        font-size: 10px;
+        line-height: 1.15;
+
+        letter-spacing: 0.3px;
+
+        white-space: normal;
+
+        overflow: hidden;
+
+        min-width: 0;
+        max-width: 115px;
     }
 
-    .social-links a {
-        width: 32px;
-        height: 32px;
-        font-size: 15px;
+
+    /* ================= LOGO GOLD LIGHT ================= */
+
+    .logo-wrap::before {
+        width: 58px;
+        height: 58px;
+
+        left: -8px;
     }
+
+    .logo-wrap::after {
+        width: 62px;
+        height: 62px;
+
+        left: -10px;
+    }
+
+
+    /* ================= SOCIAL MEDIA ================= */
+
+    .topbar .social-links {
+
+        display: flex;
+        align-items: center;
+
+        gap: 3px;
+
+        margin: 0;
+
+        flex-shrink: 0;
+    }
+
+
+    .topbar .social-links a {
+
+        width: 27px;
+        height: 27px;
+
+        min-width: 27px;
+        min-height: 27px;
+
+        font-size: 11px;
+
+        border-radius: 50%;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ================= MENU ================= */
 
     .menu-toggle {
-        font-size: 28px;
+
+        width: 36px;
+        height: 36px;
+
+        min-width: 36px;
+        min-height: 36px;
+
+        flex-shrink: 0;
+
+        padding: 0;
+
+        font-size: 19px;
+
+        border-radius: 8px;
     }
+
 }
+
+
+/* =====================================================
+   VERY SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .topbar {
+
+        min-height: 60px;
+        height: 60px;
+
+        padding: 6px;
+        gap: 4px;
+    }
+
+
+    .logo {
+
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        max-width: 38px;
+    }
+
+
+    .brand {
+
+        font-size: 8px;
+
+        max-width: 92px;
+
+        letter-spacing: 0.2px;
+    }
+
+
+    .topbar .social-links {
+
+        gap: 2px;
+    }
+
+
+    .topbar .social-links a {
+
+        width: 24px;
+        height: 24px;
+
+        min-width: 24px;
+        min-height: 24px;
+
+        font-size: 10px;
+    }
+
+
+    .menu-toggle {
+
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+        min-height: 32px;
+
+        font-size: 17px;
+    }
+
+
+    .logo-wrap::before {
+
+        width: 52px;
+        height: 52px;
+
+        left: -7px;
+    }
+
+
+    .logo-wrap::after {
+
+        width: 56px;
+        height: 56px;
+
+        left: -9px;
+    }
+
+}
+
 /* Reduce space between header and hero title */
 .hero {
     padding-top: 6px;
