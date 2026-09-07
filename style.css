@@ -372,128 +372,216 @@ li::before {
 
     .topbar {
         width: 100%;
+        height: 68px;
         min-height: 68px;
-        height: auto;
+
         padding: 8px 10px;
-        gap: 6px;
-        overflow: hidden;
-    }
-
-    /* Logo + brand */
-    .logo-wrap {
-        gap: 7px;
-        min-width: 0;
-        flex: 1 1 auto;
-    }
-
-    .logo {
-        width: 44px;
-        height: 44px;
-        flex-shrink: 0;
-    }
-
-    .brand {
-        font-size: 0.68rem;
-        letter-spacing: 0.45px;
-
-        /* IMPORTANT */
-        white-space: normal;
-        line-height: 1.1;
-
-        min-width: 0;
-        overflow: hidden;
-    }
-
-    /* Reduce animated light on small screens */
-    .logo-wrap::before {
-        width: 62px;
-        height: 62px;
-        left: -8px;
-    }
-
-    .logo-wrap::after {
-        width: 66px;
-        height: 66px;
-        left: -10px;
-    }
-
-    /* SOCIAL ICONS */
-    .topbar .social-links {
-        flex-shrink: 0;
 
         display: flex;
         align-items: center;
 
-        gap: 4px;
+        box-sizing: border-box;
 
-        margin-left: 0;
-        margin-right: 3px;
+        /* Do NOT clip the logo */
+        overflow: visible;
+
+        gap: 6px;
     }
+
+
+    /* ================= LOGO AREA ================= */
+
+    .logo-wrap {
+        position: relative;
+
+        width: 46px;
+        height: 46px;
+
+        min-width: 46px;
+        min-height: 46px;
+
+        flex: 0 0 46px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+        padding: 0;
+
+        overflow: visible;
+    }
+
+
+    /* ================= LOGO ================= */
+
+    .logo {
+        position: relative;
+
+        width: 44px;
+        height: 44px;
+
+        min-width: 44px;
+        min-height: 44px;
+
+        max-width: 44px;
+        max-height: 44px;
+
+        display: block;
+
+        object-fit: contain;
+
+        flex: none;
+
+        z-index: 5;
+    }
+
+
+    /* ================= GOLDEN GLOW ================= */
+
+    .logo-wrap::before {
+        content: "";
+
+        position: absolute;
+
+        width: 58px;
+        height: 58px;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+
+        border-radius: 50%;
+
+        background: radial-gradient(
+            circle,
+            rgba(255, 221, 120, 0.75) 0%,
+            rgba(212, 162, 76, 0.45) 28%,
+            rgba(212, 162, 76, 0.18) 48%,
+            transparent 72%
+        );
+
+        filter: blur(6px);
+
+        animation: goldenPulse 3s ease-in-out infinite;
+
+        pointer-events: none;
+
+        z-index: 1;
+    }
+
+
+    .logo-wrap::after {
+        content: "";
+
+        position: absolute;
+
+        width: 62px;
+        height: 62px;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+
+        border-radius: 50%;
+
+        background: conic-gradient(
+            transparent 0deg,
+            transparent 210deg,
+            rgba(255, 220, 120, 0.9) 250deg,
+            rgba(212, 162, 76, 0.35) 285deg,
+            transparent 330deg,
+            transparent 360deg
+        );
+
+        filter: blur(4px);
+
+        animation: goldenRotate 4s linear infinite;
+
+        pointer-events: none;
+
+        z-index: 2;
+    }
+
+
+    /* ================= BRAND ================= */
+
+    .brand {
+        flex: 1 1 auto;
+
+        min-width: 0;
+        max-width: 105px;
+
+        color: #ffffff;
+
+        font-size: 9px;
+        line-height: 1.15;
+
+        letter-spacing: 0.3px;
+
+        white-space: normal;
+
+        overflow: hidden;
+    }
+
+
+    /* ================= SOCIAL ICONS ================= */
+
+    .topbar .social-links {
+        display: flex;
+        align-items: center;
+
+        gap: 3px;
+
+        margin: 0;
+
+        flex: 0 0 auto;
+    }
+
 
     .topbar .social-links a {
-        width: 29px;
-        height: 29px;
+        width: 28px;
+        height: 28px;
 
-        flex-shrink: 0;
+        min-width: 28px;
+        min-height: 28px;
 
-        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        border-width: 1px;
+        font-size: 11px;
+
+        box-sizing: border-box;
     }
 
-    /* MENU */
+
+    /* ================= MENU ================= */
+
     .menu-toggle {
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
 
-        min-width: 38px;
-        flex-shrink: 0;
+        min-width: 36px;
+        min-height: 36px;
 
-        font-size: 20px;
+        flex: 0 0 36px;
 
-        border-radius: 8px;
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 19px;
     }
 }
+
 
 
 /* ================= VERY SMALL PHONES ================= */
-
-@media (max-width: 390px) {
-
-    .topbar {
-        padding: 7px 7px;
-        gap: 4px;
-    }
-
-    .logo {
-        width: 39px;
-        height: 39px;
-    }
-
-    .brand {
-        font-size: 0.58rem;
-        letter-spacing: 0.3px;
-        max-width: 105px;
-    }
-
-    .topbar .social-links {
-        gap: 2px;
-        margin-right: 2px;
-    }
-
-    .topbar .social-links a {
-        width: 26px;
-        height: 26px;
-        font-size: 11px;
-    }
-
-    .menu-toggle {
-        width: 35px;
-        height: 35px;
-        min-width: 35px;
-        font-size: 18px;
-    }
-}
 
 
 nav a {
@@ -505,7 +593,7 @@ nav a {
     transition: 0.3s;
 }
 #home {
-    min-height: 100vh;
+    min-height: 120vh;
 
     display: flex;
     flex-direction: column;
