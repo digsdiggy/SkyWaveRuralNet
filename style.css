@@ -411,7 +411,7 @@ nav a {
     transition: 0.3s;
 }
 #home {
-    min-height: 90vh;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -431,23 +431,6 @@ nav a:hover {
     border: 1px solid var(--gold);
     padding: 6px 10px;
     border-radius: 6px;
-}
-#volunteer h5{
-    margin:0 0 10px;
-   
-}
-#volunteer {
-    
-    min-height: 150vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-    box-sizing: border-box;
-}
-#volunteer p{
-    margin:0 0 5px;
 }
 
 /* =========================
@@ -956,8 +939,6 @@ background: linear-gradient(
     border-radius: 16px;
 
     box-shadow: 0 10px 35px rgba(0,0,0,0.4);
-
-    min-height: auto;
 }
 
 
@@ -1566,14 +1547,8 @@ input:focus, textarea:focus {
     border-color: var(--gold);
 }
 
-/* =========================
-   DONATE SECTION
-========================= */
-.donate {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(180deg, #0b0b0b, #111);
-}
+
+
 
 /* =========================
    ADMIN PANEL
@@ -2752,4 +2727,163 @@ section + div {
         0 0 10px rgba(212, 162, 76, 0.35);
 
     pointer-events: none;
+}
+/* ================= TOP BAR ================= */
+
+.topbar {
+    width: 100%;
+    min-height: 78px;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    box-sizing: border-box;
+
+    background: rgba(15, 15, 15, 0.96);
+    position: relative;
+    z-index: 1000;
+}
+
+/* Logo + name */
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.brand {
+    color: #D4A24C;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Social icons */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: auto;
+}
+
+.social-links a {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #D4A24C;
+    text-decoration: none;
+    border-radius: 50%;
+
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #fff;
+    background: rgba(212, 162, 76, 0.2);
+    box-shadow: 0 0 15px rgba(212, 162, 76, 0.6);
+}
+
+/* Menu button */
+.menu-toggle {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: 1px solid rgba(212, 162, 76, 0.7);
+    border-radius: 8px;
+
+    color: #D4A24C;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .topbar {
+        min-height: 68px;
+        padding: 8px 12px;
+        gap: 8px;
+    }
+
+    .logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .brand {
+        font-size: 12px;
+        letter-spacing: 0.3px;
+    }
+
+    .social-links {
+        gap: 5px;
+    }
+
+    .social-links a {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 21px;
+    }
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 430px) {
+
+    .topbar {
+        padding: 7px 9px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand {
+        font-size: 10px;
+        max-width: 125px;
+        white-space: normal;
+        line-height: 1.1;
+    }
+
+    .social-links {
+        gap: 2px;
+    }
+
+    .social-links a {
+        width: 27px;
+        height: 27px;
+        font-size: 13px;
+    }
+
+    .menu-toggle {
+        width: 37px;
+        height: 37px;
+        font-size: 19px;
+    }
 }
