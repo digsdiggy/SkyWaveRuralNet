@@ -343,21 +343,10 @@ li::before {
     /* ================= BRAND ================= */
 
     .brand {
-        flex: 1 1 auto;
-
-        min-width: 0;
-        max-width: 105px;
-
-        color: #ffffff;
-
+        
         font-size: 9px;
-        line-height: 1.15;
-
-        letter-spacing: 0.3px;
-
-        white-space: normal;
-
-        overflow: hidden;
+        
+      
     }
 
 
@@ -452,7 +441,7 @@ nav a {
     justify-content: center;
     align-items: center;
 
-    padding: 80px 40px;
+    
 
     box-sizing: border-box;
 }
