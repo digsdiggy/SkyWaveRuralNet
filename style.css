@@ -151,7 +151,17 @@ li::before {
 .brand {
     font-weight: bold;
     color: var(--gold);
-    font-size: 18px;
+    font
+-size: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
 
