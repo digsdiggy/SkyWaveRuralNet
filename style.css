@@ -212,35 +212,6 @@ nav a {
 
 /* ================= MOBILE HEADER ================= */
 
-@media (max-width: 600px) {
-
-    .topbar {
-        padding: 10px 15px;
-    }
-
-    .brand {
-        font-size: 13px;
-    }
-
-    .logo {
-        width: 45px;
-    }
-
-    .social-links {
-        gap: 6px;
-        margin-right: 8px;
-    }
-
-    .social-links a {
-        width: 32px;
-        height: 32px;
-        font-size: 15px;
-    }
-
-    .menu-toggle {
-        font-size: 28px;
-    }
-}
 /* Reduce space between header and hero title */
 .hero {
     padding-top: 6px;
@@ -282,7 +253,7 @@ nav a {
 }
 
 #home {
-    min-height: 300vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2510,3 +2481,32 @@ section + div {
 }
 /* ================= TOP BAR ================= */
 
+@media (max-width: 600px) {
+
+    .topbar {
+        padding: 10px 15px;
+    }
+
+    .brand {
+        font-size: 13px;
+    }
+
+    .logo {
+        width: 45px;
+    }
+
+    .social-links {
+        gap: 6px;
+        margin-right: 8px;
+    }
+
+    .social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+
+    .menu-toggle {
+        font-size: 28px;
+    }
+}
