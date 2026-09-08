@@ -22,14 +22,27 @@ body {font-family:'Poppins',sans-serif;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:25px;
 }
-@media (max-width: 768px){
-  .container{
-    width:100%;
-    max-width:1200px;
-    margin: 0 auto;
-    padding: 16px;
-  }
+@media (max-width: 768px) {
+
+    .section-image .card,
+    .section-image2 .card,
+    .section-image3 .card,
+    .section-image4 .card,
+    .section-image5 .card,
+    .section-image6 .card {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+
+        transform: none;
+        width: 100%;
+        margin: 0;
+    }
+
 }
+
 .navbar {
   display: flex;
   alight-items: center;
@@ -2457,7 +2470,32 @@ section + div {
 }
 
 @media (max-width: 600px) {
+ .topbar {
+        padding: 10px 15px;
+    }
 
+    .brand {
+        font-size: 13px;
+    }
+
+    .logo {
+        width: 45px;
+    }
+
+    .social-links {
+        gap: 6px;
+        margin-right: 8px;
+    }
+
+    .social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+
+    .menu-toggle {
+        font-size: 28px;
+    }
     .section-image,
     .section-image2,
     .section-image3,
@@ -2466,7 +2504,7 @@ section + div {
     .section-image6 {
         position: relative;
         width: 100%;
-        min-height: 600px;
+        min-height: auto;
         height: auto;
 
         padding: 40px 15px;
@@ -2508,33 +2546,3 @@ section + div {
     }
 }
 
-
-@media (max-width: 600px) {
-
-    .topbar {
-        padding: 10px 15px;
-    }
-
-    .brand {
-        font-size: 13px;
-    }
-
-    .logo {
-        width: 45px;
-    }
-
-    .social-links {
-        gap: 6px;
-        margin-right: 8px;
-    }
-
-    .social-links a {
-        width: 32px;
-        height: 32px;
-        font-size: 15px;
-    }
-
-    .menu-toggle {
-        font-size: 28px;
-    }
-}
