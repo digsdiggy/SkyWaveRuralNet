@@ -42,6 +42,26 @@ body {font-family:'Poppins',sans-serif;
     }
 
 }
+@media (max-width: 700px) {
+
+    #donate .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        width: 100%;
+        margin: 30px auto 0;
+    }
+
+    #donate .card {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+}
 
 .navbar {
   display: flex;
