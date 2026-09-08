@@ -2567,3 +2567,35 @@ section + div {
     }
 
 }
+@media (max-width: 700px) {
+
+    #home {
+        min-height: calc(100vh - 65px);
+        padding: 80px 20px 40px;
+        scroll-margin-top: 80px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: calc(100vh - 65px);
+        height: auto;
+        padding: 80px 20px 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        margin-top: 0;
+    }
+}
