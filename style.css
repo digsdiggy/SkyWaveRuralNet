@@ -3130,3 +3130,14 @@ section + div {
         margin-top: 0 !important;
     }
 }
+
+@media (max-width: 600px) {
+
+    .donate-topbar {
+        margin-left: 18px !important;
+        margin-right: 8px !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+    }
+
+}
