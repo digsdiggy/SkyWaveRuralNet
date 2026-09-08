@@ -1822,17 +1822,7 @@ button:hover {
     margin-bottom: 2px;
 }
 
-.section > p {
-    margin-top: 2px;
-}
-.section {
-  position: relative;
-  
-}
-.section-content {
-  position: absolute;
-  
-}
+
 /* =====================================================
    MODERN ADMIN LOGIN
 ===================================================== */
