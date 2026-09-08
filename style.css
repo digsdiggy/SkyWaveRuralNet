@@ -3130,7 +3130,6 @@ section + div {
         margin-top: 0 !important;
     }
 }
-
 @media (max-width: 600px) {
 
     .donate-topbar {
@@ -3140,4 +3139,19 @@ section + div {
         white-space: nowrap !important;
     }
 
+}
+.charity-address {
+    color: #E8F1F8;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 18px 0;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .charity-address {
+        font-size: 13px;
+        line-height: 1.6;
+        margin: 15px 0;
+    }
 }
