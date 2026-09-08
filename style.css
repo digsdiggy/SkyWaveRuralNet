@@ -1107,7 +1107,6 @@ background: linear-gradient(
     margin-top: 30px;
 }
 /* =========================================
-   MODERN KIDS WEBSITE CARDS
 ========================================= */
 
 .card {
@@ -2457,17 +2456,58 @@ section + div {
     pointer-events: none;
 }
 
-@media (max-width: 768px) {
-  .background-section {
-    position: relative;
-  }
+@media (max-width: 600px) {
 
-  .card {
-    position: absolute;
-    top: 120px;
-    left: 50px;
-  }
+    .section-image,
+    .section-image2,
+    .section-image3,
+    .section-image4,
+    .section-image5,
+    .section-image6 {
+        position: relative;
+        width: 100%;
+        min-height: 600px;
+        height: auto;
+
+        padding: 40px 15px;
+
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .section-image > .section,
+    .section-image2 > .section,
+    .section-image3 > .section,
+    .section-image4 > .section,
+    .section-image5 > .section,
+    .section-image6 > .section {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+
+        padding: 25px 18px;
+
+        box-sizing: border-box;
+    }
+
+    .section-image .card,
+    .section-image2 .card,
+    .section-image3 .card,
+    .section-image4 .card,
+    .section-image5 .card,
+    .section-image6 .card {
+        position: relative;
+        top: auto;
+        left: auto;
+
+        width: 100%;
+        margin: 0;
+
+        transform: none;
+    }
 }
+
 
 @media (max-width: 600px) {
 
