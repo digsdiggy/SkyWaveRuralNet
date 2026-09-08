@@ -2456,6 +2456,13 @@ section + div {
 
     pointer-events: none;
 }
+.background-section {
+  position: relative;
+}
+
+.card {
+  position: absolute;
+}
 
 @media (max-width: 600px) {
 
