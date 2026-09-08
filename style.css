@@ -2755,51 +2755,87 @@ section + div {
 }
 
 
-@media (max-width: 600px) {
+/* =========================================
+FIX ADMIN + CONTACT CARDS
+Keep cards fully inside their background
+========================================= */
 
-.topbar {
-    display: flex;
-    align-items: center;
+#contact,
+#admin {
+overflow: visible;
+}
+
+#contact .section-image5,
+#admin .section-image6 {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+min-height: 400px;
+height: auto;
+padding: 80px 20px;
+box-sizing: border-box;
+}
+
+#contact .section-image5 > .section,
+#admin .section-image6 > .section {
+position: relative;
+top: auto;
+left: auto;
+right: auto;
+bottom: auto;
+
+width: 100%;
+max-width: 1100px;
+margin: 0 auto;
+
+padding: 50px;
+box-sizing: border-box;
+
+transform: none;
+
+}
+
+/* Keep the actual cards centered */
+#contact .section-image5 .card,
+#admin .section-image6 .card {
+position: relative !important;
+
+top: auto !important;
+left: auto !important;
+right: auto !important;
+bottom: auto !important;
+
+width: 100%;
+margin: 0 auto;
+
+transform: none;
+
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+#contact .section-image5,
+#admin .section-image6 {
+    min-height: auto;
+    height: auto;
+    padding: 50px 15px;
+}
+
+#contact .section-image5 > .section,
+#admin .section-image6 > .section {
     width: 100%;
-    padding: 10px 15px;
-    gap: 10px;
+    padding: 30px 20px;
+    margin: 0 auto;
 }
 
-.logo-wrap {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.brand {
-    font-size: 13px;
-    white-space: nowrap;
-}
-
-.logo {
-    width: 45px;
-    flex-shrink: 0;
-}
-
-.social-links {
-    margin-left: auto;
-    margin-right: 0;
-    gap: 6px;
-    flex-shrink: 0;
-}
-
-.social-links a {
-    width: 32px;
-    height: 32px;
-    font-size: 15px;
-}
-
-.menu-toggle {
-    margin-left: 8px;
-    margin-right: 8px;
-    flex-shrink: 0;
-    font-size: 28px;
+#contact .section-image5 .card,
+#admin .section-image6 .card {
+    width: 100%;
+    margin: 0 auto;
+    transform: none !important;
 }
 
 }
