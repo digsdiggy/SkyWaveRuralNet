@@ -1234,6 +1234,7 @@ background: linear-gradient(
     border: 2px solid var(--border);
 }
 
+
 /* =========================
    STATS SECTION
 ========================= */
@@ -2755,87 +2756,243 @@ section + div {
 }
 
 
-/* =========================================
-FIX ADMIN + CONTACT CARDS
-Keep cards fully inside their background
-========================================= */
+/* =====================================================
+   MOBILE TOPBAR — DONATE BUTTON
+===================================================== */
 
-#contact,
-#admin {
-overflow: visible;
-}
+/* =====================================================
+   MOBILE TOPBAR DONATE BUTTON
+===================================================== */
 
-#contact .section-image5,
-#admin .section-image6 {
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-width: 100%;
-min-height: 400px;
-height: auto;
-padding: 80px 20px;
-box-sizing: border-box;
-}
+/* =====================================================
+   TOPBAR — DESKTOP + MOBILE
+===================================================== */
 
-#contact .section-image5 > .section,
-#admin .section-image6 > .section {
-position: relative;
-top: auto;
-left: auto;
-right: auto;
-bottom: auto;
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
 
-width: 100%;
-max-width: 1100px;
-margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-padding: 50px;
-box-sizing: border-box;
-
-transform: none;
-
-}
-
-/* Keep the actual cards centered */
-#contact .section-image5 .card,
-#admin .section-image6 .card {
-position: relative !important;
-
-top: auto !important;
-left: auto !important;
-right: auto !important;
-bottom: auto !important;
-
-width: 100%;
-margin: 0 auto;
-
-transform: none;
-
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-
-#contact .section-image5,
-#admin .section-image6 {
-    min-height: auto;
-    height: auto;
-    padding: 50px 15px;
-}
-
-#contact .section-image5 > .section,
-#admin .section-image6 > .section {
     width: 100%;
-    padding: 30px 20px;
-    margin: 0 auto;
+    min-height: 64px;
+
+    padding: 10px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #163A5F 0%,
+        #1F4E79 50%,
+        #102A43 100%
+    );
+
+    border-bottom: 1px solid var(--border);
+
+    box-sizing: border-box;
 }
 
-#contact .section-image5 .card,
-#admin .section-image6 .card {
-    width: 100%;
-    margin: 0 auto;
-    transform: none !important;
+
+/* =====================================================
+   LEFT — LOGO + BRAND
+===================================================== */
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    flex-shrink: 0;
 }
 
+.logo {
+    width: 55px;
+}
+
+.brand {
+    font-weight: bold;
+    color: var(--gold);
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   CENTER — DONATE BUTTON
+===================================================== */
+
+.donate-top {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #D4A24C,
+        #E6B566
+    );
+
+    color: #102A43;
+
+    border: none;
+    border-radius: 7px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 15px rgba(212, 162, 76, 0.3);
+
+    transition: all 0.25s ease;
+}
+
+.donate-top:hover {
+    background: #FFD166;
+    color: #102A43;
+
+    transform: translate(-50%, calc(-50% - 2px));
+
+    box-shadow:
+        0 7px 20px rgba(212, 162, 76, 0.45);
+}
+
+
+/* =====================================================
+   RIGHT — SOCIAL + MENU
+===================================================== */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+
+/* Menu button */
+
+.menu-toggle {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: rgba(255,255,255,0.07);
+
+    color: white;
+
+    border: 1px solid rgba(212,162,76,0.6);
+    border-radius: 10px;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.menu-toggle:hover {
+    background: var(--gold);
+    color: #102A43;
+
+    box-shadow:
+        0 0 15px rgba(212,162,76,0.55);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .topbar {
+        min-height: 58px;
+
+        padding: 8px 12px;
+    }
+
+    .logo-wrap {
+        gap: 6px;
+    }
+
+    .logo {
+        width: 42px;
+    }
+
+    .brand {
+        font-size: 12px;
+    }
+
+    /* Center Donate button */
+    .donate-top {
+        padding: 7px 13px;
+
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    /* Hide social icons on mobile */
+    .social-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+
+        font-size: 25px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .brand {
+        font-size: 10px;
+    }
+
+    .logo {
+        width: 38px;
+    }
+
+    .donate-top {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+        font-size: 23px;
+    }
 }
