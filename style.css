@@ -1826,7 +1826,12 @@ button:hover {
     margin-top: 2px;
 }
 .section {
-    padding: 45px 20px;
+  position: relative;
+  
+}
+.section-content {
+  position: absolute;
+  
 }
 /* =====================================================
    MODERN ADMIN LOGIN
