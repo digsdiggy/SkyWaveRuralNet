@@ -108,7 +108,7 @@ li {
     position: sticky;
     top: 0;
     z-index: 999;
-    background: rgba(0,0,0,0.9);
+      color: #ffffff;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
 
