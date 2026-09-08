@@ -108,10 +108,15 @@ li {
     position: sticky;
     top: 0;
     z-index: 999;
-      color: #ffffff;
+    background: rgba(0,0,0,0.9);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
-
+ background: linear-gradient(
+        135deg,
+        #163A5F 0%,
+        #1F4E79 50%,
+        #102A43 100%
+    );
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -143,8 +148,9 @@ nav a {
     transition: 0.3s;
 }
 #home {
-    min-height: 100vh;
-    display: flex;
+    min-height: 90vh;
+     position: relative;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -2247,7 +2253,7 @@ button:hover {
 .section-image4 .grid,
 .section-image5 .grid,
 .section-image6 .grid {
-
+position: relative;
     width: 100%;
 
     display: grid;
