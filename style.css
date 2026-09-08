@@ -1863,6 +1863,52 @@ button:hover {
 }
 
 
+/*  keep admin section and the contact in position*/
+#contact,
+#admin {
+overflow: visible;
+}
+
+#contact .section-image5,
+#admin .section-image6 {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+min-height: 400px;
+height: auto;
+padding: 80px 20px;
+box-sizing: border-box;
+}
+
+#contact .section-image5 > .section,
+#admin .section-image6 > .section {
+position: relative;
+top: auto;
+left: auto;
+right: auto;
+bottom: auto;
+  
+width: 100%;
+max-width: 1100px;
+margin: 0 auto;
+
+padding: 50px;
+box-sizing: border-box;
+
+transform: none;
+
+
+
+
+
+
+
+
+
+
+
 /* LOGIN CARD */
 
 .admin-box {
