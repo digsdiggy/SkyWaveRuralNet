@@ -1901,14 +1901,6 @@ transform: none;
 
 
 
-
-
-
-
-
-
-
-
 /* LOGIN CARD */
 
 .admin-box {
@@ -2730,4 +2722,53 @@ section + div {
     .hero-buttons {
         margin-top: 20px;
     }
+}
+
+  @media (max-width: 600px) {
+
+.topbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    gap: 10px;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.brand {
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.logo {
+    width: 45px;
+    flex-shrink: 0;
+}
+
+.social-links {
+    margin-left: auto;
+    margin-right: 0;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.social-links a {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+}
+
+.menu-toggle {
+    margin-left: 8px;
+    margin-right: 0;
+    flex-shrink: 0;
+    font-size: 28px;
+}
+
 }
