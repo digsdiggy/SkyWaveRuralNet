@@ -2924,11 +2924,11 @@ section + div {
     }
 
     .logo {
-        width: 38px;
+        width: 32px;
     }
 
     .brand {
-        font-size: 10px;
+        font-size: 8px;
 
         white-space: nowrap;
 
@@ -2939,14 +2939,16 @@ section + div {
     }
 
 
+
     /* CENTER DONATE */
     .donate-top {
+      
+        font-size: 10px;
         left: 50% !important;
 
-        padding: 7px 12px !important;
+       padding: 6px 8px !important;
 
-        font-size: 11px;
-
+        
         border-radius: 6px;
     }
 
@@ -2957,13 +2959,13 @@ section + div {
     }
 
     .menu-toggle {
-        width: 40px;
-        height: 40px;
-
+      width: 36px;
+        height: 36px;
+        font-size: 21px;
         margin-left: auto !important;
         margin-right: 0 !important;
 
-        font-size: 24px;
+        
     }
 }
 
