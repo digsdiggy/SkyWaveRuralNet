@@ -2768,19 +2768,24 @@ section + div {
    TOPBAR — DESKTOP + MOBILE
 ===================================================== */
 
+/* =====================================================
+   FINAL TOPBAR FIX — DESKTOP + MOBILE
+===================================================== */
+
 .topbar {
-    position: sticky;
+    position: sticky !important;
     top: 0;
     z-index: 999;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex !important;
+    align-items: center !important;
 
     width: 100%;
     min-height: 64px;
 
-    padding: 10px 20px;
+    padding: 10px 20px !important;
+
+    box-sizing: border-box;
 
     background: linear-gradient(
         135deg,
@@ -2788,64 +2793,67 @@ section + div {
         #1F4E79 50%,
         #102A43 100%
     );
-
-    border-bottom: 1px solid var(--border);
-
-    box-sizing: border-box;
 }
 
 
-/* =====================================================
-   LEFT — LOGO + BRAND
-===================================================== */
+/* LEFT SIDE */
 
 .logo-wrap {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px;
 
-    flex-shrink: 0;
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 .logo {
-    width: 55px;
+    width: 50px;
+    flex-shrink: 0;
 }
 
 .brand {
-    font-weight: bold;
-    color: var(--gold);
     font-size: 18px;
+    font-weight: bold;
+
     white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    min-width: 0;
 }
 
 
 /* =====================================================
-   CENTER — DONATE BUTTON
+   DONATE — CENTER
 ===================================================== */
 
 .donate-top {
-    position: absolute;
+    position: absolute !important;
 
-    left: 50%;
-    top: 50%;
+    left: 50% !important;
+    top: 50% !important;
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) !important;
 
-    display: inline-flex;
+    margin: 0 !important;
+
+    display: flex !important;
     align-items: center;
     justify-content: center;
 
-    padding: 9px 20px;
+    padding: 9px 20px !important;
 
     background: linear-gradient(
         135deg,
         #D4A24C,
         #E6B566
-    );
+    ) !important;
 
-    color: #102A43;
+    color: #102A43 !important;
 
-    border: none;
+    border: none !important;
     border-radius: 7px;
 
     font-family: 'Poppins', sans-serif;
@@ -2856,72 +2864,39 @@ section + div {
 
     cursor: pointer;
 
-    box-shadow:
-        0 4px 15px rgba(212, 162, 76, 0.3);
-
-    transition: all 0.25s ease;
-}
-
-.donate-top:hover {
-    background: #FFD166;
-    color: #102A43;
-
-    transform: translate(-50%, calc(-50% - 2px));
-
-    box-shadow:
-        0 7px 20px rgba(212, 162, 76, 0.45);
+    z-index: 10;
 }
 
 
 /* =====================================================
-   RIGHT — SOCIAL + MENU
+   RIGHT SIDE
 ===================================================== */
 
 .social-links {
-    display: flex;
+    display: flex !important;
     align-items: center;
+
     gap: 8px;
 
-    margin-left: auto;
-    margin-right: 15px;
+    flex: 1 1 0;
+    justify-content: flex-end;
+
+    margin: 0 !important;
 }
 
-
-/* Menu button */
-
 .menu-toggle {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin: 0 0 0 12px !important;
 
     width: 44px;
     height: 44px;
 
-    display: flex;
+    flex-shrink: 0;
+
+    display: flex !important;
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0;
-
-    background: rgba(255,255,255,0.07);
-
-    color: white;
-
-    border: 1px solid rgba(212,162,76,0.6);
-    border-radius: 10px;
-
     font-size: 28px;
-
-    cursor: pointer;
-
-    transition: 0.25s ease;
-}
-
-.menu-toggle:hover {
-    background: var(--gold);
-    color: #102A43;
-
-    box-shadow:
-        0 0 15px rgba(212,162,76,0.55);
 }
 
 
@@ -2934,122 +2909,52 @@ section + div {
     .topbar {
         min-height: 58px;
 
-        padding: 8px 12px;
+        padding: 8px 10px !important;
+
+        gap: 0 !important;
     }
 
+    /* LEFT */
     .logo-wrap {
-        gap: 6px;
+        flex: 1 1 0;
+
+        max-width: 40%;
+
+        gap: 5px;
     }
 
     .logo {
-        width: 42px;
+        width: 38px;
     }
-
-    .brand {
-        font-size: 12px;
-    }
-
-    /* Center Donate button */
-    .donate-top {
-        padding: 7px 13px;
-
-        font-size: 12px;
-        border-radius: 6px;
-    }
-
-    /* Hide social icons on mobile */
-    .social-links {
-        display: none;
-    }
-
-    .menu-toggle {
-        width: 40px;
-        height: 40px;
-
-        font-size: 25px;
-    }
-}
-
-
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
-
-@media (max-width: 380px) {
 
     .brand {
         font-size: 10px;
-    }
 
-    .logo {
-        width: 38px;
-    }
+        max-width: 100%;
 
-    .donate-top {
-        padding: 6px 10px;
-        font-size: 11px;
-    }
-
-    .menu-toggle {
-        width: 38px;
-        height: 38px;
-        font-size: 23px;
-    }
-}
-/*  */
-/* =====================================================
-   MOBILE — PREVENT DONATE BUTTON OVERLAPPING BRAND
-===================================================== */
-
-@media (max-width: 600px) {
-
-    .topbar {
-        position: sticky;
-        display: flex;
-        align-items: center;
-        padding: 8px 10px;
-        min-height: 58px;
-    }
-
-    .logo-wrap {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-
-        max-width: 42%;
-        flex-shrink: 1;
-    }
-
-    .logo {
-        width: 40px;
-        flex-shrink: 0;
-    }
-
-    .brand {
-        font-size: 11px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    /* Donate */
+
+    /* CENTER DONATE */
     .donate-top {
-        position: absolute;
+        left: 50% !important;
 
-        left: 50%;
-        top: 50%;
-
-        transform: translate(-50%, -50%);
-
-        padding: 7px 12px;
+        padding: 7px 12px !important;
 
         font-size: 11px;
 
-        white-space: nowrap;
-        z-index: 5;
+        border-radius: 6px;
     }
 
-    /* Menu */
+
+    /* RIGHT */
+    .social-links {
+        display: none !important;
+    }
+
     .menu-toggle {
         width: 40px;
         height: 40px;
@@ -3057,31 +2962,23 @@ section + div {
         margin-left: auto !important;
         margin-right: 0 !important;
 
-        flex-shrink: 0;
-
-        font-size: 25px;
-
-        z-index: 6;
-    }
-
-    .social-links {
-        display: none;
+        font-size: 24px;
     }
 }
 
 
 /* =====================================================
-   VERY SMALL PHONES
+   SMALL PHONES
 ===================================================== */
 
 @media (max-width: 400px) {
 
     .logo-wrap {
-        max-width: 38%;
+        max-width: 36%;
     }
 
     .logo {
-        width: 36px;
+        width: 34px;
     }
 
     .brand {
@@ -3089,34 +2986,13 @@ section + div {
     }
 
     .donate-top {
-        padding: 6px 10px;
+        padding: 6px 10px !important;
         font-size: 10px;
     }
 
     .menu-toggle {
-        width: 36px;
-        height: 36px;
-        font-size: 23px;
-    }
-}
-
-
-/* =====================================================
-   EXTRA SMALL PHONES
-===================================================== */
-
-@media (max-width: 350px) {
-
-    .logo-wrap {
-        max-width: 34%;
-    }
-
-    .brand {
-        font-size: 8px;
-    }
-
-    .donate-top {
-        padding: 5px 8px;
-        font-size: 9px;
+        width: 37px;
+        height: 37px;
+        font-size: 22px;
     }
 }
