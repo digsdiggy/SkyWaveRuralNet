@@ -3071,3 +3071,62 @@ section + div {
         font-size: 21px;
     }
 }
+
+/* =====================================================
+   DESKTOP — KEEP CONTACT & ADMIN CARDS INSIDE BACKGROUND
+===================================================== */
+
+@media (min-width: 769px) {
+
+    .section-image5,
+    .section-image6 {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 550px !important;
+
+        padding: 70px 40px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        box-sizing: border-box !important;
+
+        position: relative !important;
+    }
+
+    .section-image5 > .section,
+    .section-image6 > .section {
+        position: relative !important;
+
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+
+        width: 100% !important;
+        max-width: 1100px !important;
+
+        margin: 0 auto !important;
+
+        padding: 50px !important;
+
+        box-sizing: border-box !important;
+
+        transform: none !important;
+    }
+
+    .section-image5 .card,
+    .section-image6 .card {
+        position: relative !important;
+
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+
+        transform: none !important;
+
+        margin-top: 0 !important;
+    }
+}
