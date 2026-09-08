@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  
+ 
 }
 
 html,
@@ -188,7 +188,7 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.07);
     color: #ffffff;
 
-    
+   
     cursor: pointer;
 
     display: flex;
@@ -316,35 +316,52 @@ z-index:1;}
 /* =========================
    BUTTONS
 ========================= */
-.btn-primary {
-    display: inline-block;
-    background: var(--gold);
-    color: #0B0B0B;
-    padding: 14px 28px;
-    margin: 10px;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s ease;
-    border: none;
-    cursor: pointer;
+/* =========================================
+   ALL BUTTONS EXCEPT WORK WITH US
+========================================= */
+
+
+.btn-secondary,
+.btn-primary,
+.donate-button,
+.admin-login-button {
+    background: linear-gradient(
+        135deg,
+        #FFD166 0%,
+        #E6B566 50%,
+        #D4A24C 100%
+    );
+
+    color: #102A43 !important;
+
+    border: 1px solid #FFE29A;
+    font-weight: 700;
+
+    box-shadow:
+        0 6px 18px rgba(212, 162, 76, 0.25);
+
+    transition: all 0.25s ease;
 }
 
-.btn-primary:hover {
-    background: var(--gold-dark);
-    color: #ffffff;
+/* Hover */
+
+button:not(.btn-primary):hover,
+.btn-secondary:hover,
+.donate-button:hover,
+.admin-login-button:hover {
+    background: linear-gradient(
+        135deg,
+        #FFE29A 0%,
+        #FFD166 50%,
+        #E6B566 100%
+    );
+
+    color: #0B1F33 !important;
+
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(212, 162, 76, 0.3);
-}
 
-
-.btn-secondary {
-    display: inline-block;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    padding: 12px 20px;
-    border-radius: 6px;
-    text-decoration: none;
+    box-shadow:
+        0 10px 25px rgba(212, 162, 76, 0.35);
 }
 
 /* =========================
@@ -358,7 +375,7 @@ z-index:1;}
 
 /* WHY WE EXIST */
 #why-we-exist {
-    
+   
  background: linear-gradient(
     135deg,
     #102A43 0%,
@@ -374,7 +391,7 @@ z-index:1;}
     border-radius: 16px;
 
     box-shadow: 0 10px 35px rgba(0,0,0,0.4);
-  
+ 
 
 }
 .section-image {
@@ -413,14 +430,7 @@ z-index:1;}
 }
 /* WHAT WE DO */
 #what-we-do {
-    
-
-    margin: 30px auto;
-    padding: 60px 40px;
-
-    /* IMPORTANT: use background-color, NOT background */
-    background-color: var(--card);
-background: linear-gradient(
+   background: linear-gradient(
     135deg,
     #102A43 0%,
     #234E70 35%,
@@ -428,6 +438,11 @@ background: linear-gradient(
     #6FAED6 100%
 );
 
+    margin: 30px auto;
+    padding: 60px 40px;
+
+    /* IMPORTANT: use background-color, NOT background */
+    background-color: var(--card);
     border: 1px solid var(--border);
     border-left: 5px solid var(--gold);
     border-radius: 16px;
@@ -514,39 +529,21 @@ background: linear-gradient(
 
 #research .grid {
     display: grid;
-
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(280px, 1fr)
-    );
-
-    gap: 30px;
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px; /* space between subcards */
     margin-top: 30px;
 }
 
-
-/* Individual research cards */
-
 #research .grid .card {
     margin: 0;
-
-    padding: 25px;
-
-    min-height: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    background: linear-gradient(
-        145deg,
-        rgba(70, 130, 180, 0.18),
-        rgba(16, 42, 67, 0.85)
-    );
-
-    border-radius: 20px;
 }
 
+@media (max-width: 700px) {
+    #research .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
 
 /* Research images */
 
@@ -607,10 +604,32 @@ background: linear-gradient(
     }
 
 }
+/*................*/
+/* RESEARCH PREPRINT — FULL WIDTH */
+
+#research .research-preprint-card {
+    width: 100% !important;
+    max-width: none !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 30px 0 !important;
+
+    box-sizing: border-box !important;
+}
+
 
 
 /* OUR VALUES */
 #values {
+  background: linear-gradient(
+    135deg,
+    #102A43 0%,
+    #234E70 35%,
+    #4682B4 70%,
+    #6FAED6 100%
+);
     margin: 30px auto;
     padding: 60px 40px;
 
@@ -652,6 +671,26 @@ background: linear-gradient(
         url("https://res.cloudinary.com/dshto9bis/image/upload/v1788802731/Screenshot_2026-09-07_183821_s5pipw.png");
 }
 
+/* =========================================
+   RESEARCH SUBHEADING
+========================================= */
+
+.research-subheading {
+    margin: 45px 0 20px;
+    color: #FFD166;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: left;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 600px) {
+    .research-subheading {
+        margin: 35px 0 18px;
+        font-size: 22px;
+    }
+}
 
 /* MOBILE */
 
@@ -954,7 +993,7 @@ background: linear-gradient(
 
 @media (max-width: 600px) {
 
-  
+ 
     #why-we-exist,
     #what-we-do,
     #about,
@@ -1070,7 +1109,7 @@ background: linear-gradient(
    padding: 45px 20px;
     max-width: 1100px;
     margin: auto;
-  
+ 
 }
 /* Reduce spacing between headings and paragraphs */
 .section h2,
@@ -1105,122 +1144,453 @@ background: linear-gradient(
 /* =========================================
 ========================================= */
 
+/* =========================================================
+   SKYWAVE RURALNET SCIO
+   PROFESSIONAL ENGINEERED CARD SYSTEM
+   ========================================================= */
+
 .card {
     position: relative;
 
-    background: linear-gradient(
-        145deg,
-        rgba(70, 130, 180, 0.22),
-        rgba(16, 42, 67, 0.85)
-    );
+    width: 100%;
+    box-sizing: border-box;
 
-    border: 2px solid rgba(255, 255, 255, 0.16);
+    padding: 30px;
 
-    border-left: 2px solid #4682B4;
+    /* Deep engineered surface */
+    background:
+        linear-gradient(
+            135deg,
+            rgba(31, 78, 121, 0.96),
+            rgba(16, 42, 67, 0.98)
+        );
 
-    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
 
-    padding: 28px;
+    border-left: 3px solid #D4A24C;
+
+    border-radius: 14px;
 
     color: #ffffff;
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+        0 12px 30px rgba(0, 0, 0, 0.30);
 
     overflow: hidden;
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        transform 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
 }
 
 
-/* Decorative glow */
+/* =========================================================
+   TECHNICAL GRID DETAIL
+   Decorative only — NEVER interferes with content
+   ========================================================= */
 
 .card::before {
     content: "";
 
     position: absolute;
 
-    width: 120px;
-    height: 120px;
+    inset: 0;
 
-    top: -60px;
-    right: -60px;
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        );
 
-    background: rgba(111, 174, 214, 0.25);
+    background-size: 28px 28px;
+
+    opacity: 0.25;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   TECHNICAL CORNER DETAIL
+   ========================================================= */
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    top: -45px;
+    right: -45px;
 
     border-radius: 50%;
 
-    filter: blur(5px);
+    background:
+        radial-gradient(
+            circle,
+            rgba(212,162,76,0.18),
+            transparent 70%
+        );
 
     pointer-events: none;
+
+    z-index: 0;
 }
 
 
-/* CARD HOVER */
+/* =========================================================
+   KEEP CONTENT ABOVE DECORATION
+   ========================================================= */
 
-.card:hover {
-    transform: translateY(-8px);
+.card > * {
+    position: relative;
 
-    border-color: #D4A24C;
-
-    box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.35),
-        0 0 20px rgba(70, 130, 180, 0.20);
+    z-index: 2;
 }
 
 
-/* CARD HEADINGS */
+/* =========================================================
+   CARD HEADINGS
+   ========================================================= */
 
 .card h3,
 .card h4,
 .card h5,
 .card h6 {
+
+    position: relative;
+
     color: #FFD166;
 
-    margin-bottom: 12px;
+    margin-top: 0;
+    margin-bottom: 14px;
 
-    position: relative;
+    line-height: 1.35;
+
+    letter-spacing: 0.3px;
 }
 
 
-/* CARD TEXT */
+/* Small technical line beneath headings */
+
+.card h3::after,
+.card h4::after,
+.card h5::after,
+.card h6::after {
+
+    content: "";
+
+    display: block;
+
+    width: 35px;
+
+    height: 2px;
+
+    margin-top: 8px;
+
+    background: #D4A24C;
+
+    border-radius: 2px;
+}
+
+
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
 
 .card p {
-    color: #F1F5F9;
 
-    line-height: 1.7;
+    color: #E7EEF5;
 
-    position: relative;
+    line-height: 1.75;
+
+    margin-top: 0;
+    margin-bottom: 14px;
+
+    font-size: 15px;
 }
 
 
-/* CARD IMAGES */
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+.card ul {
+
+    margin: 15px 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.card li {
+
+    position: relative;
+
+    padding-left: 22px;
+
+    margin: 9px 0;
+
+    color: #E7EEF5;
+
+    line-height: 1.65;
+}
+
+
+.card li::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0.7em;
+
+    width: 6px;
+
+    height: 6px;
+
+    background: #D4A24C;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 6px rgba(212,162,76,0.4);
+}
+
+
+/* =========================================================
+   CARD IMAGES
+   ========================================================= */
 
 .card img {
+
+    position: relative;
+
+    z-index: 2;
+
     width: 100%;
 
     height: auto;
 
-    border-radius: 14px;
-
-    margin-bottom: 18px;
-
     display: block;
 
-    transition: transform 0.4s ease;
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    object-fit: cover;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease;
 }
 
 
-/* IMAGE HOVER */
+/* =========================================================
+   IMAGE HOVER
+   ========================================================= */
 
 .card:hover img {
-    transform: scale(1.02);
+
+    transform: scale(1.015);
+
+    border-color:
+        rgba(212,162,76,0.45);
+}
+
+
+/* =========================================================
+   HOVER STATE
+   ========================================================= */
+
+.card:hover {
+
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(212,162,76,0.55);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.38),
+        0 0 0 1px rgba(212,162,76,0.06);
+}
+
+
+/* =========================================================
+   CARD LINKS
+   ========================================================= */
+
+.card a {
+
+    color: #FFD166;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.card a:hover {
+
+    color: #FFFFFF;
+}
+
+
+/* =========================================================
+   CARD BUTTONS
+   ========================================================= */
+/* =========================
+   PROFESSIONAL GRADIENT BUTTONS
+========================= */
+
+button:not(.btn-primary),
+.btn-secondary,
+.donate-button,
+.admin-login-button {
+    background: linear-gradient(
+        135deg,
+        #FFD166 0%,
+        #E6B566 50%,
+        #D4A24C 100%
+    );
+
+    color: #102A43 !important;
+
+    border: 1px solid #FFE29A;
+    font-weight: 700;
+
+    box-shadow:
+        0 6px 18px rgba(212, 162, 76, 0.25);
+
+    transition: all 0.25s ease;
+}
+
+/* Hover */
+
+button:not(.btn-primary):hover,
+.btn-secondary:hover,
+.donate-button:hover,
+.admin-login-button:hover {
+    background: linear-gradient(
+        135deg,
+        #FFE29A 0%,
+        #FFD166 50%,
+        #E6B566 100%
+    );
+
+    color: #0B1F33 !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(212, 162, 76, 0.35);
+}
+
+/* Active / pressed */
+
+button:not(.btn-primary):active,
+.btn-secondary:active,
+.donate-button:active,
+.admin-login-button:active {
+    transform: translateY(0);
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+@media (max-width: 600px) {
+
+    .card button,
+    .btn-primary {
+
+        padding: 11px 20px;
+
+        font-size: 14px;
+
+        border-radius: 7px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .card {
+
+        padding: 23px 19px;
+
+        border-radius: 12px;
+
+        border-left-width: 3px;
+    }
+
+    .card h3,
+    .card h4,
+    .card h5,
+    .card h6 {
+
+        font-size: 19px;
+
+        margin-bottom: 12px;
+    }
+
+    .card p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .card:hover {
+
+        transform: translateY(-2px);
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .card,
+    .card img,
+    .card button {
+
+        transition: none;
+    }
+
+    .card:hover {
+
+        transform: none;
+    }
+
+    .card:hover img {
+
+        transform: none;
+    }
 }
 
 
@@ -2942,13 +3312,13 @@ section + div {
 
     /* CENTER DONATE */
     .donate-top {
-      
+     
         font-size: 10px;
         left: 50% !important;
 
        padding: 6px 8px !important;
 
-        
+       
         border-radius: 6px;
     }
 
@@ -2965,7 +3335,7 @@ section + div {
         margin-left: auto !important;
         margin-right: 0 !important;
 
-        
+       
     }
 }
 
@@ -3154,4 +3524,1698 @@ section + div {
         line-height: 1.6;
         margin: 15px 0;
     }
+}
+
+/* =====================================================
+   FINAL UNIVERSAL SUB-CARD DESIGN
+   Consistent across every section
+===================================================== */
+
+#why-we-exist .card,
+#what-we-do .card,
+#about .card,
+#research .card,
+#values .card,
+#impact .card,
+#partners .card,
+#volunteer .card,
+#contact .card,
+#donate .card,
+#admin .card {
+
+    position: relative;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 26px;
+
+    /* SAME BACKGROUND FOR EVERY SUB-CARD */
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(70, 130, 180, 0.18),
+            rgba(16, 42, 67, 0.88)
+        );
+
+    /* SAME BORDER */
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 14px;
+
+    /* SAME SHADOW */
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.20);
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* =====================================================
+   REMOVE SPECIAL RESEARCH CARD BACKGROUND
+===================================================== */
+
+#research .grid .card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(70, 130, 180, 0.18),
+            rgba(16, 42, 67, 0.88)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =====================================================
+   SAME HOVER FOR ALL SUB-CARDS
+===================================================== */
+
+#why-we-exist .card:hover,
+#what-we-do .card:hover,
+#about .card:hover,
+#research .card:hover,
+#values .card:hover,
+#impact .card:hover,
+#partners .card:hover,
+#volunteer .card:hover,
+#contact .card:hover,
+#donate .card:hover,
+#admin .card:hover {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(70, 130, 180, 0.23),
+            rgba(16, 42, 67, 0.90)
+        );
+
+    border-color:
+        rgba(212, 162, 76, 0.45);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.28);
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   CONSISTENT CARD HEADINGS
+===================================================== */
+
+#why-we-exist .card h3,
+#why-we-exist .card h4,
+#why-we-exist .card h5,
+#why-we-exist .card h6,
+#what-we-do .card h3,
+#what-we-do .card h4,
+#what-we-do .card h5,
+#what-we-do .card h6,
+#about .card h3,
+#about .card h4,
+#about .card h5,
+#about .card h6,
+#research .card h3,
+#research .card h4,
+#research .card h5,
+#research .card h6,
+#values .card h3,
+#values .card h4,
+#values .card h5,
+#values .card h6,
+#impact .card h3,
+#impact .card h4,
+#impact .card h5,
+#impact .card h6,
+#partners .card h3,
+#partners .card h4,
+#partners .card h5,
+#partners .card h6,
+#volunteer .card h3,
+#volunteer .card h4,
+#volunteer .card h5,
+#volunteer .card h6,
+#contact .card h3,
+#contact .card h4,
+#contact .card h5,
+#contact .card h6,
+#donate .card h3,
+#donate .card h4,
+#donate .card h5,
+#donate .card h6,
+#admin .card h3,
+#admin .card h4,
+#admin .card h5,
+#admin .card h6 {
+
+    color: #FFD166;
+
+    margin-top: 0;
+
+    margin-bottom: 12px;
+
+    line-height: 1.3;
+}
+
+
+/* =====================================================
+   CONSISTENT CARD TEXT
+===================================================== */
+
+#why-we-exist .card p,
+#what-we-do .card p,
+#about .card p,
+#research .card p,
+#values .card p,
+#impact .card p,
+#partners .card p,
+#volunteer .card p,
+#contact .card p,
+#donate .card p,
+#admin .card p {
+
+    color: #F1F5F9;
+
+    line-height: 1.7;
+
+    margin-top: 0;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    #why-we-exist .card,
+    #what-we-do .card,
+    #about .card,
+    #research .card,
+    #values .card,
+    #impact .card,
+    #partners .card,
+    #volunteer .card,
+    #contact .card,
+    #donate .card,
+    #admin .card {
+
+        padding: 22px;
+
+        border-radius: 13px;
+    }
+
+    #why-we-exist .card:hover,
+    #what-we-do .card:hover,
+    #about .card:hover,
+    #research .card:hover,
+    #values .card:hover,
+    #impact .card:hover,
+    #partners .card:hover,
+    #volunteer .card:hover,
+    #contact .card:hover,
+    #donate .card:hover,
+    #admin .card:hover {
+
+        transform: none;
+    }
+}
+/* =========================================
+   MODERN SUBCARD SYSTEM
+   ========================================= */
+
+.section-image .card,
+.section-image2 .card,
+.section-image3 .card,
+.section-image4 .card,
+.section-image5 .card,
+.section-image6 .card,
+#research .card,
+#impact .card,
+#volunteer .card,
+#donate .card,
+#what-we-do .card {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-left: 3px solid rgba(212, 162, 76, 0.75);
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.22);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Subtle top highlight */
+
+.section-image .card::after,
+.section-image2 .card::after,
+.section-image3 .card::after,
+.section-image4 .card::after,
+.section-image5 .card::after,
+.section-image6 .card::after,
+#research .card::after,
+#impact .card::after,
+#volunteer .card::after,
+#donate .card::after,
+#what-we-do .card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 25px;
+    right: 25px;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(212, 162, 76, 0.65),
+        transparent
+    );
+
+    pointer-events: none;
+}
+
+
+/* Hover */
+
+.section-image .card:hover,
+.section-image2 .card:hover,
+.section-image3 .card:hover,
+.section-image4 .card:hover,
+.section-image5 .card:hover,
+.section-image6 .card:hover,
+#research .card:hover,
+#impact .card:hover,
+#volunteer .card:hover,
+#donate .card:hover,
+#what-we-do .card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(212, 162, 76, 0.65);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.32),
+        0 0 25px rgba(212, 162, 76, 0.08);
+}
+
+
+/* Card headings */
+
+.section-image .card h3,
+.section-image .card h4,
+.section-image .card h5,
+.section-image .card h6,
+.section-image2 .card h3,
+.section-image2 .card h4,
+.section-image2 .card h5,
+.section-image2 .card h6,
+.section-image3 .card h3,
+.section-image3 .card h4,
+.section-image3 .card h5,
+.section-image3 .card h6,
+.section-image4 .card h3,
+.section-image4 .card h4,
+.section-image4 .card h5,
+.section-image4 .card h6,
+.section-image5 .card h3,
+.section-image5 .card h4,
+.section-image5 .card h5,
+.section-image5 .card h6,
+.section-image6 .card h3,
+.section-image6 .card h4,
+.section-image6 .card h5,
+.section-image6 .card h6,
+#research .card h3,
+#research .card h4,
+#research .card h5,
+#research .card h6 {
+
+    color: #FFD166;
+
+    margin-bottom: 14px;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Card text */
+
+.section-image .card p,
+.section-image2 .card p,
+.section-image3 .card p,
+.section-image4 .card p,
+.section-image5 .card p,
+.section-image6 .card p,
+#research .card p,
+#impact .card p,
+#volunteer .card p,
+#donate .card p,
+#what-we-do .card p {
+
+    color: #E8F1F8;
+
+    line-height: 1.75;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .section-image .card,
+    .section-image2 .card,
+    .section-image3 .card,
+    .section-image4 .card,
+    .section-image5 .card,
+    .section-image6 .card,
+    #research .card,
+    #impact .card,
+    #volunteer .card,
+    #donate .card,
+    #what-we-do .card {
+
+        padding: 24px;
+
+        border-radius: 16px;
+    }
+}
+
+
+
+
+/* =========================================
+   PREMIUM MODERN SUBCARDS
+   GOLD CORNER ACCENTS
+========================================= */
+
+.section-image .card,
+.section-image2 .card,
+.section-image3 .card,
+.section-image4 .card,
+.section-image5 .card,
+.section-image6 .card,
+#research .card,
+#impact .card,
+#volunteer .card,
+#donate .card,
+#what-we-do .card {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.10),
+            rgba(255,255,255,0.035)
+        );
+
+    border: 1px solid rgba(255,255,255,0.13);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    color: #fff;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.25);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* =========================================
+   GOLD CORNER ACCENTS
+========================================= */
+
+.section-image .card::before,
+.section-image2 .card::before,
+.section-image3 .card::before,
+.section-image4 .card::before,
+.section-image5 .card::before,
+.section-image6 .card::before,
+#research .card::before,
+#impact .card::before,
+#volunteer .card::before,
+#donate .card::before,
+#what-we-do .card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 65px;
+    height: 65px;
+
+    border-top: 3px solid #D4A24C;
+    border-left: 3px solid #D4A24C;
+
+    border-radius: 20px 0 0 0;
+
+    opacity: 0.95;
+
+    box-shadow:
+        -3px -3px 14px rgba(212,162,76,0.18);
+
+    pointer-events: none;
+}
+
+
+/* Bottom-right gold corner */
+
+.section-image .card::after,
+.section-image2 .card::after,
+.section-image3 .card::after,
+.section-image4 .card::after,
+.section-image5 .card::after,
+.section-image6 .card::after,
+#research .card::after,
+#impact .card::after,
+#volunteer .card::after,
+#donate .card::after,
+#what-we-do .card::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 65px;
+    height: 65px;
+
+    border-right: 3px solid #D4A24C;
+    border-bottom: 3px solid #D4A24C;
+
+    border-radius: 0 0 20px 0;
+
+    opacity: 0.95;
+
+    box-shadow:
+        3px 3px 14px rgba(212,162,76,0.18);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   SUBTLE GOLD GLOW
+========================================= */
+
+.section-image .card:hover,
+.section-image2 .card:hover,
+.section-image3 .card:hover,
+.section-image4 .card:hover,
+.section-image5 .card:hover,
+.section-image6 .card:hover,
+#research .card:hover,
+#impact .card:hover,
+#volunteer .card:hover,
+#donate .card:hover,
+#what-we-do .card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: rgba(212,162,76,0.35);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.35),
+        0 0 28px rgba(212,162,76,0.12);
+}
+
+
+/* =========================================
+   CARD HEADINGS
+========================================= */
+
+.section-image .card h3,
+.section-image .card h4,
+.section-image .card h5,
+.section-image .card h6,
+.section-image2 .card h3,
+.section-image2 .card h4,
+.section-image2 .card h5,
+.section-image2 .card h6,
+.section-image3 .card h3,
+.section-image3 .card h4,
+.section-image3 .card h5,
+.section-image3 .card h6,
+.section-image4 .card h3,
+.section-image4 .card h4,
+.section-image4 .card h5,
+.section-image4 .card h6,
+.section-image5 .card h3,
+.section-image5 .card h4,
+.section-image5 .card h5,
+.section-image5 .card h6,
+.section-image6 .card h3,
+.section-image6 .card h4,
+.section-image6 .card h5,
+.section-image6 .card h6,
+#research .card h3,
+#research .card h4,
+#research .card h5,
+#research .card h6 {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #FFD166;
+
+    margin-bottom: 14px;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.section-image .card p,
+.section-image2 .card p,
+.section-image3 .card p,
+.section-image4 .card p,
+.section-image5 .card p,
+.section-image6 .card p,
+#research .card p,
+#impact .card p,
+#volunteer .card p,
+#donate .card p,
+#what-we-do .card p {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #E8F1F8;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .section-image .card,
+    .section-image2 .card,
+    .section-image3 .card,
+    .section-image4 .card,
+    .section-image5 .card,
+    .section-image6 .card,
+    #research .card,
+    #impact .card,
+    #volunteer .card,
+    #donate .card,
+    #what-we-do .card {
+
+        padding: 24px;
+
+        border-radius: 17px;
+    }
+
+    .section-image .card::before,
+    .section-image2 .card::before,
+    .section-image3 .card::before,
+    .section-image4 .card::before,
+    .section-image5 .card::before,
+    .section-image6 .card::before,
+    #research .card::before,
+    #impact .card::before,
+    #volunteer .card::before,
+    #donate .card::before,
+    #what-we-do .card::before {
+
+        width: 45px;
+        height: 45px;
+    }
+
+    .section-image .card::after,
+    .section-image2 .card::after,
+    .section-image3 .card::after,
+    .section-image4 .card::after,
+    .section-image5 .card::after,
+    .section-image6 .card::after,
+    #research .card::after,
+    #impact .card::after,
+    #volunteer .card::after,
+    #donate .card::after,
+    #what-we-do .card::after {
+
+        width: 45px;
+        height: 45px;
+    }
+}
+ChatGPT said:
+Yes. I would actually change the approach completely.
+
+Instead of putting decorative elements inside the card, use a clean "floating frame" design where the gold accents sit around the outer edges. This gives you a modern software-engineering look and guarantees the decoration doesn't interfere with the card's text.
+
+Recommended design: Floating Gold Frame
+Replace the previous card-decoration CSS with this:
+
+/* =========================================
+   MODERN SOFTWARE-STYLE SUBCARDS
+   CLEAN FLOATING GOLD FRAME
+========================================= */
+
+.section-image .card,
+.section-image2 .card,
+.section-image3 .card,
+.section-image4 .card,
+.section-image5 .card,
+.section-image6 .card,
+#research .card,
+#impact .card,
+#volunteer .card,
+#donate .card,
+#what-we-do .card {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.09),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    overflow: visible;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================
+   GOLD FLOATING FRAME
+   Completely outside text area
+========================================= */
+
+.section-image .card::before,
+.section-image2 .card::before,
+.section-image3 .card::before,
+.section-image4 .card::before,
+.section-image5 .card::before,
+.section-image6 .card::before,
+#research .card::before,
+#impact .card::before,
+#volunteer .card::before,
+#donate .card::before,
+#what-we-do .card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: -1px;
+
+    width: 45px;
+    height: 45px;
+
+    border-top: 2px solid #D4A24C;
+    border-left: 2px solid #D4A24C;
+
+    border-radius: 18px 0 0 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* Bottom-right frame */
+
+.section-image .card::after,
+.section-image2 .card::after,
+.section-image3 .card::after,
+.section-image4 .card::after,
+.section-image5 .card::after,
+.section-image6 .card::after,
+#research .card::after,
+#impact .card::after,
+#volunteer .card::after,
+#donate .card::after,
+#what-we-do .card::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -1px;
+    bottom: -1px;
+
+    width: 45px;
+    height: 45px;
+
+    border-right: 2px solid #D4A24C;
+    border-bottom: 2px solid #D4A24C;
+
+    border-radius: 0 0 18px 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   CONTENT ALWAYS ABOVE DECORATION
+========================================= */
+
+.section-image .card > *,
+.section-image2 .card > *,
+.section-image3 .card > *,
+.section-image4 .card > *,
+.section-image5 .card > *,
+.section-image6 .card > *,
+#research .card > *,
+#impact .card > *,
+#volunteer .card > *,
+#donate .card > *,
+#what-we-do .card > * {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.section-image .card:hover,
+.section-image2 .card:hover,
+.section-image3 .card:hover,
+.section-image4 .card:hover,
+.section-image5 .card:hover,
+.section-image6 .card:hover,
+#research .card:hover,
+#impact .card:hover,
+#volunteer .card:hover,
+#donate .card:hover,
+#what-we-do .card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(212, 162, 76, 0.30);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.32),
+        0 0 25px rgba(212, 162, 76, 0.10);
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+.section-image .card h3,
+.section-image .card h4,
+.section-image .card h5,
+.section-image .card h6,
+.section-image2 .card h3,
+.section-image2 .card h4,
+.section-image2 .card h5,
+.section-image2 .card h6,
+.section-image3 .card h3,
+.section-image3 .card h4,
+.section-image3 .card h5,
+.section-image3 .card h6,
+.section-image4 .card h3,
+.section-image4 .card h4,
+.section-image4 .card h5,
+.section-image4 .card h6,
+.section-image5 .card h3,
+.section-image5 .card h4,
+.section-image5 .card h5,
+.section-image5 .card h6,
+.section-image6 .card h3,
+.section-image6 .card h4,
+.section-image6 .card h5,
+.section-image6 .card h6,
+#research .card h3,
+#research .card h4,
+#research .card h5,
+#research .card h6 {
+
+    color: #FFD166;
+
+    margin-bottom: 14px;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.section-image .card p,
+.section-image2 .card p,
+.section-image3 .card p,
+.section-image4 .card p,
+.section-image5 .card p,
+.section-image6 .card p,
+#research .card p,
+#impact .card p,
+#volunteer .card p,
+#donate .card p,
+#what-we-do .card p {
+
+    color: #E8F1F8;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .section-image .card,
+    .section-image2 .card,
+    .section-image3 .card,
+    .section-image4 .card,
+    .section-image5 .card,
+    .section-image6 .card,
+    #research .card,
+    #impact .card,
+    #volunteer .card,
+    #donate .card,
+    #what-we-do .card {
+
+        padding: 24px;
+
+        border-radius: 16px;
+    }
+
+    .section-image .card::before,
+    .section-image2 .card::before,
+    .section-image3 .card::before,
+    .section-image4 .card::before,
+    .section-image5 .card::before,
+    .section-image6 .card::before,
+    #research .card::before,
+    #impact .card::before,
+    #volunteer .card::before,
+    #donate .card::before,
+    #what-we-do .card::before {
+
+        width: 32px;
+        height: 32px;
+    }
+
+    .section-image .card::after,
+    .section-image2 .card::after,
+    .section-image3 .card::after,
+    .section-image4 .card::after,
+    .section-image5 .card::after,
+    .section-image6 .card::after,
+    #research .card::after,
+    #impact .card::after,
+    #volunteer .card::after,
+    #donate .card::after,
+    #what-we-do .card::after {
+
+        width: 32px;
+        height: 32px;
+    }
+}
+/*,,,,,,,,,,,,*/
+/* =====================================================
+   MODERN SUBCARDS — CLEAN PROFESSIONAL DESIGN
+===================================================== */
+
+.section-image .card,
+.section-image2 .card,
+.section-image3 .card,
+.section-image4 .card,
+.section-image5 .card,
+.section-image6 .card {
+
+    position: relative;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 28px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(16, 42, 67, 0.95),
+        rgba(35, 78, 112, 0.88)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-left: 3px solid #D4A24C;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.28);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* REMOVE OLD CORNER DECORATION */
+
+.section-image .card::before,
+.section-image2 .card::before,
+.section-image3 .card::before,
+.section-image4 .card::before,
+.section-image5 .card::before,
+.section-image6 .card::before {
+
+    display: none !important;
+    content: none !important;
+}
+
+
+/* =====================================================
+   TITLE BACKGROUND
+===================================================== */
+
+.section-image .card h3,
+.section-image .card h4,
+.section-image .card h5,
+.section-image .card h6,
+
+.section-image2 .card h3,
+.section-image2 .card h4,
+.section-image2 .card h5,
+.section-image2 .card h6,
+
+.section-image3 .card h3,
+.section-image3 .card h4,
+.section-image3 .card h5,
+.section-image3 .card h6,
+
+.section-image4 .card h3,
+.section-image4 .card h4,
+.section-image4 .card h5,
+.section-image4 .card h6,
+
+.section-image5 .card h3,
+.section-image5 .card h4,
+.section-image5 .card h5,
+.section-image5 .card h6,
+
+.section-image6 .card h3,
+.section-image6 .card h4,
+.section-image6 .card h5,
+.section-image6 .card h6 {
+
+    display: block;
+
+    margin: -28px -28px 22px -28px;
+
+    padding: 16px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #102A43,
+        #163A5F
+    );
+
+    border-bottom: 1px solid rgba(212, 162, 76, 0.35);
+
+    color: #FFD166;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =====================================================
+   TITLE GOLD ACCENT
+===================================================== */
+
+.section-image .card h3::after,
+.section-image .card h4::after,
+.section-image .card h5::after,
+.section-image .card h6::after,
+
+.section-image2 .card h3::after,
+.section-image2 .card h4::after,
+.section-image2 .card h5::after,
+.section-image2 .card h6::after,
+
+.section-image3 .card h3::after,
+.section-image3 .card h4::after,
+.section-image3 .card h5::after,
+.section-image3 .card h6::after,
+
+.section-image4 .card h3::after,
+.section-image4 .card h4::after,
+.section-image4 .card h5::after,
+.section-image4 .card h6::after,
+
+.section-image5 .card h3::after,
+.section-image5 .card h4::after,
+.section-image5 .card h5::after,
+.section-image5 .card h6::after,
+
+.section-image6 .card h3::after,
+.section-image6 .card h4::after,
+.section-image6 .card h5::after,
+.section-image6 .card h6::after {
+
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 3px;
+
+    margin-top: 9px;
+
+    background: linear-gradient(
+        90deg,
+        #D4A24C,
+        #FFD166
+    );
+
+    border-radius: 3px;
+}
+
+
+/* =====================================================
+   CARD TEXT
+===================================================== */
+
+.section-image .card p,
+.section-image2 .card p,
+.section-image3 .card p,
+.section-image4 .card p,
+.section-image5 .card p,
+.section-image6 .card p {
+
+    color: #F1F5F9;
+
+    line-height: 1.75;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.section-image .card:hover,
+.section-image2 .card:hover,
+.section-image3 .card:hover,
+.section-image4 .card:hover,
+.section-image5 .card:hover,
+.section-image6 .card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(212, 162, 76, 0.55);
+
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(212, 162, 76, 0.08);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .section-image .card,
+    .section-image2 .card,
+    .section-image3 .card,
+    .section-image4 .card,
+    .section-image5 .card,
+    .section-image6 .card {
+
+        padding: 22px;
+
+        border-radius: 14px;
+    }
+
+
+    .section-image .card h3,
+    .section-image .card h4,
+    .section-image .card h5,
+    .section-image .card h6,
+
+    .section-image2 .card h3,
+    .section-image2 .card h4,
+    .section-image2 .card h5,
+    .section-image2 .card h6,
+
+    .section-image3 .card h3,
+    .section-image3 .card h4,
+    .section-image3 .card h5,
+    .section-image3 .card h6,
+
+    .section-image4 .card h3,
+    .section-image4 .card h4,
+    .section-image4 .card h5,
+    .section-image4 .card h6,
+
+    .section-image5 .card h3,
+    .section-image5 .card h4,
+    .section-image5 .card h5,
+    .section-image5 .card h6,
+
+    .section-image6 .card h3,
+    .section-image6 .card h4,
+    .section-image6 .card h5,
+    .section-image6 .card h6 {
+
+        margin: -22px -22px 18px -22px;
+
+        padding: 14px 17px;
+
+        font-size: 17px;
+    }
+}
+/*.........................................*/
+/* =====================================================
+   FINAL — COMMON DESIGN FOR ALL SUBCARDS
+   Clean • Modern • Professional • No Corner Decorations
+===================================================== */
+
+/* ALL CARDS */
+
+.card {
+    position: relative;
+
+    background: linear-gradient(
+        145deg,
+        #163A5F 0%,
+        #102A43 100%
+    ) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-left: 3px solid #D4A24C !important;
+
+    border-radius: 16px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.28);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* REMOVE ALL OLD CORNER DECORATIONS */
+
+.card::before {
+    display: none !important;
+    content: none !important;
+}
+
+
+/* =====================================================
+   TITLE AREA FOR EVERY SUBCARD
+===================================================== */
+
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+
+    display: block;
+
+    margin: -28px -28px 22px -28px;
+
+    padding: 16px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #0B2239 0%,
+        #163A5F 100%
+    );
+
+    border-bottom: 1px solid rgba(212, 162, 76, 0.35);
+
+    color: #FFD166 !important;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.45);
+
+    position: relative;
+}
+
+
+/* =====================================================
+   GOLD ACCENT UNDER TITLE
+===================================================== */
+
+.card h3::after,
+.card h4::after,
+.card h5::after,
+.card h6::after {
+
+    content: "";
+
+    display: block;
+
+    width: 45px;
+
+    height: 3px;
+
+    margin-top: 9px;
+
+    background: linear-gradient(
+        90deg,
+        #D4A24C,
+        #FFD166
+    );
+
+    border-radius: 3px;
+}
+
+
+/* =====================================================
+   CARD TEXT
+===================================================== */
+
+.card p {
+
+    color: #F1F5F9 !important;
+
+    line-height: 1.75;
+
+    margin-top: 0;
+}
+
+
+/* =====================================================
+   CARD LISTS
+===================================================== */
+
+.card ul {
+    margin-top: 10px;
+}
+
+.card li {
+    color: #F1F5F9;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(212, 162, 76, 0.65) !important;
+
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(212, 162, 76, 0.10);
+}
+
+
+/* =====================================================
+   RESEARCH CARDS
+===================================================== */
+
+#research .grid .card {
+
+    background: linear-gradient(
+        145deg,
+        #163A5F 0%,
+        #102A43 100%
+    ) !important;
+
+    padding: 28px;
+
+    border-radius: 16px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .card {
+
+        padding: 22px;
+
+        border-radius: 14px;
+    }
+
+
+    .card h3,
+    .card h4,
+    .card h5,
+    .card h6 {
+
+        margin: -22px -22px 18px -22px;
+
+        padding: 14px 17px;
+
+        font-size: 17px;
+    }
+
+
+    .card h3::after,
+    .card h4::after,
+    .card h5::after,
+    .card h6::after {
+
+        width: 38px;
+
+        height: 2px;
+
+        margin-top: 7px;
+    }
+}
+#partners .card,
+#volunteer .card {
+
+    background: linear-gradient(
+        145deg,
+        #163A5F 0%,
+        #102A43 100%
+    ) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-left: 3px solid #D4A24C !important;
+
+    border-radius: 16px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.28);
+
+    overflow: visible;
+}
+
+
+/* REMOVE ALL DECORATIVE ELEMENTS */
+
+#partners .card::before,
+#partners .card::after,
+#volunteer .card::before,
+#volunteer .card::after {
+
+    display: none !important;
+    content: none !important;
+}
+
+
+/* REMOVE TITLE-BAR STYLE IF A HEADING EXISTS */
+
+#partners .card h3,
+#partners .card h4,
+#partners .card h5,
+#partners .card h6,
+
+#volunteer .card h3,
+#volunteer .card h4,
+#volunteer .card h5,
+#volunteer .card h6 {
+
+    margin: 0 0 15px 0 !important;
+
+    padding: 0 !important;
+
+    background: none !important;
+
+    border: none !important;
+
+    color: #FFD166 !important;
+
+    text-shadow: none;
+}
+
+
+/* REMOVE GOLD LINE UNDER HEADING */
+
+#partners .card h3::after,
+#partners .card h4::after,
+#partners .card h5::after,
+#partners .card h6::after,
+
+#volunteer .card h3::after,
+#volunteer .card h4::after,
+#volunteer .card h5::after,
+#volunteer .card h6::after {
+
+    display: none !important;
+    content: none !important;
+}
+
+
+/* CLEAN TEXT */
+
+#partners .card p,
+#volunteer .card p {
+
+    color: #F1F5F9 !important;
+
+    line-height: 1.75;
+
+    margin: 0;
+}
+
+
+/* CLEAN LISTS */
+
+#partners .card ul,
+#volunteer .card ul {
+
+    margin: 10px 0 0 0;
+}
+
+#partners .card li,
+#volunteer .card li {
+
+    color: #F1F5F9;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    #partners .card,
+    #volunteer .card {
+
+        padding: 22px;
+
+        border-radius: 14px;
+    }
+
+    #partners .card h3,
+    #partners .card h4,
+    #partners .card h5,
+    #partners .card h6,
+
+    #volunteer .card h3,
+    #volunteer .card h4,
+    #volunteer .card h5,
+    #volunteer .card h6 {
+
+        margin: 0 0 12px 0 !important;
+
+        padding: 0 !important;
+
+        background: none !important;
+    }
+}
+/* =====================================================
+   FORCE SPACE BETWEEN RESEARCH SUBCARDS
+===================================================== */
+
+#research .grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 35px !important;
+    row-gap: 35px !important;
+}
+
+#research .grid > .card {
+    margin: 0 !important;
+}
+
+
+/* =====================================================
+   FORCE SPACE BETWEEN VOLUNTEER SUBCARDS
+===================================================== */
+
+#volunteer .grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 35px !important;
+    row-gap: 35px !important;
+}
+
+#volunteer .grid > .card {
+    margin: 0 !important;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    #research .grid,
+    #volunteer .grid {
+        grid-template-columns: 1fr !important;
+        column-gap: 0 !important;
+        row-gap: 25px !important;
+    }
+
+    #research .grid > .card,
+    #volunteer .grid > .card {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+}
+/* =====================================================
+   RESEARCH PREPRINT FEATURE CARD
+===================================================== */
+
+/* SAME WIDTH AS ONE VOLUNTEER SUBCARD */
+/* SAME WIDTH AS ONE VOLUNTEER SUBCARD */
+
+#research .research-preprint-card {
+    width: 1125px !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 30px auto !important;
+    box-sizing: border-box !important;
 }
