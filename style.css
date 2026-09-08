@@ -2690,3 +2690,66 @@ section + div {
         margin-top: 20px;
     }
 }
+/* =====================================================
+   FINAL MOBILE SECTION SPACING
+===================================================== */
+
+@media (max-width: 600px) {
+
+    #why-we-exist,
+    #what-we-do,
+    #about,
+    #research,
+    #values,
+    #impact,
+    #partners,
+    #volunteer,
+    #contact,
+    #donate,
+    #admin {
+        width: calc(100% - 20px);
+
+        margin-top: 25px !important;
+        margin-bottom: 25px !important;
+
+        padding: 40px 20px;
+    }
+
+    /* Space after the hero */
+    #home {
+        margin-bottom: 25px !important;
+    }
+
+    /* Prevent the first section from touching the hero */
+    #why-we-exist {
+        margin-top: 25px !important;
+    }
+
+    /* Background image sections */
+    .section-image,
+    .section-image2,
+    .section-image3,
+    .section-image4,
+    .section-image5,
+    .section-image6 {
+        margin-top: 25px !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* Remove the artificial separator lines */
+    .section:not(#dashboard)::after,
+    .section-image::after,
+    .section-image2::after,
+    .section-image3::after,
+    .section-image4::after,
+    .section-image5::after,
+    .section-image6::after {
+        display: none !important;
+    }
+
+    /* Admin should have normal spacing */
+    #admin {
+        margin-top: 25px !important;
+        margin-bottom: 25px !important;
+    }
+}
