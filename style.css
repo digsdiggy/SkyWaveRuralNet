@@ -2996,3 +2996,127 @@ section + div {
         font-size: 23px;
     }
 }
+/*  */
+/* =====================================================
+   MOBILE — PREVENT DONATE BUTTON OVERLAPPING BRAND
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .topbar {
+        position: sticky;
+        display: flex;
+        align-items: center;
+        padding: 8px 10px;
+        min-height: 58px;
+    }
+
+    .logo-wrap {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        max-width: 42%;
+        flex-shrink: 1;
+    }
+
+    .logo {
+        width: 40px;
+        flex-shrink: 0;
+    }
+
+    .brand {
+        font-size: 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Donate */
+    .donate-top {
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+
+        padding: 7px 12px;
+
+        font-size: 11px;
+
+        white-space: nowrap;
+        z-index: 5;
+    }
+
+    /* Menu */
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+
+        margin-left: auto !important;
+        margin-right: 0 !important;
+
+        flex-shrink: 0;
+
+        font-size: 25px;
+
+        z-index: 6;
+    }
+
+    .social-links {
+        display: none;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .logo-wrap {
+        max-width: 38%;
+    }
+
+    .logo {
+        width: 36px;
+    }
+
+    .brand {
+        font-size: 9px;
+    }
+
+    .donate-top {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    .menu-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 23px;
+    }
+}
+
+
+/* =====================================================
+   EXTRA SMALL PHONES
+===================================================== */
+
+@media (max-width: 350px) {
+
+    .logo-wrap {
+        max-width: 34%;
+    }
+
+    .brand {
+        font-size: 8px;
+    }
+
+    .donate-top {
+        padding: 5px 8px;
+        font-size: 9px;
+    }
+}
