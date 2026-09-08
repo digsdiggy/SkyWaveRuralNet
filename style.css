@@ -5219,3 +5219,430 @@ Replace the previous card-decoration CSS with this:
     margin: 30px auto !important;
     box-sizing: border-box !important;
 }
+/* =====================================================
+   KEEP CARDS INSIDE BACKGROUND IMAGES
+   WHY WE EXIST + OUR VALUES
+===================================================== */
+
+.why-exist-image,
+.value-image {
+    position: relative !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    width: 100% !important;
+
+    padding: 80px 20px !important;
+
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
+}
+
+/* Keep the main content card ON the background image */
+
+.why-exist-image > .section,
+.value-image > .section {
+    position: relative !important;
+
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+
+    transform: none !important;
+
+    width: 100% !important;
+    max-width: 1100px !important;
+
+    margin: 0 auto !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Keep subcards inside the main card */
+
+.why-exist-image .card,
+.value-image .card {
+    position: relative !important;
+
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+
+    transform: none !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+}
+@media (max-width: 700px) {
+
+    .why-exist-image,
+    .value-image {
+        height: auto !important;
+        min-height: 0 !important;
+
+        padding: 40px 15px !important;
+
+        align-items: center !important;
+    }
+
+    .why-exist-image > .section,
+    .value-image > .section {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 25px 18px !important;
+    }
+
+    .why-exist-image .card,
+    .value-image .card {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}
+/* =========================================
+   SPACE BETWEEN VALUES AND IMPACT
+========================================= */
+
+#values {
+    margin-bottom: 55px !important;
+}
+
+#impact {
+    margin-top: 0 !important;
+}
+@media (max-width: 700px) {
+
+    #values {
+        margin-bottom: 35px !important;
+    }
+
+    #impact {
+        margin-top: 0 !important;
+    }
+
+}
+/* =========================================
+   FINAL SECTION SPACING
+========================================= */
+/* =====================================================
+   FINAL CONSISTENT SECTION SPACING
+===================================================== */
+
+#why-we-exist,
+#what-we-do,
+#about,
+#research,
+#values,
+#impact,
+#partners,
+#volunteer,
+#contact,
+#donate,
+#admin {
+    margin-top: 0 !important;
+    margin-bottom: 60px !important;
+}
+
+/* Prevent internal pseudo-separators from affecting
+   the visual spacing */
+#why-we-exist::before,
+#what-we-do::before,
+#about::before,
+#research::before,
+#values::before,
+#impact::before,
+#partners::before,
+#volunteer::before,
+#contact::before,
+#donate::before,
+#admin::before,
+#why-we-exist::after,
+#what-we-do::after,
+#about::after,
+#research::after,
+#values::after,
+#impact::after,
+#partners::after,
+#volunteer::after,
+#contact::after,
+#donate::after,
+#admin::after {
+    display: none !important;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    #why-we-exist,
+    #what-we-do,
+    #about,
+    #research,
+    #values,
+    #impact,
+    #partners,
+    #volunteer,
+    #contact,
+    #donate,
+    #admin {
+        margin-top: 0 !important;
+        margin-bottom: 40px !important;
+    }
+
+}
+/* =====================================================
+   MODERN BUTTON SYSTEM
+   Applies to normal buttons and action links
+===================================================== */
+
+/* All standard buttons */
+button,
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 12px 24px;
+
+    border-radius: 10px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PRIMARY BUTTONS
+===================================================== */
+
+.btn-primary {
+    color: #111111 !important;
+
+    background: linear-gradient(
+        135deg,
+        #D4A24C 0%,
+        #E6B566 50%,
+        #FFD166 100%
+    );
+
+    border: 1px solid #E6B566;
+
+    box-shadow:
+        0 6px 18px rgba(212, 162, 76, 0.22);
+}
+
+
+/* Hover */
+
+.btn-primary:hover {
+    color: #000000 !important;
+
+    background: linear-gradient(
+        135deg,
+        #E6B566 0%,
+        #FFD166 50%,
+        #E6B566 100%
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(212, 162, 76, 0.35);
+}
+
+
+/* Click */
+
+.btn-primary:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 4px 10px rgba(212, 162, 76, 0.20);
+}
+
+
+/* =====================================================
+   SECONDARY BUTTONS
+===================================================== */
+
+.btn-secondary {
+    color: #111111 !important;
+
+    background: linear-gradient(
+        135deg,
+        #6FAED6 0%,
+        #8FC8E8 50%,
+        #B7E0F5 100%
+    );
+
+    border: 1px solid #8FC8E8;
+
+    box-shadow:
+        0 6px 18px rgba(70, 130, 180, 0.25);
+}
+
+
+.btn-secondary:hover {
+    color: #000000 !important;
+
+    background: linear-gradient(
+        135deg,
+        #8FC8E8,
+        #C8E9F8
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(70, 130, 180, 0.35);
+}
+
+
+/* =====================================================
+   GENERAL BUTTONS
+===================================================== */
+
+button {
+    color: #111111;
+
+    background: linear-gradient(
+        135deg,
+        #D4A24C,
+        #E6B566
+    );
+
+    border: 1px solid #E6B566;
+
+    box-shadow:
+        0 6px 18px rgba(212, 162, 76, 0.20);
+}
+
+
+button:hover {
+    background: linear-gradient(
+        135deg,
+        #E6B566,
+        #FFD166
+    );
+
+    color: #000000;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(212, 162, 76, 0.35);
+}
+
+
+/* =====================================================
+   DELETE BUTTON — KEEP RED
+===================================================== */
+
+.delete-btn {
+    background: linear-gradient(
+        135deg,
+        #991B1B,
+        #DC2626
+    ) !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid #EF4444 !important;
+
+    box-shadow:
+        0 6px 18px rgba(220, 38, 38, 0.20);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(
+        135deg,
+        #DC2626,
+        #EF4444
+    ) !important;
+
+    color: #ffffff !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(220, 38, 38, 0.35);
+}
+
+
+/* =====================================================
+   ADMIN LOGIN BUTTON
+===================================================== */
+
+.admin-login-button {
+    color: #111111 !important;
+
+    background: linear-gradient(
+        135deg,
+        #D4A24C 0%,
+        #E6B566 50%,
+        #FFD166 100%
+    ) !important;
+
+    border: 1px solid #E6B566 !important;
+}
+
+.admin-login-button:hover {
+    color: #000000 !important;
+
+    background: linear-gradient(
+        135deg,
+        #E6B566,
+        #FFD166
+    ) !important;
+}
+
+
+/* =====================================================
+   MOBILE BUTTONS
+===================================================== */
+
+@media (max-width: 600px) {
+
+    button,
+    .btn-primary,
+    .btn-secondary {
+        min-height: 44px;
+
+        padding: 11px 20px;
+
+        font-size: 14px;
+
+        border-radius: 9px;
+    }
+
+}
