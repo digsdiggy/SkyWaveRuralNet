@@ -37,7 +37,71 @@ const db = getFirestore(app);
 const ADMIN_EMAILS = [
     "admin@skywaveruralnet.org"
 ];
+///////////////////////////////////////////////
+const sections = [
+    document.getElementById("home"),
+    document.getElementById("why-we-exist"),
+    document.getElementById("what-we-do"),
+    document.getElementById("about"),
+    document.getElementById("research"),
+    document.getElementById("values"),
+    document.getElementById("impact"),
+    document.getElementById("partners"),
+    document.getElementById("volunteer"),
+    document.getElementById("contact"),
+    document.getElementById("donate")
+];
 
+let currentSection = 0;
+
+
+function showSection(index) {
+
+    sections.forEach((section, i) => {
+
+        if (i === index) {
+            section.classList.add("section-page-active");
+            section.classList.remove("section-page-hidden");
+        } else {
+            section.classList.remove("section-page-active");
+            section.classList.add("section-page-hidden");
+        }
+
+    });
+
+    document.getElementById("sectionCounter").textContent =
+        `${index + 1} / ${sections.length}`;
+
+    document.getElementById("previousSection").disabled =
+        index === 0;
+
+    document.getElementById("nextSection").disabled =
+        index === sections.length - 1;
+}
+
+
+document.getElementById("previousSection").addEventListener("click", () => {
+
+    if (currentSection > 0) {
+        currentSection--;
+        showSection(currentSection);
+    }
+
+});
+
+
+document.getElementById("nextSection").addEventListener("click", () => {
+
+    if (currentSection < sections.length - 1) {
+        currentSection++;
+        showSection(currentSection);
+    }
+
+});
+
+
+showSection(0);
+////////////////////////////////////////////////////
 /* =========================
    AUTH STATE LISTENER
 ========================= */
@@ -1106,3 +1170,655 @@ window.openJobForm = function (job) {
   jobForm.classList.remove("hidden");
 };
 /////////////////////////////////////////////////
+/* =========================================================
+   ONE SECTION AT A TIME NAVIGATION
+========================================================= */
+
+/* =====================================================
+   SECTION NAVIGATION
+===================================================== */
+
+const siteSections =
+    Array.from(
+        document.querySelectorAll(".site-section")
+    );
+
+const nextButton =
+    document.getElementById("nextSection");
+
+const previousButton =
+    document.getElementById("previousSection");
+
+const dots =
+    Array.from(
+        document.querySelectorAll(".section-dots button")
+    );
+
+
+let currentSection = 0;
+
+
+/* =====================================================
+   SHOW SECTION
+===================================================== */
+
+function showSection(index) {
+
+    if (index < 0 || index >= publicSections.length) {
+        return;
+    }
+
+    currentSection = index;
+
+    publicSections.forEach((id, i) => {
+
+        const section = document.getElementById(id);
+
+        if (!section) return;
+
+        section.classList.remove(
+            "section-page-active",
+            "section-page-hidden"
+        );
+
+        if (i === index) {
+
+            section.classList.add(
+                "section-page-active"
+            );
+
+            /* Start at top */
+            section.scrollTop = 0;
+
+        } else {
+
+            section.classList.add(
+                "section-page-hidden"
+            );
+
+        }
+
+    });
+
+    updateNavigation();
+}
+
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+if (nextButton) {
+
+    nextButton.addEventListener(
+        "click",
+        function () {
+
+            showSection(
+                currentSection + 1
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+if (previousButton) {
+
+    previousButton.addEventListener(
+        "click",
+        function () {
+
+            showSection(
+                currentSection - 1
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+dots.forEach(
+    (dot, index) => {
+
+        dot.addEventListener(
+            "click",
+            function () {
+
+                showSection(index);
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   MENU LINKS
+===================================================== */
+
+document.querySelectorAll(
+    "#sideMenu a"
+).forEach(
+    link => {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const href =
+                    this.getAttribute("href");
+
+
+                if (
+                    !href ||
+                    !href.startsWith("#")
+                ) {
+
+                    return;
+
+                }
+
+
+                const id =
+                    href.substring(1);
+
+
+                const index =
+                    siteSections.findIndex(
+                        section =>
+                            section.id === id
+                    );
+
+
+                if (index !== -1) {
+
+                    event.preventDefault();
+
+                    showSection(index);
+
+                    closeMenu();
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   KEYBOARD
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        const tag =
+            event.target.tagName.toLowerCase();
+
+
+        /*
+           Don't hijack keyboard arrows
+           inside forms.
+        */
+
+        if (
+            tag === "input" ||
+            tag === "textarea" ||
+            tag === "select"
+        ) {
+
+            return;
+
+        }
+
+
+        if (
+            event.key === "ArrowRight"
+        ) {
+
+            showSection(
+                currentSection + 1
+            );
+
+        }
+
+
+        if (
+            event.key === "ArrowLeft"
+        ) {
+
+            showSection(
+                currentSection - 1
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   OPEN CORRECT SECTION FROM URL
+===================================================== */
+
+function openInitialSection() {
+
+    const hash =
+        window.location.hash.substring(1);
+
+
+    const index =
+        siteSections.findIndex(
+            section =>
+                section.id === hash
+        );
+
+
+    if (index >= 0) {
+
+        showSection(index);
+
+    } else {
+
+        showSection(0);
+
+    }
+
+}
+
+
+openInitialSection();
+
+
+////////////////////////////////////////////////////
+/* =====================================================
+   SECTION NAVIGATION
+   ===================================================== */
+
+const publicSections = [
+    "home",
+    "about",
+    "research",
+    "values",
+    "impact",
+    "partners",
+    "volunteer",
+    "contact",
+    "donate"
+];
+
+
+let currentSection = 0;
+
+
+/* =========================================================
+   SHOW SECTION
+   ========================================================= */
+
+function showSection(index) {
+
+    if (index < 0 || index >= publicSections.length) {
+        return;
+    }
+
+    currentSection = index;
+
+    publicSections.forEach((id, i) => {
+
+        const section = document.getElementById(id);
+
+        if (!section) {
+            return;
+        }
+
+        if (i === index) {
+
+            section.classList.remove("section-page-hidden");
+            section.classList.add("section-page-active");
+
+            // Start this page at the top
+            section.scrollTop = 0;
+
+        } else {
+
+            section.classList.remove("section-page-active");
+            section.classList.add("section-page-hidden");
+
+        }
+
+    });
+
+    updateNavigation();
+}
+
+
+
+/* =========================================================
+   UPDATE PREVIOUS / NEXT NAVIGATION
+   ========================================================= */
+
+function updateNavigation() {
+
+    const previous =
+        document.getElementById(
+            "previousSection"
+        );
+
+    const next =
+        document.getElementById(
+            "nextSection"
+        );
+
+    const counter =
+        document.getElementById(
+            "sectionCounter"
+        );
+
+
+    if (previous) {
+
+        previous.disabled =
+            currentSection === 0;
+
+    }
+
+
+    if (next) {
+
+        next.disabled =
+            currentSection ===
+            publicSections.length - 1;
+
+    }
+
+
+    if (counter) {
+
+        counter.textContent =
+            `${currentSection + 1} / ${publicSections.length}`;
+
+    }
+
+}
+
+
+/* =========================================================
+   PREVIOUS BUTTON
+   ========================================================= */
+
+const previousButton =
+    document.getElementById(
+        "previousSection"
+    );
+
+if (previousButton) {
+
+    previousButton.addEventListener(
+        "click",
+        function () {
+
+            showSection(
+                currentSection - 1
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+   ========================================================= */
+
+const nextButton =
+    document.getElementById(
+        "nextSection"
+    );
+
+if (nextButton) {
+
+    nextButton.addEventListener(
+        "click",
+        function () {
+
+            showSection(
+                currentSection + 1
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SIDE MENU NAVIGATION
+   ========================================================= */
+
+document
+    .querySelectorAll("#sideMenu a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const target =
+                    this.getAttribute("href");
+
+                if (!target) {
+                    return;
+                }
+
+                const id =
+                    target.substring(1);
+
+                const index =
+                    publicSections.indexOf(id);
+
+                if (index === -1) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                showSection(index);
+
+                if (
+                    typeof closeMenu ===
+                    "function"
+                ) {
+                    closeMenu();
+                }
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   START WEBSITE
+   ========================================================= */
+
+showSection(0);
+const publicSections = [
+    "home",
+    "about",
+    "research",
+    "values",
+    "impact",
+    "partners",
+    "volunteer",
+    "contact",
+    "donate"
+];
+
+let currentSection = 0;
+
+
+/* =========================================================
+   SCROLL TO SECTION
+   ========================================================= */
+
+function showSection(index) {
+
+    if (index < 0 || index >= publicSections.length) {
+        return;
+    }
+
+    currentSection = index;
+
+    const section =
+        document.getElementById(publicSections[index]);
+
+    if (!section) {
+        return;
+    }
+
+    section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    updateNavigation();
+}
+
+
+/* =========================================================
+   UPDATE PREVIOUS / NEXT
+   ========================================================= */
+
+function updateNavigation() {
+
+    const previous =
+        document.getElementById("previousSection");
+
+    const next =
+        document.getElementById("nextSection");
+
+    const counter =
+        document.getElementById("sectionCounter");
+
+
+    if (previous) {
+        previous.disabled = currentSection === 0;
+    }
+
+
+    if (next) {
+        next.disabled =
+            currentSection === publicSections.length - 1;
+    }
+
+
+    if (counter) {
+        counter.textContent =
+            `${currentSection + 1} / ${publicSections.length}`;
+    }
+
+}
+
+
+/* =========================================================
+   PREVIOUS BUTTON
+   ========================================================= */
+
+const previousButton =
+    document.getElementById("previousSection");
+
+if (previousButton) {
+
+    previousButton.addEventListener("click", function () {
+
+        showSection(currentSection - 1);
+
+    });
+
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+   ========================================================= */
+
+const nextButton =
+    document.getElementById("nextSection");
+
+if (nextButton) {
+
+    nextButton.addEventListener("click", function () {
+
+        showSection(currentSection + 1);
+
+    });
+
+}
+
+
+/* =========================================================
+   MENU LINKS
+   ========================================================= */
+
+document
+    .querySelectorAll("#sideMenu a")
+    .forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const href =
+                this.getAttribute("href");
+
+            if (!href || !href.startsWith("#")) {
+                return;
+            }
+
+            const id =
+                href.substring(1);
+
+            const index =
+                publicSections.indexOf(id);
+
+            if (index === -1) {
+                return;
+            }
+
+            event.preventDefault();
+
+            showSection(index);
+
+            if (typeof closeMenu === "function") {
+                closeMenu();
+            }
+
+        });
+
+    });
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    showSection(0);
+
+});
