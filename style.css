@@ -7959,136 +7959,156 @@ footer {
 
 }
 
+
 @media (max-width: 700px) {
 
-    /* ---------- TRUST STRIP ---------- */
+    /* =========================================
+       TRUST STRIP — MOBILE
+    ========================================= */
 
     .trust-strip {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-
         width: 100% !important;
-        box-sizing: border-box !important;
+        max-width: 100% !important;
 
-        gap: 12px !important;
-
-        padding: 15px !important;
-    }
-
-    .trust-strip > div {
-        width: 100% !important;
-        box-sizing: border-box !important;
+        margin: 0 auto !important;
+        padding: 20px 15px !important;
 
         display: flex !important;
+        flex-direction: column !important;
         align-items: center !important;
-        gap: 10px !important;
 
-        text-align: left !important;
-    }
+        background: linear-gradient(
+            135deg,
+            #071a2b,
+            #123b5a
+        ) !important;
 
-    .trust-strip span {
-        display: block !important;
-        font-size: 12px !important;
-    }
-
-
-    /* ---------- QUICK NAVIGATION ---------- */
-
-    .bottom-navigation {
-        width: 100% !important;
         box-sizing: border-box !important;
-
-        padding: 15px !important;
 
         overflow: visible !important;
     }
 
+    .trust-strip > div {
+        width: 100% !important;
+        max-width: 420px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        padding: 12px 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .trust-strip i {
+        margin-bottom: 6px !important;
+    }
+
+    .trust-strip strong,
+    .trust-strip span {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+
+    /* =========================================
+       QUICK NAVIGATION — MOBILE
+    ========================================= */
+
+    .bottom-navigation {
+        display: block !important;
+
+        position: relative !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 auto !important;
+
+        padding: 20px 15px !important;
+
+        background: #071a2b !important;
+
+        box-sizing: border-box !important;
+
+        overflow: visible !important;
+
+        text-align: center !important;
+    }
+
+    .bottom-navigation h3 {
+        display: block !important;
+
+        margin: 0 0 15px !important;
+
+        color: #d4af37 !important;
+
+        text-align: center !important;
+    }
+
     .bottom-navigation-links {
         display: grid !important;
+
         grid-template-columns: 1fr 1fr !important;
 
         gap: 8px !important;
 
         width: 100% !important;
+        max-width: 500px !important;
+
+        margin: 0 auto !important;
     }
 
     .bottom-navigation-links a {
-        display: block !important;
+        display: flex !important;
 
-        width: 100% !important;
-        box-sizing: border-box !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        min-height: 40px !important;
 
         padding: 8px 5px !important;
 
-        font-size: 13px !important;
+        color: #ffffff !important;
+
+        background: rgba(212, 175, 55, 0.12) !important;
+
+        border: 1px solid rgba(212, 175, 55, 0.35) !important;
+
+        border-radius: 8px !important;
+
+        text-decoration: none !important;
+
+        font-size: 12px !important;
 
         text-align: center !important;
-    }
-
-
-    /* ---------- FOOTER ---------- */
-
-    footer {
-        width: 100% !important;
-
-        height: auto !important;
-        min-height: 190px !important;
 
         box-sizing: border-box !important;
-
-        overflow: visible !important;
-
-        padding: 15px !important;
     }
 
-    footer .social-links {
-        display: flex !important;
-
-        justify-content: center !important;
-        align-items: center !important;
-
-        gap: 14px !important;
-
-        width: 100% !important;
-
-        margin-bottom: 12px !important;
-    }
-
-    footer .social-links a {
-        display: flex !important;
-
-        width: 38px !important;
-        height: 38px !important;
-
-        flex-shrink: 0 !important;
-
-        align-items: center !important;
-        justify-content: center !important;
-    }
-
-    footer p {
-        font-size: 12px !important;
-        text-align: center !important;
-    }
-
-    footer .charity-address {
-        font-size: 11px !important;
-        text-align: center !important;
+    .bottom-navigation-links a:hover {
+        background: #d4af37 !important;
+        color: #071a2b !important;
     }
 
 
-    /* ---------- PREVENT HORIZONTAL OVERFLOW ---------- */
+    /* =========================================
+       MOBILE BODY WIDTH
+    ========================================= */
 
     html,
     body {
         width: 100% !important;
         max-width: 100% !important;
-        overflow-x: hidden !important;
-    }
 
-    * {
-        max-width: 100%;
-        box-sizing: border-box;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow-x: hidden !important;
     }
 
 }
