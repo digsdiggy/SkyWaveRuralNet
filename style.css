@@ -8112,3 +8112,65 @@ footer {
     }
 
 }
+
+/* =========================================================
+   MOBILE: TRUST STRIP + QUICK NAVIGATION
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Centre and fit the trust strip */
+    .trust-strip {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+
+        justify-items: center !important;
+        align-items: center !important;
+
+        text-align: center !important;
+
+        gap: 12px !important;
+
+        padding: 15px 10px !important;
+
+        box-sizing: border-box !important;
+
+        margin: 0 auto !important;
+    }
+
+    .trust-strip > div {
+        width: 100% !important;
+        max-width: 170px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+    }
+
+    .trust-strip i {
+        margin-bottom: 5px !important;
+    }
+
+    .trust-strip strong {
+        font-size: 13px !important;
+    }
+
+    .trust-strip span {
+        font-size: 10px !important;
+        line-height: 1.25 !important;
+    }
+
+
+    /* Hide Quick Navigation on mobile */
+    .bottom-navigation {
+        display: none !important;
+    }
+
+}
