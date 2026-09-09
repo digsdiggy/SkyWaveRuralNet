@@ -254,8 +254,8 @@ nav a:hover {
    HERO SECTION
 ========================= */
 .hero {
-    min-height: 85vh;
-
+    
+min-height: 720px;
     background:
         linear-gradient(
             135deg,
@@ -313,6 +313,290 @@ z-index:1;}
     margin-top: 20px;
 }
 
+/* =========================
+   TRUST STRIP
+   ========================= */
+
+.trust-strip {
+    width: min(1180px, calc(100% - 40px));
+    margin: -45px auto 55px;
+    padding: 0;
+  left: 50%;
+    bottom: -40px;
+
+    transform: translateX(-80%);
+
+    width: min(1180px, calc(100% - 80px));
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+     
+background: linear-gradient(
+        135deg,
+        #eaf8fc 0%,
+        #dff2f8 100%
+    ) !important;
+
+    border: 1px solid #c5e3ed;
+    border: 1px solid var(--trust-border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 18px 45px rgba(7, 26, 43, 0.12),
+        0 3px 12px rgba(7, 26, 43, 0.05);
+
+    position: relative;
+    z-index: 20;
+
+    overflow: hidden;
+}
+
+/* =====================================================
+   INDIVIDUAL ITEMS
+   ===================================================== */
+
+.trust-strip > div {
+    position: relative;
+
+    min-height: 125px;
+    padding: 25px 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+
+/* Vertical divider */
+
+.trust-strip > div:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+    right: 0;
+    bottom: 25px;
+
+    width: 1px;
+
+    background: #e4ebf0;
+}
+
+
+/* =====================================================
+   TOP ACCENT
+   ===================================================== */
+
+.trust-strip > div::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 28px;
+
+    width: 38px;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #0877c9,
+        #21c4e8
+    );
+
+    border-radius: 0 0 4px 4px;
+
+    transition: width 0.25s ease;
+}
+
+
+/* Slight interaction */
+
+.trust-strip > div:hover::before {
+    width: 60px;
+}
+
+
+/* =====================================================
+   MAIN CREDENTIAL
+   ===================================================== */
+
+.trust-strip strong {
+    display: block;
+
+    margin-bottom: 7px;
+color: #b8941f;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+
+    line-height: 1.2;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.trust-strip span {
+    display: block;
+
+    max-width: 210px;
+
+    color: #607080;
+
+    font-size: 0.88rem;
+    font-weight: 400;
+
+    line-height: 1.45;
+}
+
+
+/* =====================================================
+   OPTIONAL ICONS
+   ===================================================== */
+
+.trust-strip i {
+    width: 38px;
+    height: 38px;
+
+    margin-bottom: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #0877c9;
+
+    background: #edf8fc;
+
+    border-radius: 10px;
+
+    font-size: 1rem;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+    .trust-strip {
+        width: calc(100% - 30px);
+
+        margin: -25px auto 40px;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        border-radius: 16px;
+    }
+
+
+    .trust-strip > div {
+        min-height: 120px;
+
+        padding: 24px 20px;
+    }
+
+
+    /* Horizontal/vertical grid lines */
+
+    .trust-strip > div:nth-child(1),
+    .trust-strip > div:nth-child(2) {
+        border-bottom: 1px solid #e4ebf0;
+    }
+
+
+    .trust-strip > div:nth-child(odd)::after {
+        content: "";
+
+        position: absolute;
+
+        top: 20px;
+        right: 0;
+        bottom: 20px;
+
+        width: 1px;
+
+        background: #e4ebf0;
+    }
+
+
+    .trust-strip > div:nth-child(even)::after {
+        display: none;
+    }
+
+
+    .trust-strip > div::before {
+        left: 20px;
+    }
+
+
+    .trust-strip strong {
+        font-size: 1rem;
+    }
+
+
+    .trust-strip span {
+        font-size: 0.78rem;
+
+        max-width: 150px;
+    }
+
+
+    .trust-strip i {
+        width: 34px;
+        height: 34px;
+
+        margin-bottom: 9px;
+
+        font-size: 0.9rem;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    .trust-strip {
+        width: calc(100% - 24px);
+
+        margin-top: -15px;
+
+        border-radius: 14px;
+    }
+
+
+    .trust-strip > div {
+        min-height: 110px;
+
+        padding: 20px 15px;
+    }
+
+
+    .trust-strip > div::before {
+        left: 15px;
+    }
+
+
+    .trust-strip strong {
+        font-size: 0.92rem;
+    }
+
+
+    .trust-strip span {
+        font-size: 0.72rem;
+        line-height: 1.35;
+    }
+}
 /* =========================
    BUTTONS
 ========================= */
@@ -373,6 +657,51 @@ button:not(.btn-primary):hover,
 
 
 
+/* ABOUT US */
+#about {
+    margin: 30px auto;
+    padding: 60px 40px;
+
+    background: var(--card);
+background: linear-gradient(
+    135deg,
+    #102A43 0%,
+    #234E70 35%,
+    #4682B4 70%,
+    #6FAED6 100%
+);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--gold);
+    border-radius: 16px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+}
+.section-image2 {
+    width: 100%;
+    min-height: 600px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+
+/* WHY WE EXIST IMAGE */
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .section-image2 {
+        height: 600px;
+    }
+
+}
+
 /* WHY WE EXIST */
 #why-we-exist {
    
@@ -415,10 +744,9 @@ button:not(.btn-primary):hover,
             rgba(11, 11, 11, 0.85),
             rgba(11, 11, 11, 0.85)
         ),
-        url("https://res.cloudinary.com/dshto9bis/image/upload/v1788790111/water_colou_knk9lr.png");
+       
 }
-
-
+ 
 /* MOBILE */
 
 @media (max-width: 600px) {
@@ -450,57 +778,13 @@ button:not(.btn-primary):hover,
     box-shadow: 0 10px 35px rgba(0,0,0,0.4);
 }
 
-/* ABOUT US */
-#about {
-    margin: 30px auto;
-    padding: 60px 40px;
-
-    background: var(--card);
-background: linear-gradient(
-    135deg,
-    #102A43 0%,
-    #234E70 35%,
-    #4682B4 70%,
-    #6FAED6 100%
-);
-    border: 1px solid var(--border);
-    border-left: 5px solid var(--gold);
-    border-radius: 16px;
-
-    box-shadow: 0 10px 35px rgba(0,0,0,0.4);
-}
-.section-image2 {
-    width: 100%;
-    min-height: 600px;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    border-top: 2px solid var(--gold);
-    border-bottom: 2px solid var(--gold);
-}
-
-
-/* WHY WE EXIST IMAGE */
-
 .about-image {
    background-image:
         linear-gradient(
             rgba(11, 11, 11, 0.85),
             rgba(11, 11, 11, 0.85)
         ),
-        url("https://res.cloudinary.com/dshto9bis/image/upload/v1788804094/poop_k6neie.png");
-}
-
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .section-image2 {
-        height: 600px;
-    }
+    url("https://res.cloudinary.com/dshto9bis/image/upload/v1788804094/poop_k6neie.png");   
 
 }
 
@@ -523,6 +807,9 @@ background: linear-gradient(
 
     box-shadow: 0 10px 35px rgba(0,0,0,0.4);
 }
+
+
+
 /* =========================================
    RESEARCH SECTION CARDS
 ========================================= */
@@ -548,14 +835,20 @@ background: linear-gradient(
 /* Research images */
 
 #research .card img {
-    width: 100%;
-    height: 220px;
+    display: block;
 
-    object-fit: cover;
+    width: 100%;
+    height: auto !important;
+
+    max-width: 100%;
+
+    object-fit: contain;
 
     border-radius: 14px;
 
-    margin-bottom: 18px;
+    margin: 0 auto 18px;
+
+    image-rendering: auto;
 }
 
 
@@ -5916,4 +6209,1693 @@ button:hover {
         box-shadow:
             0 5px 15px rgba(212, 162, 76, 0.30) !important;
     }
+}
+
+
+/*..................................*/
+.section-navigation {
+
+    position: fixed;
+
+    left: 0;
+    right: 0;
+
+    bottom: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+}
+
+
+.section-navigation button {
+
+    pointer-events: auto;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    background: #071a2b;
+
+    color: #ffffff;
+
+    min-height: 48px;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.section-navigation button:hover {
+
+    background: #d4af37;
+
+    color: #071a2b;
+
+    transform: translateY(-2px);
+
+}
+
+
+.section-navigation button:focus-visible {
+
+    outline: 3px solid #d4af37;
+
+    outline-offset: 4px;
+
+}
+
+
+/* =========================================
+   SECTION NAVIGATION - DARK BACKGROUND
+========================================= */
+
+.section-navigation {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    z-index: 9999;
+    pointer-events: none;
+}
+
+
+/* Previous / Next buttons */
+
+.section-navigation > button {
+    pointer-events: auto;
+
+    background: #d4af37 !important;
+    color: #071a2b !important;
+
+    border: 2px solid #d4af37 !important;
+
+    min-height: 48px;
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Hover */
+
+.section-navigation > button:hover {
+    background: #ffffff !important;
+    color: #071a2b !important;
+
+    border-color: #ffffff !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* Keyboard accessibility */
+
+.section-navigation > button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+}
+
+
+/* Disabled */
+
+.section-navigation > button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+
+
+/* =====================================================
+   ONE-SECTION VIEW
+===================================================== */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 80px;
+
+    z-index: 10000;
+}
+
+
+/* =====================================================
+   SECTION CONTENT
+===================================================== */
+
+.site-section {
+    display: none !important;
+
+
+
+    top: 80px;
+    left: 0;
+    right: 0;
+
+    /*
+       Space reserved for the footer.
+    */
+    bottom: 125px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    /*
+       THIS is what allows the user
+       to scroll through a long section.
+    */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding-bottom: 90px;
+}
+
+
+/* Only the selected section is visible */
+
+.site-section.active {
+    display: block !important;
+}
+
+
+/* =====================================================
+   SECTION SCROLLBAR
+===================================================== */
+
+.site-section::-webkit-scrollbar {
+    width: 9px;
+}
+
+.site-section::-webkit-scrollbar-track {
+    background: #071a2b;
+}
+
+.site-section::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 10px;
+}
+
+.site-section::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+
+/* Firefox */
+
+.site-section {
+    scrollbar-color: #d4af37 #071a2b;
+    scrollbar-width: thin;
+}
+
+
+/* =====================================================
+   NEXT / PREVIOUS NAVIGATION
+===================================================== */
+
+.section-navigation {
+  
+
+    left: 0;
+    right: 0;
+
+    bottom: 135px;
+
+    height: 50px;
+
+    z-index: 9999;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 25px;
+
+    pointer-events: none;
+}
+
+
+/* Navigation buttons */
+
+.section-navigation button {
+    pointer-events: auto;
+
+    background: #d4af37 !important;
+
+    color: #071a2b !important;
+
+    border: 2px solid #d4af37 !important;
+
+    border-radius: 30px;
+
+    min-height: 46px;
+
+    padding: 10px 20px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+.section-navigation button:hover {
+    background: #ffffff !important;
+
+    border-color: #ffffff !important;
+}
+
+
+.section-navigation button:disabled {
+    opacity: 0.4;
+
+    cursor: not-allowed;
+}
+
+
+/* Keyboard focus */
+
+.section-navigation button:focus-visible {
+    outline: 3px solid #ffffff;
+
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   STATIC FOOTER
+===================================================== */
+
+footer {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /*
+       Increased so ALL footer information
+       has enough room.
+    */
+    height: 125px;
+
+    background: #071a2b;
+
+    color: #ffffff;
+
+    z-index: 10000;
+
+    box-sizing: border-box;
+
+    padding: 8px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+/* Footer paragraphs */
+
+footer p {
+    margin: 3px 0;
+
+    line-height: 1.3;
+
+    font-size: 13px;
+}
+
+
+/* Charity address */
+
+footer .charity-address {
+    margin: 3px 0;
+
+    line-height: 1.2;
+
+    font-size: 12px;
+}
+
+
+/* Social links */
+
+.social-links {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 3px;
+}
+
+
+.social-links a {
+    color: #d4af37;
+
+    font-size: 17px;
+
+    text-decoration: none;
+}
+
+
+.social-links a:hover {
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        height: 65px;
+    }
+
+
+    .site-section {
+
+        top: 65px;
+
+        /*
+           Bigger footer on mobile because
+           the address needs more vertical space.
+        */
+        bottom: 170px;
+
+        padding:
+            20px
+            15px
+            100px;
+    }
+
+
+    footer {
+
+        height: 170px;
+
+        padding:
+            10px
+            15px;
+    }
+
+
+    footer p {
+        font-size: 12px;
+    }
+
+
+    footer .charity-address {
+        font-size: 11px;
+    }
+
+
+    .social-links {
+        margin-bottom: 4px;
+
+        gap: 18px;
+    }
+
+
+    .section-navigation {
+
+        bottom: 180px;
+
+        padding: 0 10px;
+    }
+
+
+    .section-navigation > button {
+
+        width: 46px;
+
+        min-width: 46px;
+
+        height: 46px;
+
+        min-height: 46px;
+
+        padding: 0;
+
+        border-radius: 50%;
+    }
+
+
+    .section-navigation > button span:not([aria-hidden="true"]) {
+
+        display: none;
+    }
+
+
+    .section-dots {
+
+        gap: 5px;
+
+        padding: 7px 9px;
+    }
+
+
+    .section-dots button {
+
+        width: 7px !important;
+
+        height: 7px !important;
+
+        min-width: 7px !important;
+
+        min-height: 7px !important;
+    }
+
+}
+/* =====================================================
+   FINAL ONE-SECTION SCROLL SYSTEM
+===================================================== */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden !important;
+}
+
+
+/* -----------------------------------------------------
+   HEADER
+----------------------------------------------------- */
+
+.topbar {
+    position: fixed !important;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 80px;
+
+    z-index: 99999;
+}
+
+
+/* -----------------------------------------------------
+   MAIN SECTION
+----------------------------------------------------- */
+
+.site-section {
+    display: none !important;
+
+    position: fixed !important;
+
+    top: 80px !important;
+    bottom: 125px !important;
+
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    /*
+       THIS IS THE IMPORTANT PART.
+    */
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+
+    -webkit-overflow-scrolling: touch;
+
+    box-sizing: border-box;
+
+    padding-bottom: 120px !important;
+}
+
+
+/* -----------------------------------------------------
+   CURRENT SECTION
+----------------------------------------------------- */
+
+.site-section.active {
+    display: block !important;
+}
+
+
+/* -----------------------------------------------------
+   IMPORTANT:
+   Don't allow your old .section rules to
+   prevent scrolling.
+----------------------------------------------------- */
+
+.site-section .section {
+    position: relative !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    overflow: visible !important;
+}
+
+
+/* Images wrapping sections */
+
+.section-image,
+.section-image2,
+.section-image3,
+.section-image4,
+.section-image5,
+.section-image6 {
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    overflow: visible !important;
+}
+
+
+/* -----------------------------------------------------
+   SCROLLBAR
+----------------------------------------------------- */
+
+.site-section::-webkit-scrollbar {
+    width: 10px;
+}
+
+.site-section::-webkit-scrollbar-track {
+    background: #071a2b;
+}
+
+.site-section::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 10px;
+}
+
+
+/* -----------------------------------------------------
+   FOOTER
+----------------------------------------------------- */
+
+footer {
+    position: fixed !important;
+
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    height: 125px !important;
+
+    z-index: 99999 !important;
+
+    overflow: hidden !important;
+
+    box-sizing: border-box;
+}
+
+
+/* -----------------------------------------------------
+   NEXT / PREVIOUS
+----------------------------------------------------- */
+
+.section-navigation {
+    position: fixed !important;
+
+    left: 0;
+    right: 0;
+
+    bottom: 135px;
+
+    z-index: 99998;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    pointer-events: none;
+}
+
+.section-navigation button {
+    pointer-events: auto;
+}
+
+
+/* -----------------------------------------------------
+   MOBILE
+----------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        height: 65px !important;
+    }
+
+    .site-section {
+
+        top: 65px !important;
+
+        bottom: 170px !important;
+
+        overflow-y: scroll !important;
+
+        padding:
+            20px
+            15px
+            120px !important;
+    }
+
+    footer {
+
+        height: 170px !important;
+    }
+
+    .section-navigation {
+
+        bottom: 180px !important;
+
+        padding: 0 10px;
+    }
+}
+/* =====================================================
+   SECTION VIEW - ADDITIONAL OVERRIDE
+   ===================================================== */
+
+/* Hide sections that are not selected */
+.section-page-hidden {
+    display: none !important;
+}
+
+/* Selected section */
+.section-page-active {
+    display: block !important;
+    max-height: calc(100vh - 230px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+}
+
+
+/* Navigation arrows */
+.section-navigation {
+
+    left: 0;
+    right: 0;
+    bottom: 145px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    background: #071a2b;
+    z-index: 9998;
+}
+
+.section-navigation button {
+    background: #d4af37;
+    color: #071a2b;
+
+    border: none;
+    border-radius: 25px;
+
+    padding: 10px 22px;
+
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.section-navigation button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+#sectionCounter {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+/* Fixed footer */
+footer {
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 145px;
+
+    overflow-y: auto;
+
+    z-index: 9999;
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .section-page-active {
+        max-height: calc(100vh - 295px);
+        padding: 20px 15px 50px;
+    }
+
+    .section-navigation {
+        bottom: 185px;
+        padding: 0 10px;
+    }
+
+    footer {
+        height: 185px;
+    }
+}
+
+
+/* =========================================================
+   FINAL SECTION + FOOTER LAYOUT
+   ========================================================= */
+
+/* Keep the page itself fixed */
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* Normal section */
+.section {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Active section = the only scrolling area */
+.section-page-active {
+    display: block !important;
+
+    position: fixed !important;
+
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 205px;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    box-sizing: border-box;
+
+    -webkit-overflow-scrolling: touch;
+
+    padding-bottom: 40px;
+}
+
+.section-page-hidden {
+    display: none !important;
+}
+/* Scrollbar */
+.section-page-active::-webkit-scrollbar {
+    width: 10px;
+}
+
+.section-page-active::-webkit-scrollbar-track {
+    background: #071a2b;
+}
+
+.section-page-active::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 10px;
+}
+
+
+/* Previous / Next */
+.section-navigation {
+    position: fixed !important;
+
+    left: 0;
+    right: 0;
+    bottom: 145px;
+
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    box-sizing: border-box;
+
+    background: #071a2b;
+
+    z-index: 10000;
+}
+
+
+/* Footer */
+footer {
+    position: fixed !important;
+
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+
+    height: 145px !important;
+    min-height: 145px !important;
+
+    box-sizing: border-box;
+
+    z-index: 10001;
+
+    background: #071a2b !important;
+    color: white !important;
+
+    text-align: center;
+
+    padding: 10px 20px;
+
+    overflow: hidden !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .section-page-active {
+        top: 65px;
+
+        /*
+          180px footer
+          55px navigation
+          15px safety space
+        */
+        bottom: 235px;
+
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+
+        padding-bottom: 50px;
+    }
+
+
+    .section-navigation {
+        bottom: 180px;
+        height: 55px;
+
+        padding: 0 15px;
+    }
+
+
+    footer {
+        height: 180px !important;
+        min-height: 180px !important;
+
+        overflow: hidden !important;
+
+        padding: 10px 15px;
+    }
+
+}
+.section {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SIDE MENU - ALWAYS ABOVE EVERYTHING
+   ========================================================= */
+
+.side-menu {
+    position: fixed !important;
+
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 300px;
+    max-width: 85vw;
+
+    height: 100vh !important;
+
+    background: #071a2b !important;
+
+    z-index: 999999 !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    box-sizing: border-box;
+
+    padding: 80px 25px 30px;
+
+    transform: translateX(100%);
+
+    transition: transform 0.3s ease;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Open menu */
+
+.side-menu.open {
+    transform: translateX(0) !important;
+}
+
+
+/* Menu links */
+
+.side-menu a {
+    display: block;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    padding: 15px 10px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    font-size: 17px;
+}
+
+
+.side-menu a:hover {
+    color: #071a2b;
+
+    background: #d4af37;
+}
+
+
+/* Close button */
+
+.side-menu .close-menu {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #d4af37;
+
+    color: #071a2b;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 1000000;
+}
+
+
+.side-menu .close-menu:hover {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   MENU TOGGLE
+   ========================================================= */
+
+.menu-toggle {
+    position: relative;
+
+    z-index: 1000000;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .side-menu {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 75px 20px 30px;
+    }
+
+
+    .side-menu a {
+        padding: 17px 10px;
+
+        font-size: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   SCROLLING PAGE
+   ========================================================= */
+
+.section {
+    position: relative !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Only the selected page scrolls */
+
+.section-page-active {
+    display: block !important;
+
+    position: fixed !important;
+
+    top: 80px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 205px !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    box-sizing: border-box;
+
+    padding-bottom: 80px !important;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Other pages hidden */
+
+.section-page-hidden {
+    display: none !important;
+}
+
+
+/* About page content */
+
+.about-page {
+    height: auto !important;
+    min-height: 100%;
+ position: relative;
+    overflow: visible !important;
+}
+
+
+.about-content {
+    position: relative;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 40px 30px;
+}
+
+
+/* Make sure cards don't create their own scrolling */
+
+.about-content .grid {
+    overflow: visible !important;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .section-page-active {
+        top: 65px !important;
+        bottom: 235px !important;
+
+        overflow-y: auto !important;
+
+        padding-bottom: 100px !important;
+    }
+
+
+    .about-content {
+        padding: 30px 15px 50px;
+    }
+
+}
+/* =========================================================
+   FINAL SCROLLING FIX
+   ========================================================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    height: auto !important;
+
+    margin: 0;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+
+/* Normal sections */
+
+.section {
+    position: relative !important;
+
+    width: 100%;
+
+    height: auto !important;
+    min-height: auto !important;
+
+    overflow: visible !important;
+
+    box-sizing: border-box;
+}
+
+
+/* Do NOT make sections fixed */
+
+.section-page-active {
+    display: block !important;
+
+    position: relative !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 100vh !important;
+
+    max-height: none !important;
+
+    overflow: visible !important;
+
+    padding-bottom: 80px !important;
+
+    box-sizing: border-box;
+}
+
+
+.section-page-hidden {
+    display: none !important;
+}
+
+
+/* Navigation */
+
+.section-navigation {
+    position: relative !important;
+
+    width: 100%;
+
+    height: 60px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #071a2b;
+
+    z-index: 10000;
+}
+
+
+/* Footer */
+
+footer {
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+
+    min-height: 145px !important;
+
+    box-sizing: border-box;
+
+    overflow: visible !important;
+
+    z-index: 10001;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    .section-page-active {
+        position: relative !important;
+
+        height: auto !important;
+        min-height: 100vh !important;
+
+        overflow: visible !important;
+
+        padding-bottom: 50px !important;
+    }
+
+    .section-navigation {
+        position: relative !important;
+
+        bottom: auto !important;
+    }
+
+    footer {
+        position: relative !important;
+
+        height: auto !important;
+
+        min-height: 220px !important;
+    }
+
+}
+/* =========================================================
+   HOME / HERO VISIBILITY FIX
+   ========================================================= */
+
+#home {
+    position: relative !important;
+
+    width: 100% !important;
+
+    min-height: 100vh !important;
+    height: auto !important;
+
+    margin: 0 !important;
+
+    overflow: visible !important;
+
+    box-sizing: border-box;
+
+    padding-top: 80px !important;
+}
+
+
+/* Hero content */
+
+#home .hero-content {
+    position: relative !important;
+
+    z-index: 10 !important;
+
+    display: block !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    padding-top: 40px;
+}
+
+
+/* Hero heading */
+
+#home h1 {
+    position: relative !important;
+
+    z-index: 11 !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Hero subtitle */
+
+#home h4 {
+    position: relative !important;
+
+    z-index: 11 !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Hero paragraph */
+
+#home .hero-content p {
+    position: relative !important;
+
+    z-index: 11 !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Hero buttons */
+
+#home .hero-buttons {
+    position: relative !important;
+
+    z-index: 11 !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Hero background overlay stays behind the text */
+
+#home .hero-overlay {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    z-index: 1 !important;
+}
+
+
+/* Trust strip */
+
+#home .trust-strip {
+    position: relative !important;
+
+    z-index: 10 !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    #home {
+        min-height: 100vh !important;
+
+        padding-top: 65px !important;
+    }
+
+    #home .hero-content {
+        padding-top: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+/* =========================================================
+   RETURN TO HOME BUTTON
+   ========================================================= */
+
+.home-arrow {
+    position: fixed;
+
+    right: 25px;
+    bottom: 165px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #d4af37;
+    color: #071a2b;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    z-index: 10050;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.home-arrow:hover {
+    background: #ffffff;
+
+    color: #071a2b;
+
+    transform: translateY(-3px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .home-arrow {
+        right: 15px;
+        bottom: 235px;
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 18px;
+    }
+
+}
+
+/* =========================================================
+   SECTION LINKS
+   ========================================================= */
+
+/* =========================================================
+   MAIN SECTION NAVIGATION
+   ========================================================= */
+
+=========================================================
+   BOTTOM QUICK NAVIGATION
+   ========================================================= */
+
+.bottom-navigation {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 30px 20px;
+
+    background: #071a2b;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    border-top: 2px solid #d4af37;
+}
+
+
+.bottom-navigation h3 {
+
+    margin: 0 0 18px;
+
+    color: #d4af37;
+
+    font-size: 20px;
+}
+
+
+.bottom-navigation-links {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.bottom-navigation-links a {
+
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    border: 1px solid #d4af37;
+
+    border-radius: 20px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.bottom-navigation-links a:hover {
+
+    background: #d4af37;
+
+    color: #071a2b;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .bottom-navigation {
+
+        padding: 25px 15px;
+    }
+
+
+    .bottom-navigation-links {
+
+        gap: 8px;
+    }
+
+
+    .bottom-navigation-links a {
+
+        font-size: 13px;
+
+        padding: 8px 12px;
+    }
+
 }
