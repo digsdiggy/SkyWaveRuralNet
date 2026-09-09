@@ -8024,43 +8024,34 @@ footer {
 /* =========================================================
    MOBILE TRUST STRIP — FINAL FIX
    ========================================================= */
-
 @media (max-width: 700px) {
 
     .trust-strip {
         width: 100% !important;
         max-width: 100% !important;
-        height: auto !important;
-        min-height: 0 !important;
 
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
 
-        gap: 8px !important;
+        gap: 5px !important;
 
-        padding: 12px 8px !important;
+        padding: 8px 5px !important;
         margin: 0 auto !important;
 
         box-sizing: border-box !important;
-
-        overflow: hidden !important;
 
         text-align: center !important;
     }
 
     .trust-strip > div {
         width: 100% !important;
-        max-width: none !important;
         min-width: 0 !important;
 
-        padding: 5px !important;
+        padding: 3px !important;
         margin: 0 !important;
-
-        box-sizing: border-box !important;
 
         display: flex !important;
         flex-direction: column !important;
-
         align-items: center !important;
         justify-content: center !important;
 
@@ -8068,27 +8059,25 @@ footer {
     }
 
     .trust-strip i {
-        font-size: 18px !important;
-        margin-bottom: 3px !important;
+        font-size: 14px !important;
+        margin-bottom: 2px !important;
     }
 
     .trust-strip strong {
-        display: block !important;
-        font-size: 12px !important;
-        line-height: 1.2 !important;
+        font-size: 10px !important;
+        line-height: 1.1 !important;
     }
 
     .trust-strip span {
-        display: block !important;
+        font-size: 7px !important;
+        line-height: 1.15 !important;
 
-        font-size: 9px !important;
-        line-height: 1.2 !important;
+        max-width: 100px !important;
 
-        max-width: 130px !important;
-        overflow-wrap: break-word !important;
+        text-align: center !important;
     }
 
-    /* Remove Quick Navigation on mobile */
+    /* Hide Quick Navigation on mobile */
     .bottom-navigation {
         display: none !important;
     }
