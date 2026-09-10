@@ -255,7 +255,7 @@ nav a:hover {
 ========================= */
 .hero {
     
-min-height: 720px;
+height: 800px;
     background:
         linear-gradient(
             135deg,
@@ -276,9 +276,10 @@ min-height: 720px;
 
     text-align: center;
 
-    border-radius: 0 0 30px 30px;
-
+  
     overflow: hidden;
+   margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 
@@ -318,55 +319,57 @@ z-index:1;}
    ========================= */
 
 .trust-strip {
-    width: min(1180px, calc(100% - 40px));
-    margin: -45px auto 55px;
-    padding: 0;
-  left: 50%;
+   width: 100%;
+    text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: block;
+    gap: 60px;
+    padding: 18px 30px;
+  justify-content: center;
+  left: 73%;
+   box-sizing: border-box;
     bottom: -40px;
+background: transparent;
+ transform: translateX(-73%);   
+   margin-top: 0;
+   position: relative;
 
-    transform: translateX(-80%);
-
-    width: min(1180px, calc(100% - 80px));
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
-     
-background: linear-gradient(
-        135deg,
-        #eaf8fc 0%,
-        #dff2f8 100%
-    ) !important;
-
-    border: 1px solid #c5e3ed;
-    border: 1px solid var(--trust-border);
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 18px 45px rgba(7, 26, 43, 0.12),
-        0 3px 12px rgba(7, 26, 43, 0.05);
-
+    border-radius: 20px 20px 20px 20px;
     position: relative;
     z-index: 20;
-
     overflow: hidden;
 }
-
+.trust-strip-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    flex-direction: column;  
+    text-align: center;
+    gap: 4px;
+}
 /* =====================================================
    INDIVIDUAL ITEMS
    ===================================================== */
 
 .trust-strip > div {
     position: relative;
-
     min-height: 125px;
     padding: 25px 28px;
-
-    display: flex;
+   display: flex;
     flex-direction: column;
     justify-content: center;
-
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 
@@ -374,8 +377,7 @@ background: linear-gradient(
 
 .trust-strip > div:not(:last-child)::after {
     content: "";
-
-    position: absolute;
+position: relative;
 
     top: 25px;
     right: 0;
@@ -434,7 +436,7 @@ color: #b8941f;
     font-weight: 700;
     letter-spacing: -0.01em;
 
-    line-height: 1.2;
+    line-height: 1.4;
 }
 
 
@@ -444,10 +446,11 @@ color: #b8941f;
 
 .trust-strip span {
     display: block;
-
+text-align: center;
+  align-items: center;
     max-width: 210px;
 
-    color: #607080;
+    color: #6FAED6;
 
     font-size: 0.88rem;
     font-weight: 400;
@@ -463,13 +466,14 @@ color: #b8941f;
 .trust-strip i {
     width: 38px;
     height: 38px;
-
-    margin-bottom: 12px;
-
+font-size: 20px;
+    margin-bottom: 4px;
+    
     display: flex;
     align-items: center;
     justify-content: center;
-
+text-align: center;
+ 
     color: #0877c9;
 
     background: #edf8fc;
@@ -7701,9 +7705,9 @@ footer {
 
     z-index: 10 !important;
 
-    visibility: visible !important;
+    visibility: visible;
 
-    opacity: 1 !important;
+    opacity: 10;
 }
 
 
