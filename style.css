@@ -606,64 +606,104 @@ font-size: 20px;
 /* =========================================
    ALL BUTTONS EXCEPT WORK WITH US
 ========================================= */
+/* ================================
+   DASHBOARD TITLE
+   ================================ */
+
+
+/* ================================
+   DASHBOARD TITLE
+   ================================ */
+
+
+/* ================================
+   COMPACT DASHBOARD TITLE
+   ================================ */
+
+
+/* ================================
+   DASHBOARD HEADING
+   ================================ */
+
+
+#dashboard h7 {
+    font-family: "Poppins", "Segoe UI", sans-serif;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    letter-spacing: 0;
+    line-height: 1.2;
+
+    margin: 0 0 14px;
+
+    /* Purple gradient */
+    background: linear-gradient(
+        135deg,
+        #4C1D95,
+        #7C3AED
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    filter: drop-shadow(
+        0 2px 4px rgba(76, 29, 149, 0.15)
+    );
+}
+
+
+/* Gold accent underneath */
+
+#dashboard h7::after {
+    content: "";
+
+    display: block;
+
+    width: 35px;
+    height: 2px;
+
+    margin-top: 5px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #F59E0B,
+        #FBBF24
+    );
+}
+
 #dashboard button {
     background: linear-gradient(
         135deg,
-        #0ea5e9 0%,
-        #2563eb 50%,
-        #4f46e5 100%
+        #5B21B6,
+        #7C3AED,
+        #D97706
     );
 
-    color: #ffffff;
+    color: #fff;
     border: none;
-    border-radius: 12px;
-
-    padding: 12px 22px;
-
-    cursor: pointer;
-
-    font-size: 15px;
+    border-radius: 10px;
+    padding: 10px 18px;
     font-weight: 600;
 
-    box-shadow:
-        0 6px 15px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 5px 15px rgba(76, 29, 149, 0.25);
 
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
+    transition: all 0.25s ease;
 }
 
-
-/* Hover effect */
 #dashboard button:hover {
     background: linear-gradient(
         135deg,
-        #38bdf8 0%,
-        #3b82f6 50%,
-        #6366f1 100%
+        #7C3AED,
+        #9333EA,
+        #F59E0B
     );
 
     transform: translateY(-2px);
-
-    box-shadow:
-        0 10px 22px rgba(37, 99, 235, 0.35);
-}
-
-
-/* Click effect */
-#dashboard button:active {
-    transform: translateY(0);
-
-    box-shadow:
-        0 4px 10px rgba(37, 99, 235, 0.25);
-}
-
-
-/* Keyboard focus */
-#dashboard button:focus-visible {
-    outline: 3px solid rgba(14, 165, 233, 0.35);
-    outline-offset: 3px;
+    box-shadow: 0 8px 20px rgba(76, 29, 149, 0.35);
 }
 
 
