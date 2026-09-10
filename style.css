@@ -377,7 +377,7 @@ background: rgba(255, 255, 255, 0.08);
 
 .trust-strip > div:not(:last-child)::after {
     content: "";
-position: relative;
+position: absolute;
 
     top: 25px;
     right: 0;
@@ -398,7 +398,7 @@ position: relative;
 
     position: absolute;
 
-    top: 0;
+    
     left: 28px;
 
     width: 38px;
@@ -452,8 +452,8 @@ text-align: center;
 
     color: #6FAED6;
 
-    font-size: 0.88rem;
-    font-weight: 400;
+    font-size: 0.92rem;
+    font-weight: 450;
 
     line-height: 1.45;
 }
@@ -472,8 +472,7 @@ font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-text-align: center;
- 
+
     color: #0877c9;
 
     background: #edf8fc;
