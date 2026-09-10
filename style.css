@@ -606,6 +606,65 @@ font-size: 20px;
 /* =========================================
    ALL BUTTONS EXCEPT WORK WITH US
 ========================================= */
+#dashboard button {
+    background: linear-gradient(
+        135deg,
+        #0ea5e9 0%,
+        #2563eb 50%,
+        #4f46e5 100%
+    );
+
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+
+    padding: 12px 22px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    box-shadow:
+        0 6px 15px rgba(37, 99, 235, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* Hover effect */
+#dashboard button:hover {
+    background: linear-gradient(
+        135deg,
+        #38bdf8 0%,
+        #3b82f6 50%,
+        #6366f1 100%
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(37, 99, 235, 0.35);
+}
+
+
+/* Click effect */
+#dashboard button:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+
+/* Keyboard focus */
+#dashboard button:focus-visible {
+    outline: 3px solid rgba(14, 165, 233, 0.35);
+    outline-offset: 3px;
+}
 
 
 .btn-secondary,
