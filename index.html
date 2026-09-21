@@ -10,7 +10,7 @@
     <!-- ================= SECTION NAVIGATION ================= -->
 
 
-  <header class="topbar">
+ <header class="topbar">
 
     <div class="logo-wrap">
 
@@ -25,45 +25,54 @@
         </span>
 
     </div>
-
-
-   <button type="button" class="donate-top" onclick="document.getElementById('donate').scrollIntoView({ behavior: 'smooth' });">
-    Donate
-</button>
-    
-
-
-    <!-- MENU BUTTON -->
-    <button class="menu-toggle" onclick="openMenu()" aria-label="Open navigation menu">
+<!-- MOBILE MENU BUTTON -->
+    <button
+        type="button"
+        class="menu-toggle"
+        onclick="openMenu()"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+    >
         ☰
     </button>
 
+    <!-- DESKTOP HORIZONTAL MENU -->
+    <nav class="desktop-nav" aria-label="Main navigation">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#values">Our Values</a>
+        <a href="#impact">Impact</a>
+        <a href="#partners">Partner with us</a>
+        <a href="#donate">Donate</a>
+       <a href="#volunteer">Volunteer</a>
+      <a href="#contact">Get in touch</a>
+       <a href="#admin">Admin</a>
+       
+    </nav>
+
 </header>
-    
-<nav class="section-links" aria-label="Main section navigation">
 
-    <a href="#home">Home</a>
 
-    <a href="#about">About Us</a>
+<!-- MOBILE MENU -->
+<nav id="mobileMenu" class="mobile-nav" aria-label="Mobile navigation">
 
-    <a href="#research">Research</a>
-
-    <a href="#values">Our Values</a>
-
-    <a href="#impact">Impact</a>
-
-    <a href="#partners">Partner With Us</a>
-
-    <a href="#volunteer">Volunteer</a>
-
-    <a href="#contact">Get in Touch</a>
-
-    <a href="#donate">Donate</a>
-
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About Us</a>
+    <a href="#research" onclick="closeMenu()">Research</a>
+    <a href="#values" onclick="closeMenu()">Our Values</a>
+    <a href="#impact" onclick="closeMenu()">Impact</a>
+    <a href="#partners" onclick="closeMenu()">Partner with us</a>
+    <a href="#donate" onclick="closeMenu()">Donate</a>
+<a href="#volunteer" onclick="closeMenu()">Volunteer</a>
+  <a href="#contact" onclick="closeMenu()">Get in touch</a>
+  <a href="#admin" onclick="closeMenu()">Admin</a>
+  
 </nav>
 
-  <!-- SIDE MENU MUST BE OUTSIDE HEADER -->
-  <div id="sideMenu" class="side-menu"> <button class="close-menu" onclick="closeMenu()"> ✕ </button> <a href="#home" onclick="closeMenu()">Home</a> <a href="#about" onclick="closeMenu()">About Us</a> <a href="#research" onclick="closeMenu()">Research</a> <a href="#values" onclick="closeMenu()">Our Values</a> <a href="#impact" onclick="closeMenu()">Impact</a> <a href="#partners" onclick="closeMenu()">Partner with us</a> <a href="#volunteer" onclick="closeMenu()">Volunteer</a> <a href="#contact" onclick="closeMenu()">Get in touch</a> <a href="#donate" onclick="closeMenu()">Donate</a> <a href="#admin" onclick="closeMenu()">Admin</a> </div> <!-- ================= HERO ================= -->
+
+  
   <!-- ================= HERO ================= -->
 <section id="home" class="hero">
 
@@ -879,9 +888,69 @@ Supporting the development of future connectivity, device, digital skills and su
 
 
         <!-- ================= FOOTER ================= -->
-        <footer>
+        <footer class="site-footer">
 
-    <div class="social-links">
+    <div class="footer-container">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+
+            <a class="footer-logo" href="#home">
+
+                <img
+                    src="https://res.cloudinary.com/dshto9bis/image/upload/v1789125289/logo3_odupw7.png"
+                    alt="SkyWave RuralNet SCIO logo"
+                    class="footer-logo-image"
+                > 
+            </a>
+
+            <p>
+                Closing the Rural Digital Divide in Scotland
+            </p>
+
+        </div>
+
+
+        <!-- EXPLORE -->
+        <div class="footer-links">
+
+            <h4>Explore</h4>
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#values">Our Values</a>
+            <a href="#impact">Impact</a>
+
+        </div>
+
+
+        <!-- GET INVOLVED -->
+        <div class="footer-links">
+
+            <h4>Get involved</h4>
+
+            <a href="#volunteer">Volunteer</a>
+            <a href="#partners">Partner with us</a>
+            <a href="#donate">Donate</a>
+
+        </div>
+
+
+        <!-- SUPPORT -->
+        <div class="footer-links">
+
+            <h4>Support</h4>
+
+            <a href="#contact">Get in touch</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- SOCIAL MEDIA -->
+    <div class="footer-social">
 
         <a
             href="https://www.facebook.com/share/18GvTwzEbh/?mibextid=wwXIfr"
@@ -913,26 +982,31 @@ Supporting the development of future connectivity, device, digital skills and su
     </div>
 
 
-    <p>
-        <strong>SKYWAVE RURALNET SCIO</strong>
-        | Scottish Charity No. SC055507
-    </p>
+    <!-- FOOTER BOTTOM -->
+    <div class="footer-bottom">
 
+        <p>
+            <strong>SKYWAVE RURALNET SCIO</strong>
+            <span>|</span>
+            Scottish Charity No. SC055507
+        </p>
 
-    <p class="charity-address">
-        17B Castlemilk Arcade<br>
-        The Braes Shopping Centre<br>
-        Dougrie Drive<br>
-        Glasgow G45 9AA
-    </p>
+        <p class="charity-address">
+            17B Castlemilk Arcade<br>
+            The Braes Shopping Centre<br>
+            Dougrie Drive<br>
+            Glasgow G45 9AA
+        </p>
 
+        <p class="copyright">
+            &copy; 2026 SkyWave RuralNet SCIO.
+            All rights reserved.
+        </p>
 
-    <p>
-        &copy; 2026 SkyWave RuralNet SCIO.
-        All rights reserved.
-    </p>
+    </div>
 
 </footer>
+
 <script>
 function openMenu() {
     document.getElementById("sideMenu").classList.add("open");
