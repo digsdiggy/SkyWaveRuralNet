@@ -8768,3 +8768,42 @@ footer {
         display: flex !important;
     }
 }
+
+
+/* DESKTOP */
+
+.menu-toggle {
+    display: none !important;
+}
+
+.mobile-nav {
+    display: none !important;
+}
+
+.desktop-nav {
+    display: flex;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 767px) {
+
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .menu-toggle {
+        display: block !important;
+    }
+
+    .mobile-nav {
+        display: none !important;
+    }
+
+    .mobile-nav.active {
+        display: flex !important;
+        flex-direction: column;
+    }
+}
+
