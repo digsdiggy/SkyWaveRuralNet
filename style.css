@@ -8736,3 +8736,35 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .menu-toggle {
+        display: none !important;
+    }
+
+    .mobile-nav {
+        display: none !important;
+    }
+
+    .desktop-nav {
+        display: flex !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .menu-toggle {
+        display: block !important;
+    }
+
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .mobile-nav {
+        display: none !important;
+    }
+
+    .mobile-nav.active {
+        display: flex !important;
+    }
+}
