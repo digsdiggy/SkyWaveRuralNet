@@ -125,7 +125,7 @@ li {
 }
 
 .logo {
-    width: 55px;
+    width: 80px;
     animation: glow 3s infinite alternate;
 }
 
@@ -6709,7 +6709,19 @@ footer p {
 
     font-size: 13px;
 }
+.footer-brand {
+  text-align: left;
+  justify-content: left;
+  align-item: left;
+}
 
+.footer-brand img {
+  display: block;
+  width: 220px;
+  margin: 0;
+  height: auto;
+align-item: left;
+} 
 
 /* Charity address */
 
@@ -8182,5 +8194,545 @@ footer {
     /* Hide Quick Navigation on mobile */
     .bottom-navigation {
         display: none !important;
+    }
+}
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    background: #082b43;
+    color: #ffffff;
+    padding: 60px 20px 25px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+
+/* =========================================
+   FOOTER BRAND
+========================================= */
+
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-logo-image {
+    width: 55px;
+    height: auto;
+}
+
+.footer-logo-name {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.footer-brand p {
+    margin-top: 18px;
+    color: #c7d8e2;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FOOTER LINKS
+========================================= */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links h4 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.footer-links a {
+    color: #c7d8e2;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #00aaff;
+}
+
+
+/* =========================================
+   SOCIAL MEDIA
+========================================= */
+
+.footer-social {
+    max-width: 1200px;
+    margin: 45px auto 30px;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-social a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+    background: #00aaff;
+    border-color: #00aaff;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 8px 0;
+    color: #c7d8e2;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-bottom strong {
+    color: #ffffff;
+}
+
+.footer-bottom span {
+    margin: 0 6px;
+    color: #6f8b9b;
+}
+
+.charity-address {
+    margin-top: 15px !important;
+}
+
+.copyright {
+    margin-top: 20px !important;
+    color: #8fa9b8 !important;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .site-footer {
+        padding: 45px 20px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
+
+    .footer-logo-name {
+        font-size: 16px;
+    }
+
+    .footer-social {
+        margin-top: 35px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-links {
+        gap: 8px;
+    }
+
+    .footer-bottom span {
+        display: none;
+    }
+
+}
+/* =========================================
+   SKYWave FOOTER
+========================================= */
+
+.site-footer {
+    background: #082b43;
+    color: #ffffff;
+    padding: 60px 30px 25px;
+}
+
+
+/* =========================================
+   MAIN FOOTER AREA
+========================================= */
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 50px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 80px;
+    align-items: start;
+}
+=====================================
+   BRAND
+========================================= */
+
+.footer-brand {
+    text-align: left;
+    max-width: 330px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-logo-image {
+    width: 55px;
+    height: auto;
+    display: block;
+}
+
+.footer-logo-name {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+.footer-brand p {
+    margin: 18px 0 0;
+
+    color: #c7d8e2;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   LINK COLUMNS
+========================================= */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 9px;
+}
+
+.footer-links h4 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.footer-links a {
+    color: #c7d8e2;
+    text-decoration: none;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #00aaff;
+    transform: translateX(3px);
+}
+
+
+/* =========================================
+   SOCIAL MEDIA
+========================================= */
+
+.footer-social {
+    max-width: 1200px;
+    margin: 45px auto 0;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 12px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+    background: #00aaff;
+    border-color: #00aaff;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   BOTTOM INFORMATION
+========================================= */
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 25px auto 0;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    text-align: left;
+}
+
+.footer-bottom p {
+    margin: 7px 0;
+
+    color: #c7d8e2;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-bottom strong {
+    color: #ffffff;
+}
+
+.footer-bottom span {
+    margin: 0 6px;
+    color: #6f8b9b;
+}
+
+.charity-address {
+    margin-top: 15px !important;
+}
+
+.copyright {
+    margin-top: 20px !important;
+    color: #8fa9b8 !important;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .footer-container {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        max-width: 450px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .site-footer {
+        padding: 45px 20px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
+
+    .footer-social {
+        margin-top: 35px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 430px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-links {
+        width: 100%;
+    }
+
+}
+.menu-toggle {
+  display: block !important;
+}
+
+@media screen and (min-width: 992px) {
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* First column — left */
+.footer-brand {
+    text-align: left;
+}
+
+/* Middle columns */
+.footer-container .footer-links:nth-child(2),
+.footer-container .footer-links:nth-child(3) {
+    text-align: center;
+}
+
+/* Last column — right */
+.footer-container .footer-links:nth-child(4) {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 30px;
+        padding: 45px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 30px;
+    }
+
+    .footer-brand,
+    .footer-container .footer-links {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
     }
 }
