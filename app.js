@@ -826,7 +826,6 @@ window.logout = function () {
         // Show normal website sections
         const sectionsToShow = [
             "home",
-            "what-we-do",
             "about",
             "research",
             "values",
@@ -1110,3 +1109,26 @@ window.openJobForm = function (job) {
   jobForm.classList.remove("hidden");
 };
 /////////////////////////////////////////////////
+function openMenu() {
+    const menu = document.getElementById("mobileMenu");
+    const button = document.querySelector(".menu-toggle");
+
+    menu.classList.add("active");
+
+    button.setAttribute("aria-expanded", "true");
+    button.setAttribute("aria-label", "Close navigation menu");
+
+    button.innerHTML = "✕";
+}
+
+function closeMenu() {
+    const menu = document.getElementById("mobileMenu");
+    const button = document.querySelector(".menu-toggle");
+
+    menu.classList.remove("active");
+
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-label", "Open navigation menu");
+
+    button.innerHTML = "☰";
+}
