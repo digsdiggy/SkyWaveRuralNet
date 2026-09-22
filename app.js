@@ -1109,39 +1109,48 @@ window.openJobForm = function (job) {
   jobForm.classList.remove("hidden");
 };
 /////////////////////////////////////////////////
-function openMenu() {
-    const menu = document.getElementById("mobileMenu");
-    const button = document.querySelector(".menu-toggle");
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.getElementById("mobileMenu");
 
-    if (!menu || !button) {
-        console.error("Mobile menu or menu button not found.");
-        return;
-    }
+if (menuToggle && navMenu) {
 
-    menu.classList.toggle("active");
+    menuToggle.addEventListener("click", () => {
 
-    const isOpen = menu.classList.contains("active");
+        const isOpen = navMenu.classList.toggle("active");
 
-    button.setAttribute("aria-expanded", String(isOpen));
-    button.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
-    );
+        menuToggle.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
 
-    button.innerHTML = isOpen ? "✕" : "☰";
-}
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
 
-function closeMenu() {
-    const menu = document.getElementById("mobileMenu");
-    const button = document.querySelector(".menu-toggle");
+        menuToggle.innerHTML = isOpen ? "✕" : "☰";
+    });
 
-    if (!menu || !button) {
-        return;
-    }
+    navMenu.querySelectorAll("a").forEach(link => {
 
-    menu.classList.remove("active");
+        link.addEventListener("click", () => {
 
-    button.setAttribute("aria-expanded", "false");
-    button.setAttribute("aria-label", "Open navigation menu");
-    button.innerHTML = "☰";
+            navMenu.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+            menuToggle.innerHTML = "☰";
+        });
+
+    });
 }
