@@ -8978,4 +8978,51 @@ footer {
 .topbar {
     position: relative !important;
 }
+.mobile-nav {
+    display: none;
 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    z-index: 9999;
+
+    flex-direction: column;
+
+    background: var(--bg-dark);
+    border-top: 1px solid var(--gold);
+
+    padding: 10px 20px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav a {
+    display: block;
+
+    padding: 14px 10px;
+
+    color: var(--white);
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus {
+    color: var(--gold-light);
+    background: var(--card);
+}
+
+.mobile-nav a:last-child {
+    border-bottom: none;
+}
