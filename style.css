@@ -8929,8 +8929,13 @@ footer {
     z-index: 9999;
 
     flex-direction: column;
-
-    background: #0b1f33;
+background: linear-gradient(
+    135deg,
+    #102A43 0%,
+    #234E70 35%,
+    #4682B4 70%,
+    #6FAED6 100%
+);
     border-top: 1px solid rgba(255,255,255,.12);
 
     padding: 15px 20px;
