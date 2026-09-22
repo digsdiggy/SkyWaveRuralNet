@@ -8992,14 +8992,14 @@ background: linear-gradient(
 
     position: absolute;
     top: 100%;
-    left: 0;
     right: 0;
+
+    width: 50%;
 
     z-index: 99999;
 
     flex-direction: column;
 
-    /* Same colour family as Values, Impact, Partners etc. */
     background: linear-gradient(
         135deg,
         #102A43 0%,
@@ -9009,22 +9009,23 @@ background: linear-gradient(
     );
 
     border-top: 2px solid var(--gold);
+    border-left: 1px solid rgba(255,255,255,0.15);
     border-bottom: 1px solid rgba(255,255,255,0.15);
 
     padding: 12px 20px;
 
     box-sizing: border-box;
 
+    border-radius: 0 0 0 12px;
+
     box-shadow:
         0 10px 35px rgba(0,0,0,0.5);
 }
 
-
-/* SHOW MENU */
-
 .mobile-nav.active {
     display: flex;
 }
+
 
 
 /* MENU LINKS */
