@@ -8794,7 +8794,7 @@ footer {
     }
 
     .menu-toggle {
-        display: block !important;
+        display: block;
     }
 
     .mobile-nav {
