@@ -1113,19 +1113,35 @@ function openMenu() {
     const menu = document.getElementById("mobileMenu");
     const button = document.querySelector(".menu-toggle");
 
+    if (!menu || !button) {
+        console.error("Mobile menu or menu button not found.");
+        return;
+    }
+
     menu.classList.toggle("active");
 
     const isOpen = menu.classList.contains("active");
-    button.setAttribute("aria-expanded", isOpen);
-    button.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+
+    button.setAttribute("aria-expanded", String(isOpen));
+    button.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+
+    button.innerHTML = isOpen ? "✕" : "☰";
 }
 
 function closeMenu() {
     const menu = document.getElementById("mobileMenu");
     const button = document.querySelector(".menu-toggle");
 
+    if (!menu || !button) {
+        return;
+    }
+
     menu.classList.remove("active");
 
     button.setAttribute("aria-expanded", "false");
     button.setAttribute("aria-label", "Open navigation menu");
+    button.innerHTML = "☰";
 }
