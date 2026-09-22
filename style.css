@@ -8866,10 +8866,24 @@ footer {
     .logo {
         width: 45px;
     }
-
   
+.desktop-nav {
+        display: none !important;
+    }
+
+   .menu-toggle {
+        display: block !important;
+    }
 
     .menu-toggle {
         font-size: 28px;
+    }
+   .mobile-nav {
+        display: none !important;
+    }
+
+    .mobile-nav.active {
+        display: flex !important;
+        flex-direction: column;
     }
 }
