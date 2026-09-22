@@ -1109,6 +1109,20 @@ window.openJobForm = function (job) {
   jobForm.classList.remove("hidden");
 };
 /////////////////////////////////////////////////
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+if (menuToggle && navMenu) {
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+
+    const isOpen = navMenu.classList.contains("open");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+  });
+
+}
 function openMenu() {
     const menu = document.getElementById("mobileMenu");
     const button = document.querySelector(".menu-toggle");
