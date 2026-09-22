@@ -8924,7 +8924,7 @@ footer {
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
+
 width: 50%;
     z-index: 9999;
 
@@ -8978,7 +8978,7 @@ background: linear-gradient(
 
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 0;
 
     width: 50%;
 
