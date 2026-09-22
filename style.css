@@ -8978,6 +8978,10 @@ footer {
 .topbar {
     position: relative !important;
 }
+/* =====================================================
+   MOBILE NAVIGATION PANEL
+===================================================== */
+
 .mobile-nav {
     display: none;
 
@@ -8986,43 +8990,81 @@ footer {
     left: 0;
     right: 0;
 
-    z-index: 9999;
+    z-index: 99999;
 
     flex-direction: column;
 
-    background: var(--bg-dark);
-    border-top: 1px solid var(--gold);
+    /* Same colour family as Values, Impact, Partners etc. */
+    background: linear-gradient(
+        135deg,
+        #102A43 0%,
+        #234E70 35%,
+        #4682B4 70%,
+        #6FAED6 100%
+    );
 
-    padding: 10px 20px;
+    border-top: 2px solid var(--gold);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    padding: 12px 20px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.5);
 }
+
+
+/* SHOW MENU */
 
 .mobile-nav.active {
     display: flex;
 }
 
+
+/* MENU LINKS */
+
 .mobile-nav a {
     display: block;
 
-    padding: 14px 10px;
+    padding: 15px 12px;
 
     color: var(--white);
+
     text-decoration: none;
 
-    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+
+    border-bottom: 1px solid rgba(255,255,255,0.12);
 
     transition:
-        color 0.2s ease,
-        background 0.2s ease;
+        background 0.25s ease,
+        color 0.25s ease,
+        padding-left 0.25s ease;
 }
+
+
+/* LAST LINK */
+
+.mobile-nav a:last-child {
+    border-bottom: none;
+}
+
+
+/* HOVER / TAP */
 
 .mobile-nav a:hover,
 .mobile-nav a:focus {
     color: var(--gold-light);
-    background: var(--card);
+
+    background: rgba(11,11,11,0.25);
+
+    padding-left: 18px;
 }
 
-.mobile-nav a:last-child {
-    border-bottom: none;
+
+/* HEADER MUST BE THE POSITIONING REFERENCE */
+
+.topbar {
+    position: relative;
 }
