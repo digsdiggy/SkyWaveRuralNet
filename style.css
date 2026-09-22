@@ -8853,37 +8853,61 @@ footer {
 
 /* ================= MOBILE HEADER ================= */
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 
-    .topbar {
-        padding: 10px 15px;
-    }
+  /* =====================================================
+     HAMBURGER BUTTON
+  ===================================================== */
 
-    .brand {
-        font-size: 13px;
-    }
+  .menu-toggle {
+    display: flex !important;
 
-    .logo {
-        width: 45px;
-    }
-  
-.desktop-nav {
-        display: none !important;
-    }
+    width: 42px;
+    height: 42px;
 
-   .menu-toggle {
-        display: block !important;
-    }
+    flex-shrink: 0;
 
-    .menu-toggle {
-        font-size: 28px;
-    }
-   .mobile-nav {
-        display: none !important;
-    }
+    align-items: center;
+    justify-content: center;
 
-    .mobile-nav.active {
-        display: flex !important;
-        flex-direction: column;
-    }
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 8px;
+
+    background: rgba(255,255,255,.06);
+
+    color: white;
+
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+
+    width: 20px;
+    height: 2px;
+
+    background: white;
+
+    border-radius: 2px;
+
+    transition: transform .2s ease;
+  }
+
+  .menu-toggle:hover {
+    background: rgba(255,255,255,.12);
+  }
+
+
+  /* =====================================================
+     MOBILE NAVIGATION PANEL
+  ===================================================== */
+
+ 
 }
+
