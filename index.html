@@ -52,7 +52,7 @@
        
     </nav>
 
-</header>
+
 
 
 <!-- MOBILE MENU -->
@@ -70,7 +70,7 @@
   <a href="#admin" onclick="closeMenu()">Admin</a>
   
 </nav>
-
+</header>
 
   
   <!-- ================= HERO ================= -->
@@ -1007,7 +1007,15 @@ Supporting the development of future connectivity, device, digital skills and su
 
 </footer>
 
+<script>
+function openMenu() {
+    document.getElementById("sideMenu").classList.add("open");
+}
 
+function closeMenu() {
+    document.getElementById("sideMenu").classList.remove("open");
+}
+</script>
 
 <script type="module" src="app.js"></script>
       </body> </html>
