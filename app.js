@@ -1109,30 +1109,15 @@ window.openJobForm = function (job) {
   jobForm.classList.remove("hidden");
 };
 /////////////////////////////////////////////////
-const menuToggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector(".nav-menu");
-
-if (menuToggle && navMenu) {
-
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-
-    const isOpen = navMenu.classList.contains("open");
-
-    menuToggle.setAttribute("aria-expanded", isOpen);
-  });
-
-}
 function openMenu() {
     const menu = document.getElementById("mobileMenu");
     const button = document.querySelector(".menu-toggle");
 
-    menu.classList.add("active");
+    menu.classList.toggle("active");
 
-    button.setAttribute("aria-expanded", "true");
-    button.setAttribute("aria-label", "Close navigation menu");
-
-    button.innerHTML = "✕";
+    const isOpen = menu.classList.contains("active");
+    button.setAttribute("aria-expanded", isOpen);
+    button.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
 }
 
 function closeMenu() {
@@ -1143,6 +1128,4 @@ function closeMenu() {
 
     button.setAttribute("aria-expanded", "false");
     button.setAttribute("aria-label", "Open navigation menu");
-
-    button.innerHTML = "☰";
 }
