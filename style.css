@@ -8903,15 +8903,21 @@ footer {
     background: rgba(255,255,255,.12);
   }
 
-.mobile-nav {
-    display: none;
-}
+ .desktop-nav {
+        display: none;
+    }
 
-/* Mobile menu visible when active */
-.mobile-nav.active {
-    display: flex;
-    flex-direction: column;
-}
+    .menu-toggle {
+        display: block;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+
+    .mobile-nav.active {
+        display: flex;
+    }
   /* =====================================================
      MOBILE NAVIGATION PANEL
   ===================================================== */
