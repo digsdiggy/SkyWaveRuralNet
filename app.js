@@ -1109,7 +1109,7 @@ window.openJobForm = function (job) {
   jobForm.classList.remove("hidden");
 };
 /////////////////////////////////////////////////
-function openMenu() {
+/*function openMenu() {
     const menu = document.getElementById("mobileMenu");
     const button = document.querySelector(".menu-toggle");
 
@@ -1131,4 +1131,4 @@ function closeMenu() {
     button.setAttribute("aria-label", "Open navigation menu");
 
     button.innerHTML = "☰";
-}
+}*\
