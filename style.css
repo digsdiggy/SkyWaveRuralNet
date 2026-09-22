@@ -8911,16 +8911,48 @@ footer {
         display: block;
     }
 
-    .mobile-nav {
-        display: none;
-    }
+   
 
-    .mobile-nav.active {
-        display: flex;
-    }
+ 
   /* =====================================================
      MOBILE NAVIGATION PANEL
   ===================================================== */
 
+.mobile-nav {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    z-index: 9999;
+
+    flex-direction: column;
+
+    background: #0b1f33;
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    padding: 15px 20px;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav a {
+    display: block;
+
+    padding: 14px 10px;
+
+    color: white;
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.mobile-nav a:hover {
+    background: rgba(255,255,255,.08);
+}
  
 }
