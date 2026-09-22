@@ -8925,7 +8925,7 @@ footer {
     top: 100%;
     left: 0;
     right: 0;
-
+width: 50%;
     z-index: 9999;
 
     flex-direction: column;
@@ -9073,4 +9073,14 @@ background: linear-gradient(
 
 .topbar {
     position: relative;
+}
+@media (max-width: 600px) {
+
+    .brand {
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        white-space: nowrap;
+    }
+
 }
