@@ -4633,13 +4633,7 @@ section + div {
         height: 45px;
     }
 }
-ChatGPT said:
-Yes. I would actually change the approach completely.
 
-Instead of putting decorative elements inside the card, use a clean "floating frame" design where the gold accents sit around the outer edges. This gives you a modern software-engineering look and guarantees the decoration doesn't interfere with the card's text.
-
-Recommended design: Floating Gold Frame
-Replace the previous card-decoration CSS with this:
 
 /* =========================================
    MODERN SOFTWARE-STYLE SUBCARDS
@@ -8923,7 +8917,7 @@ footer {
 
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0;
 
 width: 50%;
     z-index: 9999;
@@ -8978,7 +8972,7 @@ background: linear-gradient(
 
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0;
 
     width: 50%;
 
