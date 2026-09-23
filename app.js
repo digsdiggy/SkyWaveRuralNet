@@ -1154,3 +1154,121 @@ if (menuToggle && navMenu) {
 
     });
 }
+
+// =========================================
+// SINGLE SECTION NAVIGATION
+// =========================================
+
+const sectionIds = [
+    "home",
+    "about",
+    "research",
+    "values",
+    "impact",
+    "partners",
+    "volunteer",
+    "contact",
+    "donate",
+    "admin"
+];
+
+
+function showSection(sectionId) {
+
+    sectionIds.forEach(id => {
+
+        // Look for a wrapper first
+        let section = document.getElementById(id);
+
+        if (!section) return;
+
+        if (id === sectionId) {
+
+            section.classList.remove("single-page-hidden");
+            section.classList.add("single-page-visible");
+
+        } else {
+
+            section.classList.remove("single-page-visible");
+            section.classList.add("single-page-hidden");
+
+        }
+
+    });
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+// =========================================
+// NAVIGATION LINKS
+// =========================================
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", function (event) {
+
+        const targetId = this
+            .getAttribute("href")
+            .substring(1);
+
+        if (!sectionIds.includes(targetId)) {
+            return;
+        }
+
+        event.preventDefault();
+
+        showSection(targetId);
+
+        history.pushState(
+            null,
+            "",
+            "#" + targetId
+        );
+
+    });
+
+});
+
+
+// =========================================
+// INITIAL SECTION
+// =========================================
+
+const startingSection =
+    window.location.hash.substring(1);
+
+if (sectionIds.includes(startingSection)) {
+
+    showSection(startingSection);
+
+} else {
+
+    showSection("home");
+
+}
+
+
+// =========================================
+// BACK / FORWARD
+// =========================================
+
+window.addEventListener("popstate", function () {
+
+    const sectionId =
+        window.location.hash.substring(1);
+
+    if (sectionIds.includes(sectionId)) {
+
+        showSection(sectionId);
+
+    } else {
+
+        showSection("home");
+
+    }
+
+});
