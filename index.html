@@ -146,9 +146,8 @@
   </div>
      </section>
    <!-- ================= ABOUT ================= -->
-     <div class="section-image2 about-image">
-  <section id="about" class="section about-page">
-
+    <div id="about" class="section-wrapper section-image2 about-image">
+    <section class="section about-page">
     <!-- ABOUT US -->
 
 
@@ -450,8 +449,8 @@
 
  </section> 
   <!-- ================= Our Values ================= -->
-  <div class="section-image3 value-image">
-  <section id="values" class="section"> <h3>Our Values</h3><div class="grid"> <div class="card"> <h5>Community First</h5> <p>We believe rural communities should shape the decisions and solutions that affect their digital future. </p> </div> <div class="card"> <h5>Evidence-led</h5> <p>We use research, data and spatial analysis to understand need, measure impact and inform decision-making.</p> </div> <div class="card"> <h5>Inclusion</h5> <p> We believe everyone should have the opportunity to participate in digital society, regardless of where they live, their age, income or circumstances. </p> </div> <div class="card"> <h5>Partnership</h5> <p>We work collaboratively with partners such as community organisations, local councils, healthcare organisations, charities, and academia to create sustainable, lasting solutions.</p> </div> <div class="card"> <h5>Transparency</h5> <p>We are committed to openness, accountability and responsible stewardship, ensuring our work and resources deliver the greatest possible public benefit.</p> </div> </div> </section> 
+  <div id="values" class="section-wrapper section-image3 value-image">
+    <section class="section"><h3>Our Values</h3><div class="grid"> <div class="card"> <h5>Community First</h5> <p>We believe rural communities should shape the decisions and solutions that affect their digital future. </p> </div> <div class="card"> <h5>Evidence-led</h5> <p>We use research, data and spatial analysis to understand need, measure impact and inform decision-making.</p> </div> <div class="card"> <h5>Inclusion</h5> <p> We believe everyone should have the opportunity to participate in digital society, regardless of where they live, their age, income or circumstances. </p> </div> <div class="card"> <h5>Partnership</h5> <p>We work collaboratively with partners such as community organisations, local councils, healthcare organisations, charities, and academia to create sustainable, lasting solutions.</p> </div> <div class="card"> <h5>Transparency</h5> <p>We are committed to openness, accountability and responsible stewardship, ensuring our work and resources deliver the greatest possible public benefit.</p> </div> </div> </section> 
   </div>
   <!-- ================= IMPACT ================= -->
  
@@ -502,8 +501,8 @@
 </section>
  
     <!-- ================= PARTNERS ================= -->
-<div class="section-image4 partner-image">
-    <section id="partners" class="section">
+<div id="partners" class="section-wrapper section-image4 partner-image">
+    <section class="section">
 
 <h5>Partner With Us</h5>
 
@@ -761,8 +760,9 @@ Submit Partnership Enquiry
     <!-- ================= VOLUNTEER ================= -->
     <section id="volunteer" class="section"> <div class="section"> <div class="section"> <h5>Why Volunteer</h5> Volunteers support: <ul> <div class="card">Digital skills training</div> <div class="card">Community outreach</div> <div class="card">Referrals and support</div> <div class="card">Local engagement</div> </div> <div class="section"> <h5>What You’ll Do </h5> <ul> <div class="card">Support community programmes</div> <div class="card">Help individuals access services</div> <div class="card">Assist with digital learning</div> <div class="card">Work with partner organisations</div> </div> <div class="section"> <h3>Who Can Apply </h3> Anyone passionate about: <ul> <div class="card">Digital inclusion</div> <div class="card">Rural communities</div> <div class="card">Creating social impact</div> </div> <div class="section"> <h2>Volunteer With Us</h2> <form onsubmit="submitVolunteer(event)"> <input id="v_name" type="text" placeholder="Full Name" required /> <input id="v_email" type="email" placeholder="Email Address" required /> <input id="v_phone" type="tel" placeholder="Phone Number" required /> <h3>Address</h3> <input id="v_address1" type="text" placeholder="Address Line 1" required /> <input id="v_address2" type="text" placeholder="Address Line 2 (Optional)" /> <input id="v_town" type="text" placeholder="Town / City" required /> <input id="v_county" type="text" placeholder="County" required /> <input id="v_postcode" type="text" placeholder="Postcode" required /> <h3>Volunteer Information</h3> <select id="v_interest" required> <option value=""> Select volunteering area </option> <option> Digital Skills Training </option> <option> Community Outreach </option> <option> Research Support </option> <option> Events Support </option> <option> Fundraising </option> </select> <input id="v_skills" type="Skills, experience, or qualifications" placeholder="Experience" required /> <input id="v_availability" type="Your availability (days/times)" placeholder="Your availability (days/times)" required /> <input id="v_role" type="Role" placeholder="Role" required /> <button onclick="submit">Apply</button> </form></div> </div> </section> 
   <!-- ================= CONTACT ================= -->
-      <div class="section-image5 contact-image">
-      <section id="contact" class="section"> <h5>Get in touch</h5>We would be delighted to hear from you.  <form onsubmit="sendMessage(event)"> <input id="c_name" placeholder="Full Name" required> <input id="c_email" type="email" placeholder="Email Address" required> <input id="c_phone" placeholder="Phone Number"> <h3>Address (Optional)</h3> <input id="c_address1" placeholder="Address Line 1"> <input id="c_address2" placeholder="Address Line 2"> <input id="c_town" placeholder="Town / City"> <input id="c_county" placeholder="County"> <input id="c_postcode" placeholder="Postcode"> <label for="c_subject">Reason</label> <select id="c_subject"> <option>General Enquiry</option> <option>Volunteer Information</option> <option>Partnership Opportunity</option> <option>Digital Skills Support</option> <option>Connectivity Support</option> <option>Device Donation</option> <option>Research Enquiry</option> <option>Funding / Grant Enquiry</option> <option>Other</option> </select> <textarea id="c_message" placeholder="Your message" required> </textarea> <label> <input type="checkbox" required> I agree that SkyWave RuralNet SCIO can store my information.</input> </label> <button type="submit"> Send Message </button> </form> </section> 
+<div id="contact" class="section-wrapper section-image5 contact-image">
+    <section class="section">
+ <h5>Get in touch</h5>We would be delighted to hear from you.  <form onsubmit="sendMessage(event)"> <input id="c_name" placeholder="Full Name" required> <input id="c_email" type="email" placeholder="Email Address" required> <input id="c_phone" placeholder="Phone Number"> <h3>Address (Optional)</h3> <input id="c_address1" placeholder="Address Line 1"> <input id="c_address2" placeholder="Address Line 2"> <input id="c_town" placeholder="Town / City"> <input id="c_county" placeholder="County"> <input id="c_postcode" placeholder="Postcode"> <label for="c_subject">Reason</label> <select id="c_subject"> <option>General Enquiry</option> <option>Volunteer Information</option> <option>Partnership Opportunity</option> <option>Digital Skills Support</option> <option>Connectivity Support</option> <option>Device Donation</option> <option>Research Enquiry</option> <option>Funding / Grant Enquiry</option> <option>Other</option> </select> <textarea id="c_message" placeholder="Your message" required> </textarea> <label> <input type="checkbox" required> I agree that SkyWave RuralNet SCIO can store my information.</input> </label> <button type="submit"> Send Message </button> </form> </section> 
       </div>
   <!-- ================= DONATE ================= -->
       <section id="donate" class="section">
@@ -810,8 +810,9 @@ Supporting the development of future connectivity, device, digital skills and su
 
       
   <!-- ================= ADMIN ================= -->
-       <div class="section-image6">
-        <section id="admin" class="section dark"> <h5>Admin Access</h5> <div class="admin-box"> <h6>Secure Login</h6> <input id="adminEmail" type="email" placeholder="Admin Email"> <input id="adminPassword" type="password" placeholder="Password"> <button onclick="login()" class="btn-primary">Login</button> </div> 
+   <div id="admin" class="section-wrapper section-image6">
+    <section class="section dark">
+<h5>Admin Access</h5> <div class="admin-box"> <h6>Secure Login</h6> <input id="adminEmail" type="email" placeholder="Admin Email"> <input id="adminPassword" type="password" placeholder="Password"> <button onclick="login()" class="btn-primary">Login</button> </div> 
          </section> </div>
          
          <section id="dashboard" class="hidden">
