@@ -153,6 +153,18 @@ nav a {
     padding: 100px 40px;
     box-sizing: border-box;
 }
+
+
+#impact {
+  height: 300px;
+  top: -20px;
+  margin-top: -20px;
+  transform: translateY(50px);
+   padding-top: 80px;
+position: absolute;
+overflow: hidden;
+
+}
 nav a:hover {
     color: var(--gold);
 }
